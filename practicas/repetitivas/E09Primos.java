@@ -16,7 +16,7 @@ public class E09Primos {
     Scanner s = new Scanner(System.in);
     int n, i, contador = 1, actual = 3;
     
-    // Introducci�n de datos
+    // Introducción de datos
     System.out.println("Numero de numeros primos a generar:");
     n = s.nextInt();
     

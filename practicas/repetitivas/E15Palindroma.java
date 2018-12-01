@@ -17,7 +17,7 @@ public class E15Palindroma {
     String cadena;
     int i,j;
     
-    // Introducci�n de datos
+    // Introducción de datos
     System.out.println("Introduzca una cadena:");
     cadena = s.nextLine();
     

@@ -16,7 +16,7 @@ public class E14Subcadena {
     Scanner s = new Scanner(System.in);
     String cadena, subcadena;
     
-    // Introducci�n de datos
+    // Introducción de datos
     System.out.println("Introduzca una cadena:");
     cadena = s.nextLine();
     System.out.println("Introduzca una subcadena a buscar:");

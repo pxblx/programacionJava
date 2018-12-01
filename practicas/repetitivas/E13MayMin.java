@@ -17,7 +17,7 @@ public class E13MayMin {
     String cadena, cadenaNueva="";
     char caracter, caracterMin, caracterMay;
     
-    // Introducci�n de datos
+    // Introducción de datos
     System.out.println("Introduzca una cadena:");
     cadena = s.nextLine();
     

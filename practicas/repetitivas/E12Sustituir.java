@@ -19,7 +19,7 @@ public class E12Sustituir {
     String caracter1;
     String caracter2;
     
-    // Introducci�n de datos
+    // Introducción de datos
     System.out.println("Introduzca una cadena:");
     cadena = s.nextLine();
     do {

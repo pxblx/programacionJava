@@ -18,7 +18,7 @@ public class E10Cadena {
     char caracter;
     int contador = 0;
     
-    // Introducci�n de datos
+    // Introducción de datos
     System.out.println("Introduzca una cadena:");
     cadena = s.nextLine();
     System.out.println("Introduzca un caracter:");
