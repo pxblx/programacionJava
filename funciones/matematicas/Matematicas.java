@@ -27,7 +27,7 @@ package funciones.matematicas;
 
 public class Matematicas {
   
-  /** 1. Función que comprueba si un número es capicúa
+  /** 1. Comprueba si un número es capicúa
    * 
    * @param n número entero a comprobar
    * @return <code>true</code> si el número es capicúa
@@ -35,20 +35,8 @@ public class Matematicas {
    */
   public static boolean esCapicua (int n) {
     
-    int invertido = 0;
-    int resto;
-    int aux;
-    
-    // Calcular el invertido
-    aux = n;
-    while (aux > 0) {
-      resto = aux%10;
-      invertido = invertido*10+resto;
-      aux /= 10;
-    }
-    
-    // Comprobar si es igual
-    if (n == invertido) {
+    // Comprobar si es igual (haciendo uso de la función "voltea" del ejercicio 7)
+    if (n == voltea(n)) {
       return true;
     } else {
       return false;
@@ -56,7 +44,7 @@ public class Matematicas {
     
   }
   
-  /** 2. Función que comprueba si un número es primo
+  /** 2. Comprueba si un número es primo
    * 
    * @param n número entero a comprobar
    * @return <code>true</code> si el número es primo
@@ -76,5 +64,74 @@ public class Matematicas {
     return true;
     
   }
+  
+  /** 3. Devuelve el menor primo que es mayor al número que se pasa como parámetro.
+   * 
+   * @param n número entero a comprobar
+   * @return el menor primo mayor al parámetro
+   */
+  public static int siguientePrimo (int n) {
+    
+    // Usando la funcion "esPrimo" del ejercicio 2
+    n++;
+    while (!esPrimo(n)) {
+      n++;
+    }
+    return n;
+    
+  }
+  
+  /** 4. Dada una base y un exponente devuelve la potencia.
+   * 
+   * @param b base de la potencia
+   * @param e exponente de la potencia
+   * @return potencia
+   */
+  public static int potencia (int b, int e) {
+    
+    int p = 1;
+    for (int i=0; i<e; i++) {
+      p = p*b;
+    }
+    return p;
+    
+  }
+  
+  /** 5. Cuenta el número de dígitos de un número entero.
+   * 
+   * @param n número entero
+   * @return cantidad de digitos
+   */
+  public static int digitos (int n) {
+    
+    return String.valueOf(n).length();
+    
+  }
+  
+  /** 6. Le da la vuelta a un número.
+   * 
+   * @param n número entero
+   * @return número entero volteado
+   */
+  public static int voltea (int n) {
+    
+    int resto;
+    int invertido = 0;
+    while (n > 0) {
+      resto = n%10;
+      invertido = invertido*10+resto;
+      n /= 10;
+    }
+    return invertido;
+    
+  }
+  
+  /** 7. Devuelve el dígito que está en la posición n de un número entero. Se empieza contando por el 0 y de izquierda a derecha.
+   * 
+   * @param n número entero
+   * @param x dígito a buscar
+   * @return posición de x
+   */
+  
   
 }
