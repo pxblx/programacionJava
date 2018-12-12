@@ -9,7 +9,7 @@ public class prueba {
   
   public static void main(String[] args) {
     
-    boolean p=funciones.matematicas.Matematicas.esCapicua(12321);
+    int p=practicas.funciones.matematicas.Matematicas.posicionDeDigito(1238912,9);
     System.out.println(p);
     
   }

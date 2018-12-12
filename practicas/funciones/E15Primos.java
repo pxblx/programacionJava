@@ -7,7 +7,7 @@
 
 package practicas.funciones;
 
-import funciones.matematicas.Matematicas;
+import practicas.funciones.matematicas.Matematicas;
 
 public class E15Primos {
   
