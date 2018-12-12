@@ -20,7 +20,7 @@
  * 13. trozoDeNumero: Toma como parámetros las posiciones inicial y final dentro de un número y devuelve el trozo correspondiente.
  * 14. juntaNumeros: Pega dos números para formar uno.
  * 
- * @author  Pablo
+ * @author Pablo
  */
 
 package practicas.funciones.matematicas;
@@ -143,11 +143,7 @@ public class Matematicas {
   public static int digitoN (int n, int x) {
     
     n = voltea(n);
-    x = x-1;
-    
-    for (int i = x-1; i > 0; i--) {
-      n /= 10;
-    }
+    n = quitaPorDetras(n,x-1);
     
     return n%10;
     
@@ -163,7 +159,7 @@ public class Matematicas {
     
     int i;
     
-    for (i = 1; i < digitos(n) && digitoN(n,i) != x; i++);
+    for (i = 1;(i < digitos(n)) && (digitoN(n,i) != x); i++);
     
     if (i == digitos(n)) {
       return -1;
@@ -181,9 +177,57 @@ public class Matematicas {
    */
   public static int quitaPorDetras (int n, int x) {
     
+    for (int i = x; i > 0; i--) {
+      n /= 10;
+    }
     
+    return n;
     
-    return
+  }
+  
+  /** Le quita a un número n dígitos por delante (por la izquierda).
+   * 
+   * @param n número entero
+   * @param x número de dígitos a quitar por la izquierda
+   * @return el número entero con los dígitos quitados
+   */
+  public static int quitaPorDelante (int n, int x) {
+    
+    n = voltea(n);
+    n = quitaPorDetras(n,x);
+    
+    return voltea(n);
+    
+  }
+  
+  /** Añade un dígito a un número por detrás.
+   * 
+   * @param n número entero
+   * @param x dígito a pegar por detrás
+   * @return número con el dígito pegado
+   */
+  public static int pegaPorDetras (int n, int x) {
+    
+    float aux;
+    
+    aux = (float)x/10;
+    aux = (n+aux)*10;
+    
+    return (int)aux;
+    
+  }
+  
+  /** Añade un dígito a un número por delante.
+   * 
+   * @param n número entero
+   * @param x dígito a pegar por delante
+   */
+  public static int pegaPorDelante (int n, int x) {
+    
+    n = voltea(n);
+    n = pegaPorDetras(n,x);
+    
+    return voltea(n);
     
   }
   

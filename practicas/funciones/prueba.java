@@ -9,7 +9,7 @@ public class prueba {
   
   public static void main(String[] args) {
     
-    int p=practicas.funciones.matematicas.Matematicas.posicionDeDigito(1238912,9);
+    int p=practicas.funciones.matematicas.Matematicas.pegaPorDelante(9876,3);
     System.out.println(p);
     
   }
