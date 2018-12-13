@@ -35,7 +35,7 @@ public class Matematicas {
    */
   public static boolean esCapicua (int n) {
     
-    // Comprobar si es igual (haciendo uso de la función "voltea" del ejercicio 7)
+    // Comprobar si es igual haciendo uso de la función voltea
     if (n == voltea(n)) {
       return true;
     } else {
@@ -74,7 +74,7 @@ public class Matematicas {
    */
   public static int siguientePrimo (int n) {
     
-    // Usando la funcion "esPrimo" del ejercicio 2
+    // Usando la funcion esPrimo
     n++;
     
     while (!esPrimo(n)) {
@@ -110,6 +110,7 @@ public class Matematicas {
    */
   public static int digitos (int n) {
     
+    // Se pasa a cadena para contar los caracteres
     return String.valueOf(n).length();
     
   }
@@ -124,6 +125,7 @@ public class Matematicas {
     int resto;
     int invertido = 0;
     
+    // Se van sacando dígitos en forma de decimales para ordenarlos de forma inversa
     while (n > 0) {
       resto = n%10;
       invertido = invertido*10+resto;
@@ -142,9 +144,11 @@ public class Matematicas {
    */
   public static int digitoN (int n, int x) {
     
+    // Primero se voltea el número para después ir quitando digitos hasta llegar a la posición que se quiere
     n = voltea(n);
     n = quitaPorDetras(n,x-1);
     
+    // Se obtiene el resto de dividir entre 10 para que de como resultado el número que se busca
     return n%10;
     
   }
@@ -159,6 +163,7 @@ public class Matematicas {
     
     int i;
     
+    // Usando el método digitoN se van comparando todos los números hasta que se encuentra x, quedando la posición de este guardada en i
     for (i = 1;(i < digitos(n)) && (digitoN(n,i) != x); i++);
     
     if (i == digitos(n)) {
@@ -177,6 +182,7 @@ public class Matematicas {
    */
   public static int quitaPorDetras (int n, int x) {
     
+    // Al ser n de tipo int y dividirlo entre 10 se van convirtiendo los dígitos que se quieren quitar en decimales y dejan de aparecer
     for (int i = x; i > 0; i--) {
       n /= 10;
     }
@@ -193,6 +199,7 @@ public class Matematicas {
    */
   public static int quitaPorDelante (int n, int x) {
     
+    // Igual que quitaPorDetras solo que se voltea el número antes y después para que los números se quiten por la izquieda
     n = voltea(n);
     n = quitaPorDetras(n,x);
     
@@ -208,12 +215,13 @@ public class Matematicas {
    */
   public static int pegaPorDetras (int n, int x) {
     
-    float aux;
+    // Se añaden al final de n tantos 0 como se necesiten para que los ocupe m al sumarlos
+    for (int i = digitos(x); i > 0; i--) {
+      n = n*10;
+    }
+    n = n+x;
     
-    aux = (float)x/10;
-    aux = (n+aux)*10;
-    
-    return (int)aux;
+    return n;
     
   }
   
@@ -224,10 +232,40 @@ public class Matematicas {
    */
   public static int pegaPorDelante (int n, int x) {
     
+    // Igual que pegaPorDetras solo que se voltea el número antes y después para que los números se añadan por la izquieda
     n = voltea(n);
     n = pegaPorDetras(n,x);
     
     return voltea(n);
+    
+  }
+  
+  /** Toma como parámetros las posiciones inicial y final dentro de un número y devuelve el trozo correspondiente.
+   * 
+   * @param n número entero
+   * @param i posición inicial
+   * @param f posición final
+   * @return trozo de número
+   */
+  public static int trozoDeNumero (int n, int i, int f) {
+    
+    n = quitaPorDelante(n,i-1);
+    n = quitaPorDetras(n,digitos(n)-f+1);
+    
+    return n;
+    
+  }
+  
+  /** Pega dos números para formar uno.
+   * 
+   * @param n número entero
+   * @param m número entero
+   * @return el primer número (n) con el segundo (m) pegado
+   */
+  public static int juntaNumeros (int n, int m) {
+    
+    // ?
+    return pegaPorDetras(n,m);
     
   }
   

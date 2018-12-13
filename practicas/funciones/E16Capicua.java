@@ -1,6 +1,6 @@
-/** Ejercicio 15 de funciones
+/** Ejercicio 16 de funciones
  * 
- * Muestra los números primos que hay entre 1 y 1000.
+ * Muestra los números capicúa que hay entre 1 y 99999.
  * 
  * @author Pablo
  */
@@ -9,14 +9,14 @@ package practicas.funciones;
 
 import practicas.funciones.matematicas.Matematicas;
 
-public class E15Primos {
+public class E16Capicua {
   
   public static void main(String[] args) {
     
-    // Obtener los primos entre 1 y 1000
+    // Obtener los números capicúa entre 1 y 99999
     System.out.print("| ");
-    for (int i = 1; i < 1000; i++) {
-      if (Matematicas.esPrimo(i)) {
+    for (int i = 1; i < 100000; i++) {
+      if (Matematicas.esCapicua(i)) {
         System.out.print(i + " | ");
       }
     }
