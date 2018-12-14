@@ -22,9 +22,7 @@ public class E08Cronometro {
           System.out.println(horas+":"+minutos+":"+segundos);
           TimeUnit.SECONDS.sleep(1);
         }
-        
       }
-      
     }
     
   }
