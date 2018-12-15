@@ -16,23 +16,22 @@ public class Ejercicio01 {
     
     // Definir las variables
     int opcion;
-    String fecha = "";
-    boolean fechaIntroducida = false;
-    int fechaDia = 0;
-    int fechaMes = 0;
-    int fechaAno = 0;
     int dias = 0;
-    boolean flag = true;
-    String aux = "";
+    int fecha[] = new int[3];
+//    int fecha2[] = new int[3];
+    boolean fechaIntroducida = false;
+    boolean menuFlag = true;
+    String inputFecha = "";
+//    String inputFecha2 = "";
     
-    while (flag) {
-      // Menú
+    // Mostrar el menú
+    while (menuFlag) {
       System.out.println("(1) Introducir fecha.");
       System.out.println("(2) Sumar días.");
       System.out.println("(3) Restar días.");
       System.out.println("(4) Comparar.");
       System.out.println();
-      System.out.print("Selecciones una de las siguientes opciones: ");
+      System.out.print("Seleccione una de las siguientes opciones: ");
       opcion = s.nextInt();
       s.nextLine();
       System.out.println();
@@ -40,58 +39,85 @@ public class Ejercicio01 {
       switch (opcion) {
       
         case 1:
-          System.out.print("Introduce una fecha: ");
-          fecha = s.nextLine();
+          
+          System.out.print("Introduce una fecha (dd/mm/aaaa): "); // Validar
+          inputFecha = s.nextLine();
           fechaIntroducida = true;
-          for (int i = 0; i < 2; i++) {
-            aux = aux+fecha.charAt(i);
-          }
-          fechaDia = Integer.valueOf(aux);
-          aux = "";
-          for (int i = 3; i < 5; i++) {
-            aux = aux+fecha.charAt(i);
-          }
-          fechaMes = Integer.valueOf(aux);
-          aux = "";
-          for (int i = 6; i < 10; i++) {
-            aux = aux+fecha.charAt(i);
-          }
-          fechaAno = Integer.valueOf(aux);
-          aux = "";
+          fecha = descomponerFecha(inputFecha);
           System.out.println();
           break;
+          
         case 2:
+          
           if (fechaIntroducida) {
-            System.out.print("Dias a sumar: ");
+            System.out.print("Dias a sumar (positivo): ");
             dias = s.nextInt();
             System.out.println();
-            System.out.println("La fecha ahora es: "+sumarDias(fechaDia, fechaMes, fechaAno, dias));
-            flag = false;
+            // Comprobar que es positivo
+            if (dias <= 0) {
+              System.out.println("El número debe ser positivo.");
+              System.out.println();
+            } else {
+              System.out.println("La fecha ahora es: "+sumarDias(fecha, dias));
+              menuFlag = false;
+            }
           } else {
             System.out.println("No has introducido ninguna fecha.");
+            System.out.println();
           }
           break;
+          
         case 3:
+          
           if (fechaIntroducida) {
-            System.out.print("Dias a restar: ");
+            System.out.print("Dias a restar (negativo): ");
             dias = s.nextInt();
             System.out.println();
-            System.out.println("La fecha ahora es: "+restarDias(fechaDia, fechaMes, fechaAno, dias));
-            flag = false;
+            // Comprobar que es negativo
+            if (dias >= 0) {
+              System.out.println("El número debe ser negativo.");
+              System.out.println();
+            } else {
+              System.out.println("La fecha ahora es: "+restarDias(fecha, dias));
+              menuFlag = false;
+            }
           } else {
             System.out.println("No has introducido ninguna fecha.");
+            System.out.println();
           }
           break;
+          
         case 4:
-          // llamada a la función compararFechas
+          
+//          if (fechaIntroducida) {
+//            System.out.print("Introduce la fecha con la que quieres comparar la introducida: ");
+//            System.out.println();
+//            inputFecha2 = s.nextLine(); // Validar
+//            fecha2 = descomponerFecha(inputFecha2);
+//            if (compararFechas(fecha, fecha2) == -1) {
+//              System.out.println("La primera fecha es más reciente.");
+//            } else if (compararFechas (fecha, fecha2) == 0) {
+//              System.out.println("Las fechas son iguales");
+//            } else {
+//              System.out.println("La primera fecha es más antigua.");
+//            }
+//          } else {
+//            System.out.println("No has introducido ninguna fecha.");
+//            System.out.println();
+//          }
           break;
+          
+        default:
+          
+          System.out.println("La opción que has introducido no es correcta.");
+          System.out.println();
         
       }
       
     }
     
     s.close();
-          
+    
   }
   
   /**
@@ -103,23 +129,25 @@ public class Ejercicio01 {
    * @param dias dias a sumar
    * @return fecha modificada
    */
-  public static String sumarDias (int fechaDia, int fechaMes, int fechaAno, int dias) {
+  public static String sumarDias (int[] fecha, int dias) {
     
+    // Mientras que los días a sumar sean mayores que 0
     while (dias > 0) {
+      // Por cada iteración restar 1 día
       for (int x = 0; x < dias; dias--) {
-        fechaDia++;
-        if (fechaDia > 30) {
-          fechaMes++;
-          fechaDia = 1;
+        fecha[0]++;
+        if (fecha[0] > diasMes(fecha[1], fecha[2])) {
+          fecha[1]++;
+          fecha[0] = 1;
         }
-        if (fechaMes > 12) {
-          fechaAno++;
-          fechaMes = 1;
+        if (fecha[1] > 12) {
+          fecha[2]++;
+          fecha[1] = 1;
         }
       }
     }
     
-    return (fechaDia+"/"+fechaMes+"/"+fechaAno);
+    return (String.format("%02d",fecha[0])+"/"+String.format("%02d",fecha[1])+"/"+String.format("%04d",fecha[2]));
     
   }
   
@@ -132,23 +160,110 @@ public class Ejercicio01 {
    * @param dias dias a restar
    * @return fecha modificada
    */
-  public static String restarDias (int fechaDia, int fechaMes, int fechaAno, int dias) {
+  public static String restarDias (int[] fecha, int dias) {
     
+    // Pasar los días a positivo
+    dias = Math.abs(dias);
+    
+    // Mientras que los días a restar sean mayores que 0
     while (dias > 0) {
+      // Por cada iteración restar 1 día
       for (int x = 0; x < dias; dias--) {
-        fechaDia--;
-        if (fechaDia < 1) {
-          fechaMes--;
-          fechaDia = 30;
+        fecha[0]--;
+        if (fecha[0] < 1) {
+          fecha[1]--;
+          fecha[0] = diasMes(fecha[1], fecha[2]);
         }
-        if (fechaMes < 1) {
-          fechaAno--;
-          fechaMes = 12;
+        if (fecha[1] < 1) {
+          fecha[2]--;
+          fecha[1] = 12;
         }
       }
     }
     
-    return (fechaDia+"/"+fechaMes+"/"+fechaAno);
+    return (String.format("%02d",fecha[0])+"/"+String.format("%02d",fecha[1])+"/"+String.format("%04d",fecha[2]));
+    
+  }
+  
+  /**
+   * Días que tiene el mes
+   * 
+   * @param mes
+   * @return días
+   */
+  public static int diasMes (int mes, int ano) {
+    
+    switch (mes) {
+      case 2:
+        if (esBisiesto(ano)) {
+          return 29;
+        } else {
+          return 28;
+        }
+      case 4:
+        return 30;
+      case 6:
+        return 30;
+      case 9:
+        return 30;
+      case 11:
+        return 30;
+      default:
+        return 31;
+    }
+    
+  }
+  
+  /**
+   * Comprobar si el año es bisiesto
+   * 
+   * @param año
+   * @return <true> si es bisiesto y <false> si no lo es
+   */
+  public static boolean esBisiesto (int ano) {
+    
+    if (ano%4==0) {
+      return true;
+    } else if (ano%100==0 && ano%400==0) {
+      return true;
+    } else {
+      return false;
+    }
+    
+  }
+  
+  /**
+   * Descomponer la fecha
+   * 
+   * @param fecha fecha en formato dd/mm/aaaa
+   * @return resultado array con el dia[0], el mes[1] y el año[2]
+   */
+  public static int[] descomponerFecha (String fecha) {
+    
+    String aux = "";
+    int fechaDia;
+    int fechaMes;
+    int fechaAno;
+    
+    for (int i = 0; i < 2; i++) {
+      aux = aux+fecha.charAt(i);
+    }
+    fechaDia = Integer.valueOf(aux);
+    aux = "";
+    for (int i = 3; i < 5; i++) {
+      aux = aux+fecha.charAt(i);
+    }
+    fechaMes = Integer.valueOf(aux);
+    aux = "";
+    for (int i = 6; i < 10; i++) {
+      aux = aux+fecha.charAt(i);
+    }
+    fechaAno = Integer.valueOf(aux);
+    aux = "";
+    
+    int resultado[] = {fechaDia, fechaMes, fechaAno};
+    
+    return resultado;
     
   }
   
