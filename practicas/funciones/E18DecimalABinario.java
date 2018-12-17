@@ -1,4 +1,5 @@
-/** Ejercicio 18 de funciones
+/**
+ * Ejercicio 18 de funciones
  * 
  * Escribe un programa que pase de decimal a binario.
  * 

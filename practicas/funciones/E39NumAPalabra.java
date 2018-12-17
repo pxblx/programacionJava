@@ -1,4 +1,5 @@
-/** Ejercicio 39 de funciones
+/**
+ * Ejercicio 39 de funciones
  * 
  * Esta función convierte los dígitos del número n en las correspondientes palabras y lo devuelve todo en una cadena de caracteres.
  * Por ejemplo, el 470213 convertido a palabras sería: cuatro, siete, cero, dos, uno, tres.

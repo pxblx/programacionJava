@@ -1,4 +1,5 @@
-/** Ejercicios 1-14
+/**
+ * Ejercicios 1-14
  * 
  * Crea una biblioteca de funciones matemáticas que contenga las siguientes funciones. Recuerda que puedes usar unas dentro de otras si es
  * necesario.
@@ -27,7 +28,8 @@ package practicas.funciones.funciones;
 
 public class Matematicas {
   
-  /** Comprueba si un número es capicúa
+  /**
+   * Comprueba si un número es capicúa
    * 
    * @param n número entero a comprobar
    * @return <code>true</code> si el número es capicúa
@@ -44,7 +46,8 @@ public class Matematicas {
     
   }
   
-  /** Comprueba si un número es primo
+  /**
+   * Comprueba si un número es primo
    * 
    * @param n número entero a comprobar
    * @return <code>true</code> si el número es primo
@@ -67,7 +70,8 @@ public class Matematicas {
     
   }
   
-  /** Devuelve el menor primo que es mayor al número que se pasa como parámetro.
+  /**
+   * Devuelve el menor primo que es mayor al número que se pasa como parámetro.
    * 
    * @param n número entero a comprobar
    * @return el menor primo mayor al parámetro
@@ -85,7 +89,8 @@ public class Matematicas {
     
   }
   
-  /** Dada una base y un exponente devuelve la potencia.
+  /**
+   * Dada una base y un exponente devuelve la potencia.
    * 
    * @param b base de la potencia
    * @param e exponente de la potencia
@@ -103,7 +108,8 @@ public class Matematicas {
     
   }
   
-  /** Cuenta el número de dígitos de un número entero.
+  /**
+   * Cuenta el número de dígitos de un número entero.
    * 
    * @param n número entero
    * @return cantidad de digitos
@@ -115,7 +121,8 @@ public class Matematicas {
     
   }
   
-  /** Le da la vuelta a un número.
+  /**
+   * Le da la vuelta a un número.
    * 
    * @param n número entero
    * @return número entero volteado
@@ -136,7 +143,8 @@ public class Matematicas {
     
   }
   
-  /** Devuelve el dígito que está en la posición n de un número entero. Se empieza contando por el 0 y de izquierda a derecha.
+  /**
+   * Devuelve el dígito que está en la posición n de un número entero. Se empieza contando por el 0 y de izquierda a derecha.
    * 
    * @param n número entero
    * @param x dígito a buscar
@@ -153,7 +161,8 @@ public class Matematicas {
     
   }
   
-  /** Da la posición de la primera ocurrencia de un dígito dentro de un número entero. Si no se encuentra, devuelve -1.
+  /**
+   * Da la posición de la primera ocurrencia de un dígito dentro de un número entero. Si no se encuentra, devuelve -1.
    * 
    * @param n número entero
    * @param x dígito a buscar
@@ -174,7 +183,8 @@ public class Matematicas {
     
   }
   
-  /** Le quita a un número n dígitos por detrás (por la derecha).
+  /**
+   * Le quita a un número n dígitos por detrás (por la derecha).
    * 
    * @param n número entero
    * @param x número de dígitos a quitar por la derecha
@@ -191,7 +201,8 @@ public class Matematicas {
     
   }
   
-  /** Le quita a un número n dígitos por delante (por la izquierda).
+  /**
+   * Le quita a un número n dígitos por delante (por la izquierda).
    * 
    * @param n número entero
    * @param x número de dígitos a quitar por la izquierda
@@ -207,7 +218,8 @@ public class Matematicas {
     
   }
   
-  /** Añade un dígito a un número por detrás.
+  /**
+   * Añade un dígito a un número por detrás.
    * 
    * @param n número entero
    * @param x dígito a pegar por detrás
@@ -225,7 +237,8 @@ public class Matematicas {
     
   }
   
-  /** Añade un dígito a un número por delante.
+  /**
+   * Añade un dígito a un número por delante.
    * 
    * @param n número entero
    * @param x dígito a pegar por delante
@@ -240,7 +253,8 @@ public class Matematicas {
     
   }
   
-  /** Toma como parámetros las posiciones inicial y final dentro de un número y devuelve el trozo correspondiente.
+  /**
+   * Toma como parámetros las posiciones inicial y final dentro de un número y devuelve el trozo correspondiente.
    * 
    * @param n número entero
    * @param i posición inicial
@@ -256,7 +270,8 @@ public class Matematicas {
     
   }
   
-  /** Pega dos números para formar uno.
+  /**
+   * Pega dos números para formar uno.
    * 
    * @param n número entero
    * @param m número entero

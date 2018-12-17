@@ -1,4 +1,5 @@
-/** Ejercicio 15 de funciones
+/**
+ * Ejercicio 15 de funciones
  * 
  * Muestra los números primos que hay entre 1 y 1000.
  * 

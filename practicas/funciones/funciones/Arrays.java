@@ -1,4 +1,5 @@
-/** Ejercicios 20-28
+/** 
+ * Ejercicios 20-28
  * 
  * Crea una biblioteca de funciones para arrays (de una dimensión) de números enteros que contenga las siguientes funciones:
  * 
@@ -19,7 +20,8 @@ package practicas.funciones.funciones;
 
 public class Arrays {
   
-  /** Genera un array de tamaño n con números aleatorios cuyo intervalo (mínimo y máximo) se indica como parámetro.
+  /**
+   * Genera un array de tamaño n con números aleatorios cuyo intervalo (mínimo y máximo) se indica como parámetro.
    * 
    * @param n tamaño del array
    * @param min mínimo
@@ -38,7 +40,8 @@ public class Arrays {
     
   }
   
-  /** Devuelve el mínimo del array que se pasa como parámetro.
+  /**
+   * Devuelve el mínimo del array que se pasa como parámetro.
    * 
    * @param array
    * @return mínimo valor en el array
@@ -57,7 +60,8 @@ public class Arrays {
     
   }
   
-  /** Devuelve el máximo del array que se pasa como parámetro.
+  /**
+   * Devuelve el máximo del array que se pasa como parámetro.
    * 
    * @param array
    * @return máximo valor en el array
@@ -76,7 +80,8 @@ public class Arrays {
     
   }
   
-  /** Devuelve la media del array que se pasa como parámetro.
+  /**
+   * Devuelve la media del array que se pasa como parámetro.
    * 
    * @param array
    * @return media de los valores en el array
@@ -93,7 +98,8 @@ public class Arrays {
     
   }
   
-  /** Dice si un número está o no dentro de un array.
+  /**
+   * Dice si un número está o no dentro de un array.
    * 
    * @param array
    * @param n número a buscar
@@ -111,7 +117,8 @@ public class Arrays {
     
   }
   
-  /** Busca un número en un array y devuelve la posición (el índice) en la que se encuentra.
+  /**
+   * Busca un número en un array y devuelve la posición (el índice) en la que se encuentra.
    * 
    * @param array
    * @param n número a buscar
@@ -129,7 +136,8 @@ public class Arrays {
     
   }
   
-  /** Le da la vuelta a un array.
+  /**
+   * Le da la vuelta a un array.
    * 
    * @param array
    * @return array dado la vuelta
@@ -146,7 +154,8 @@ public class Arrays {
     
   }
   
-  /** Rota n posiciones a la derecha los números de un array.
+  /**
+   * Rota n posiciones a la derecha los números de un array.
    * 
    * @param array
    * @param n número de posiciones a rotar hacia la derecha
@@ -164,7 +173,8 @@ public class Arrays {
     
   }
   
-  /** Rota n posiciones a la izquierda los números de un array.
+  /**
+   * Rota n posiciones a la izquierda los números de un array.
    * 
    * @param array
    * @param n número de posiciones a rotar hacia la izquierda

@@ -1,4 +1,5 @@
-/** Ejercicio 17 de funciones
+/**
+ * Ejercicio 17 de funciones
  * 
  * Escribe un programa que pase de binario a decimal.
  * 

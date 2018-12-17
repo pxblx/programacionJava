@@ -1,4 +1,5 @@
-/** Ejercicio 16 de funciones
+/**
+ * Ejercicio 16 de funciones
  * 
  * Muestra los números capicúa que hay entre 1 y 99999.
  * 
