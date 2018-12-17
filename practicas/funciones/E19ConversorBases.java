@@ -9,6 +9,7 @@
 package practicas.funciones;
 
 import java.util.Scanner;
+import practicas.funciones.funciones.Matematicas;
 
 public class E19ConversorBases {
   
@@ -113,7 +114,7 @@ public class E19ConversorBases {
       digito = numero%10;
       // Se eleva la base 2/8 a la posición (p) en la que se encuentra el dígito (d) y se multiplica por el mismo, sumandolo con el
       // que será el resultado final
-      resultado += digito * practicas.funciones.matematicas.Matematicas.potencia(base, posicion);
+      resultado += digito * Matematicas.potencia(base, posicion);
       // Se incrementa p para pasar a la siguiente posición
       posicion++;
       // Se quita la cifra que ya hemos utilizado, cuando llegue a 0 terminará el ciclo
@@ -147,13 +148,13 @@ public class E19ConversorBases {
       // Se obtiene el siguiente resto de la división
       resto = numero%base;
       // Se añade al resultado
-      resultado = practicas.funciones.matematicas.Matematicas.pegaPorDetras(resultado, resto);
+      resultado = Matematicas.pegaPorDetras(resultado, resto);
       // Se divide entre 2/8
       numero /= base;
     }
     
     // Se voltea el resultado
-    return practicas.funciones.matematicas.Matematicas.voltea(resultado);
+    return Matematicas.voltea(resultado);
     
   }
   

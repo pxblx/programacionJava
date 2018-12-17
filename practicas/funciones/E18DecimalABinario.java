@@ -8,6 +8,7 @@
 package practicas.funciones;
 
 import java.util.Scanner;
+import practicas.funciones.funciones.Matematicas;
 
 public class E18DecimalABinario {
   
@@ -32,7 +33,7 @@ public class E18DecimalABinario {
       // Se obtiene el siguiente resto de la división
       resto = numero%2;
       // Se añade al resultado
-      resultado = practicas.funciones.matematicas.Matematicas.pegaPorDetras(resultado, resto);
+      resultado = Matematicas.pegaPorDetras(resultado, resto);
       // Se divide entre 2
       numero /= 2;
     }
@@ -40,7 +41,7 @@ public class E18DecimalABinario {
     s.close();
     
     // Se voltea el resultado
-    resultado = practicas.funciones.matematicas.Matematicas.voltea(resultado);
+    resultado = Matematicas.voltea(resultado);
     
     // Se muestra por pantalla
     System.out.print("El número en decimal es: "+resultado);

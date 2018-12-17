@@ -26,7 +26,7 @@ public class E03Arrays {
     
     // Recorrer el array mostrando todos sus elementos. Los elementos que no han sido inicializados se muestran como un 0.
     for (int i=9; i>=0; i--) {
-      System.out.println("En la posici�n "+i+" hay un "+numeros[i]+".");
+      System.out.println("En la posición "+i+" hay un "+numeros[i]+".");
     }
     
     s.close();

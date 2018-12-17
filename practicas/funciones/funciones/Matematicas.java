@@ -23,7 +23,7 @@
  * @author Pablo
  */
 
-package practicas.funciones.matematicas;
+package practicas.funciones.funciones;
 
 public class Matematicas {
   
