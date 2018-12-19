@@ -1,7 +1,9 @@
-/** Ejercicio 6
+/**
+ * Ejercicio 6
+ * 
  * Programa que lea una cadena por teclado y compruebe si es una letra mayúscula
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.alternativas;

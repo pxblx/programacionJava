@@ -1,7 +1,9 @@
-/** Ejercicio 10
+/**
+ * Ejercicio 10
+ * 
  * Pide una cadena y un carácter por teclado y muestra cuantas veces aparece el carácter en la cadena.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.repetitivas;

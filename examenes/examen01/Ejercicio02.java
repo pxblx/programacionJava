@@ -1,7 +1,9 @@
-/** Ejercicio 2
+/**
+ * Ejercicio 2
+ * 
  * Haz un programa en Java y Python que calcule el elemento N (se pide al usuario) de la serie de Fibonacci.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package examenes.examen01;

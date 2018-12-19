@@ -1,7 +1,9 @@
-/** Ejercicio 9
+/**
+ * Ejercicio 9
+ * 
  * Mostrar en pantalla los N primero números primos. Se pide por teclado la cantidad de números primos que queremos mostrar.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.repetitivas;

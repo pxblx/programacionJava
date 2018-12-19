@@ -1,11 +1,13 @@
-/** Ejercicio 14
+/**
+ * Ejercicio 14
+ * 
  * La asociacion de vinicultores tiene como politica fijar un precio inicial al kilo de uva, la cual se clasifica en tipos A y B,
  * y ademas en tamaños 1 y 2. Cuando se realiza la venta del producto, esta es de un solo tipo y tamaño, se requiere determinar cuanto
  * recibira un productor por la uva que entrega en un embarque, considerando lo siguiente: si es de tipo A,  se le cargan 20 centimos
  * al precio inicial cuando es de tamaño 1; y 30 centimos si es de tamaño 2. Si es de tipo B, se rebajan 30 centimos cuando es de tamaño 1,
  * y 50 centimos cuando es de tamaño 2. Realice un algoritmo para determinar la ganancia obtenida.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.alternativas;

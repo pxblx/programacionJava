@@ -1,7 +1,9 @@
-/** Ejercicio 3
+/**
+ * Ejercicio 3
+ * 
  * Escribe un programa que lea un numero e indique si es par o impar.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.alternativas;

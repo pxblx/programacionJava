@@ -1,7 +1,9 @@
-/** Ejercicio 4
+/**
+ * Ejercicio 4
+ * 
  * Escribir un programa que imprima todos los números pares entre dos números que se le pidan al usuario.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.repetitivas;

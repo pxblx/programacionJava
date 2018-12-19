@@ -29,10 +29,10 @@ public class E17BinarioADecimal {
     while (numero != 0) {
       // Primero se toma el primer dígito del número
       digito = numero%10;
-      // Se eleva la base 2 a la posición (p) en la que se encuentra el dígito (d) y se multiplica por el mismo, sumandolo con el
+      // Se eleva la base 2 a la posición en la que se encuentra el dígito y se multiplica por el mismo, sumandolo con el
       // que será el resultado final
       resultado += digito * Matematicas.potencia(2, posicion);
-      // Se incrementa p para pasar a la siguiente posición
+      // Se incrementa para pasar a la siguiente posición
       posicion++;
       // Se quita la cifra que ya hemos utilizado, cuando llegue a 0 terminará el ciclo
       numero = numero/10;

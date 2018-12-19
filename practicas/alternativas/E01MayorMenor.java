@@ -1,7 +1,9 @@
-/** Ejercicio 1
+/**
+ * Ejercicio 1
+ * 
  * Algoritmo que pida dos numeros e indique si el primero es mayor que el segundo o no.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.alternativas;

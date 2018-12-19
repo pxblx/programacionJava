@@ -1,7 +1,9 @@
-/** Ejercicio 6
+/**
+ * Ejercicio 6
+ * 
  * Modifica el programa anterior de tal forma que no se repita ningún número en el array.
  * 
- * @author pablo
+ * @author Pablo
 */
 
 package practicas.arrays2d;

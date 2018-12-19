@@ -1,4 +1,6 @@
-/** Ejercicio 11
+/**
+ * Ejercicio 11
+ * 
  * Programa que lea 3 datos de entrada A, B y C. Estos corresponden a las dimensiones de los lados de un triangulo.
  * El programa debe determinar que tipo de triangulo es, teniendo en cuenta los siguiente:
  * - Si se cumple Pitágoras entonces es triángulo rectángulo
@@ -6,7 +8,7 @@
  * - Si los 3 lados son iguales entonces es equilátero.
  * - Si no se cumple ninguna de las condiciones anteriores, es escaleno.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.alternativas;

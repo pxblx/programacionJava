@@ -1,7 +1,9 @@
-/** Ejercicio 13
+/**
+ * Ejercicio 13
+ * 
  * Realizar un programa que lea una cadena por teclado y convierta las mayúsculas a minúsculas y viceversa.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.repetitivas;

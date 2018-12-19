@@ -1,7 +1,9 @@
-/** Ejercicio 1
+/**
+ * Ejercicio 1
+ * 
  * Haz un programa en Java y Python que calcule el combinatorio de dos numeros. Si hay un error en la introducción debe indicarlos.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package examenes.examen01;

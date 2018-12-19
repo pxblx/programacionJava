@@ -1,9 +1,11 @@
-/** Ejercicio 3
+/**
+ * Ejercicio 3
+ * 
  * Escribe un programa que rellene un array de 20 elementos con números enteros aleatorios comprendidos entre 0 y 400 (ambos
  * incluidos). A continuación el programa mostrar el array y preguntar si el usuario quiere resaltar los múltiplos de 5 o los
  * múltiplos de 7. Seguidamente se volverá a mostrar el array escribiendo los números que se quieren resaltar entre corchetes.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package examenes.examen01;

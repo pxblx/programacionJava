@@ -1,4 +1,6 @@
-/** Ejercicio 10
+/**
+ * Ejercicio 10
+ * 
  * Algoritmo que pida los puntos centrales x1,y1,x2,y2 y los radios r1,r2 de dos circunferencias y las clasifique en uno de estos estados:
  * - Exteriores.
  * - Tangentes exteriores.
@@ -7,7 +9,7 @@
  * - Interiores.
  * - Concéntricas.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.alternativas;

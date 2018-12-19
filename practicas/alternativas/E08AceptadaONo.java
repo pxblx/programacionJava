@@ -1,10 +1,12 @@
-/** Ejercicio 8
+/**
+ * Ejercicio 8
+ * 
  * Algoritmo que pida dos numeros nota y edad y un caracter sexo y muestre el
  * mensaje ACEPTADA si la nota es mayor o igual a cinco, la edad es mayor o igual a
  * dieciocho y el sexo es F. En caso de que se cumpla lo mismo, pero el sexo sea M, debe
  * imprimir POSIBLE. Si no se cumplen dichas condiciones se debe mostrar NO ACEPTADA.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.alternativas;

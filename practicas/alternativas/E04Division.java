@@ -1,8 +1,10 @@
-/** Ejercicio 4
+/**
+ * Ejercicio 4
+ * 
  * Crea un programa que pida al usuario dos números y muestre su división si el segundo
  * no es cero, o un mensaje de aviso en caso contrario.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.alternativas;

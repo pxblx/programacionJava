@@ -1,7 +1,9 @@
-/** Ejercicio 8
+/**
+ * Ejercicio 8
+ * 
  * Hacer un programa que muestre un cronometro, indicando las horas, minutos y segundos.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.repetitivas;

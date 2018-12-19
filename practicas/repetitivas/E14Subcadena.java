@@ -1,7 +1,9 @@
-/** Ejercicio 14
+/**
+ * Ejercicio 14
+ * 
  * Realizar un programa que compruebe si una cadena contiene una subcadena. Las dos cadenas se introducen por teclado.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.repetitivas;

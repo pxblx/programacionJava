@@ -1,8 +1,10 @@
-/** Ejercicio 12
+/**
+ * Ejercicio 12
+ * 
  * Escribir un programa que lea un año indicar si es bisiesto. Nota: un año es bisiesto si es un numero divisible por 4,
  * pero no si es divisible por 100, excepto que tambien sea divisible por 400.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.alternativas;

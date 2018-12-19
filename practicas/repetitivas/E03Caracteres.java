@@ -1,8 +1,10 @@
-/** Ejercicio 3
+/**
+ * Ejercicio 3
+ * 
  * Algoritmo que pida caracteres e imprima "VOCAL" si son vocales y "NO VOCAL" en caso contrario, el programa termina cuando se introduce
  * un espacio.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.repetitivas;

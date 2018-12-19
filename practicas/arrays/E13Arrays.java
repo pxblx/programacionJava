@@ -1,9 +1,11 @@
-/** Ejercicio 13
+/**
+ * Ejercicio 13
+ * 
  * Escribe un programa que rellene un array de 100 elementos con números enteros aleatorios comprendidos entre 0 y 500 (ambos
  * incluidos). A continuación el programa mostrar el array y preguntar si el usuario quiere destacar el máximo o el mínimo. Seguidamente
  * se volverá a mostrar el array escribiendo el número destacado entre dobles asteriscos.
  * 
- * @author pablo
+ * @author Pablo
  */
 
 package practicas.arrays;
