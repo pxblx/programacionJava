@@ -6,8 +6,6 @@
  * Utiliza esta función en un programa para comprobar que funciona bien. Desde la función no se debe mostrar nada por pantalla, solo se
  * debe usar print desde el programa principal. Fíjate que hay una coma detrás de cada palabra salvo al final.
  * 
- * Prueba para modificar.
- * 
  * @author Pablo
  */
 

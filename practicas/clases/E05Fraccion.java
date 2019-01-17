@@ -66,7 +66,7 @@ public class E05Fraccion {
    * Muestra por pantalla el resultado de dividir la fracción
    */
   public void getResultado() {
-    System.out.println(this.numerador/this.denominador);
+    System.out.println((float)(this.numerador/this.denominador));
   }
   
   /**
@@ -93,7 +93,8 @@ public class E05Fraccion {
    * @param fraccion
    */
   public void sumar(E05Fraccion fraccion) {
-    int mcm = calculaMcdYMcm(this.denominador,fraccion.denominador,0);
+    int mcd = mcd(this.denominador,fraccion.denominador);
+    int mcm = (this.denominador*fraccion.denominador)/mcd;
     System.out.println(((mcm/this.denominador)*this.numerador)+((mcm/fraccion.denominador)*fraccion.numerador)+"/"+mcm);
   }
   
@@ -110,33 +111,26 @@ public class E05Fraccion {
    * Simplifica una fracción
    */
   public void simplificar() {
-    int mcd = calculaMcdYMcm(this.numerador,this.denominador,1);
+    int mcd = mcd(this.numerador,this.denominador);
     System.out.println(this.numerador/mcd+"/"+this.denominador/mcd);
   }
   
   /**
-   * Función que permite calcular el MCD y el MCM de dos números que se pasan como parámetro
+   * Calcular el MCD de dos números que se pasan como parámetro
    * 
    * @param n1 Primer número
    * @param n2 Segundo número
-   * @param flag Si se establece como 0, devuelve el MCM; y si se establece como 1, el MCD
-   * @return
+   * @return MCD
    */
-  private int calculaMcdYMcm(int n1, int n2, int flag) {
+  private int mcd(int n1, int n2) {
     int min = Math.min(n1, n2);
-    int mcm = 0;
     int mcd = 0;
     for (int i = 1; i <= min; i++) {
       if (n1%i == 0 && n2%i == 0) {
         mcd = i;
-        mcm = (n1*n2)/mcd;
       }
     }
-    if (flag == 0) {
-      return mcm;
-    } else {
-      return mcd;
-    }
+    return mcd;
   }
 
 }
