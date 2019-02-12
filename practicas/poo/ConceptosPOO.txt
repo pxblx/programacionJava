@@ -1,0 +1,36 @@
+## Ejercicio 2
+# A continuación tienes una lista en la que están mezcladas varias clases con instancias de esas clases. Para ponerlo
+# un poco más difícil, todos los elementosmestán escritos en minúscula. Di cuáles son las clases, cuáles las instancias,
+# a qué clase pertenece cada una de estas instancias y cuál es la jerarquía entre las clases: paula, goofy, gardfiel,
+# perro, mineral, caballo, tom, silvestre, pirita, rocinante, milu, snoopy, gato, pluto, animal, javier, bucefalo,
+# pegaso, ayudante_de_santa_claus, cuarzo, laika, persona, pato_lucas.
+##
+
+Clases:     Animal, Perro, Caballo, Gato, Persona, Mineral.
+
+Instancias: Paula (Persona), Goofy (Perro), Gardfiel (Gato), Tom (Gato), Silvestre (Gato), Pirita (Mineral),
+            Rocinante (Caballo), Milu (Perro), Snoopy (Perro), Pluto (Perro), Javier (Persona), Bucefalo (Caballo),
+            Pegaso (Caballo), Ayudante_de_santa_claus (Persona), Cuarzo (Mineral), Laika (Perro), Pato_lucas (Animal).
+
+Jerarquía de las clases:
+    Animal
+        Perro
+        Caballo
+        Gato
+    Persona
+    Mineral
+
+## Ejercicio 3
+# ¿Cuáles serían los atributos de la clase Vivienda? ¿Qué subclases se te ocurren?
+##
+
+Para una clase Vivienda se podrían crear atributos como numeroHabitaciones, precio, zona, area...
+Como subclases se podrían crear las clases Casa, Piso y Chalet.
+
+## Ejercicio 7
+# ¿Cuáles serían los atributos de la clase Ventana (de ordenador)? ¿cuáles serían los métodos? Piensa en las
+# propiedades y en el comportamiento de una ventana de cualquier programa.
+##
+
+Algunos atributos podrían ser, por ejemplo: tamano, borde, titulo, texto...
+Los métodos podrían ser: cerrar, minimizar y maximizar.

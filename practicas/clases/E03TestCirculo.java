@@ -8,10 +8,8 @@
  */
 package practicas.clases;
 
-import practicas.clases.E04CirculoMod;
-
 public class E03TestCirculo {
-  
+
   public static void main(String args[]) {
     
     E04CirculoMod circulo = new E04CirculoMod(5);
