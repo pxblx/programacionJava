@@ -7,7 +7,7 @@ package practicas.poo.E02;
  * Subclase Coche
  */
 public class Coche extends Vehiculo {
-  private boolean quemandoRueda = false;
+  protected boolean quemandoRueda = false;
 
   /**
    * Constructor
@@ -15,8 +15,8 @@ public class Coche extends Vehiculo {
    * @param k kiómetros recorridos
    */
   public Coche(int k) {
-    this.kilometrosRecorridos = k;
-    setkilometrosTotales(getkilometrosTotales()+this.kilometrosRecorridos);
+    setKilometrosRecorridos(k);
+    setkilometrosTotales(getkilometrosTotales()+getKilometrosRecorridos());
     setVehiculosCreados(getVehiculosCreados()+1);
   }
 
@@ -29,13 +29,5 @@ public class Coche extends Vehiculo {
     } else {
       quemandoRueda = true;
     }
-  }
-  /**
-   * Obtener el número de kilómetros recorridos por el coche
-   *
-   * @return número de kilómetros recorridos por el coche
-   */
-  public int getKilometraje() {
-    return this.kilometrosRecorridos;
   }
 }

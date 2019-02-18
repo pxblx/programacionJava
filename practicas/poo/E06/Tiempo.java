@@ -27,22 +27,11 @@ public class Tiempo {
    * @param s segundos
    */
   public Tiempo(int h, int m, int s) {
-    this.setTiempo(h, m, s);
-  }
-
-  /**
-   * Setter para el tiempo
-   *
-   * @param h horas
-   * @param m minutos
-   * @param s segundos
-   */
-  private void setTiempo(int h, int m, int s) {
-    if (s > 59) {
+    if (s >= 59) {
       m += s/60;
       s = s%60;
     }
-    if (m > 60) {
+    if (m >= 60) {
       h += m/60;
       m = m%60;
     }
@@ -68,7 +57,7 @@ public class Tiempo {
    * @param t tiempo con el que sumar
    * @return suma con t
    */
-  public Tiempo suma (Tiempo t) {
+  public Tiempo suma(Tiempo t) {
     int segundos = this.segundos+t.segundos;
     int minutos = this.minutos+t.minutos;
     int horas = this.horas+t.horas;
@@ -91,7 +80,7 @@ public class Tiempo {
    * @param t tiempo con el que restar
    * @return resta con t
    */
-  public Tiempo resta (Tiempo t) {
+  public Tiempo resta(Tiempo t) {
     int segundos = this.segundos-t.segundos;
     int minutos = this.minutos-t.minutos;
     int horas = this.horas-t.horas;

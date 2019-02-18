@@ -81,7 +81,7 @@ public class Movil extends Terminal {
    *
    * @param gastado dinero gastado
    */
-  public void setGastado(double gastado) {
+  private void setGastado(double gastado) {
     this.gastado = gastado;
   }
 

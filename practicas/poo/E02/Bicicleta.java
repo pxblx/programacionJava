@@ -7,7 +7,7 @@ package practicas.poo.E02;
  * Subclase Bicicleta
  */
 public class Bicicleta extends Vehiculo {
-  private boolean haciendoCaballito = false;
+  protected boolean haciendoCaballito = false;
 
   /**
    * Constructor
@@ -15,8 +15,8 @@ public class Bicicleta extends Vehiculo {
    * @param k kiómetros recorridos
    */
   public Bicicleta(int k) {
-    this.kilometrosRecorridos = k;
-    setkilometrosTotales(getkilometrosTotales()+this.kilometrosRecorridos);
+    setKilometrosRecorridos(k);
+    setkilometrosTotales(getkilometrosTotales()+getKilometrosRecorridos());
     setVehiculosCreados(getVehiculosCreados()+1);
   }
 
@@ -29,14 +29,5 @@ public class Bicicleta extends Vehiculo {
     } else {
       haciendoCaballito = true;
     }
-  }
-
-  /**
-   * Obtener el número de kilómetros recorridos por la bicicleta
-   *
-   * @return número de kilómetros recorridos por la bicicleta
-   */
-  public int getKilometraje() {
-    return this.kilometrosRecorridos;
   }
 }

@@ -29,7 +29,7 @@ abstract class Vehiculo {
   private static int vehiculosCreados = 0;
   private static int kilometrosTotales = 0;
   protected boolean enMarcha = false;
-  protected int kilometrosRecorridos = 0;
+  private int kilometrosRecorridos = 0;
 
   /**
    * Arrancar el vehículo
@@ -47,7 +47,7 @@ abstract class Vehiculo {
    *
    * @return número de vehículos creados
    */
-  public int getVehiculosCreados() {
+  public static int getVehiculosCreados() {
     return vehiculosCreados;
   }
 
@@ -56,7 +56,7 @@ abstract class Vehiculo {
    *
    * @param x número de vehículos creados
    */
-  protected void setVehiculosCreados(int x) {
+  protected static void setVehiculosCreados(int x) {
     vehiculosCreados = x;
   }
 
@@ -65,7 +65,7 @@ abstract class Vehiculo {
    *
    * @return número de kilómetros recorridos por todos los vehículos
    */
-  public int getkilometrosTotales() {
+  public static int getkilometrosTotales() {
     return kilometrosTotales;
   }
 
@@ -74,7 +74,25 @@ abstract class Vehiculo {
    *
    * @param x número de kilómetros recorridos por todos los vehículos
    */
-  protected void setkilometrosTotales(int x) {
+  protected static void setkilometrosTotales(int x) {
     kilometrosTotales = x;
+  }
+
+  /**
+   * Obtener el número de kilómetros recorridos por el vehículo
+   *
+   * @return número de kilómetros recorridos por el vehículo
+   */
+  public int getKilometrosRecorridos() {
+    return this.kilometrosRecorridos;
+  }
+
+  /**
+   * Establecer el número de kilómetros recorridos por el vehículo
+   *
+   * @param x número de kilómetros recorridos por el vehículo
+   */
+  protected void setKilometrosRecorridos(int x) {
+    this.kilometrosRecorridos = x;
   }
 }
