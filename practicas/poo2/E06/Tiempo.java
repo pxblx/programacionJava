@@ -9,7 +9,7 @@
  *
  * @author Pablo
  */
-package practicas.poo.E06;
+package practicas.poo2.E06;
 
 /**
  * Clase Tiempo

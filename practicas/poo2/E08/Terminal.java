@@ -31,7 +31,7 @@
  *
  * @author Pablo
  */
-package practicas.poo.E08;
+package practicas.poo2.E08;
 
 /**
  * Clase Terminal

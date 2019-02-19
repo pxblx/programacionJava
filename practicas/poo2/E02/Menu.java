@@ -1,7 +1,7 @@
 /**
  * Ejercicio 2 de POO
  */
-package practicas.poo.E02;
+package practicas.poo2.E02;
 
 import java.util.Scanner;
 
@@ -79,5 +79,6 @@ public class Menu {
           break;
       }
     } while (opcion != 8);
+    s.close();
   }
 }

@@ -32,9 +32,9 @@
  *
  * @author Pablo
  */
-package practicas.poo.E09;
+package practicas.poo2.E09;
 
-import practicas.poo.E08.Terminal;
+import practicas.poo2.E08.Terminal;
 import java.text.DecimalFormat;
 
 /**

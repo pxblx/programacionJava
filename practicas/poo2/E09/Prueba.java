@@ -1,7 +1,7 @@
 /**
  * Ejercicio 9 de POO
  */
-package practicas.poo.E09;
+package practicas.poo2.E09;
 
 /**
  * Programa de prueba

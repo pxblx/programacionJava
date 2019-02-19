@@ -3,7 +3,7 @@
  * 
  * @author Pablo
  */
-package practicas.poo.Examen;
+package practicas.poo2.Examen;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

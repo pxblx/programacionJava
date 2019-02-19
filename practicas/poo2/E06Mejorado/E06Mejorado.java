@@ -1,7 +1,7 @@
 /**
  * Ejercicio 6 de POO mejorado
  */
-package practicas.poo.E06Mejorado;
+package practicas.poo2.E06Mejorado;
 
 import java.time.LocalTime;
 

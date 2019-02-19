@@ -1,7 +1,7 @@
 /**
  * Ejercicio 2 de POO
  */
-package practicas.poo.E02;
+package practicas.poo2.E02;
 
 /**
  * Subclase Bicicleta

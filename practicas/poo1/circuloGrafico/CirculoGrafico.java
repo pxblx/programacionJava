@@ -6,7 +6,7 @@
  *   
  * @author Pablo
  */
-package practicas.clases;
+package practicas.poo1.circuloGrafico;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -16,9 +16,7 @@ import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-@SuppressWarnings("serial")
 public class CirculoGrafico extends JFrame {
-  
   private double diametro;
   
   public CirculoGrafico() {
@@ -36,9 +34,4 @@ public class CirculoGrafico extends JFrame {
     diametro = Double.parseDouble(JOptionPane.showInputDialog("Introduce el radio")) * 2;
     circulo.drawOval(30, 150, (int)diametro, (int)diametro);
   }
-  
-  public static void main(String args[]) {
-    new CirculoGrafico();
-  }
-
 }

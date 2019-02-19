@@ -1,19 +1,17 @@
 /**
- * Ejercicio 2 de clases
+ * Ejercicio 4 de poo1
  * 
- * Crea la clase “Circulo” en Java que responda al siguiente comportamiento:
- * - Un círculo puede crecer. Aumenta su radio.
- * - Un círculo puede menguar. Decrementa su radio.
- * - Un círculo me devuelve su área si se la pido.
- * - Un círculo me dice su estado, por ejemplo “Soy un círculo de radio 0.5 metros. Ocupo un área de 0.7853981633974483 metros
- *   cuadrados” (método toString())
+ * Modifica la clase Círculo para que cuando el radio se convierta a 0 el círculo reaccione y diga con una caja de texto
+ * gráfica “Soy un mísero punto sin área” usando la clase JOptionPane del paquete javax.swing. Podéis ver
+ * este vídeo: https://youtu.be/F_48qh3BcDs.
  *   
  * @author Pablo
  */
-package practicas.clases;
+package practicas.poo1;
 
-public class E02Circulo {
-  
+import javax.swing.*;
+
+public class E04CirculoMod {
   private double radio;
   
   /**
@@ -21,8 +19,11 @@ public class E02Circulo {
    * 
    * @param r
    */
-  public E02Circulo(double r) {
+  public E04CirculoMod(double r) {
     this.radio = r;
+    if (this.radio <= 0) {
+      JOptionPane.showMessageDialog(null, "Soy un mísero punto sin área");
+    }
   }
   
   /**
@@ -44,7 +45,7 @@ public class E02Circulo {
   }
   
   /**
-   * Devuelve el área del círculo
+   * Devolver el área del círculo
    * 
    * @return
    */
@@ -59,5 +60,4 @@ public class E02Circulo {
   public String toString() {
     return ("Soy un círculo de radio "+this.radio+" metros. Ocupo un área de "+this.area()+" metros cuadrados.");
   }
-
 }

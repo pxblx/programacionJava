@@ -1,9 +1,9 @@
 /**
  * Ejercicio 2 de POO
  *
- * Crea la clase Vehiculo, así como las clases Bicicleta y Coche como subclases de la primera. Para la clase Vehiculo,
+ * Crea la clase Vehiculo, así como las poo1 Bicicleta y Coche como subclases de la primera. Para la clase Vehiculo,
  * crea los atributos de clase vehiculosCreados y kilometrosTotales, así como el atributo de instancia
- * kilometrosRecorridos. Crea también algún método específico para cada una de las subclases. Prueba las clases creadas
+ * kilometrosRecorridos. Crea también algún método específico para cada una de las subclases. Prueba las poo1 creadas
  * mediante un programa con un menú como el que se muestra a continuación:
  *
  * VEHÍCULOS
@@ -20,7 +20,7 @@
  *
  * @author Pablo
  */
-package practicas.poo.E02;
+package practicas.poo2.E02;
 
 /**
  * Clase Vehiculo
