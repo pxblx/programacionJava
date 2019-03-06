@@ -51,6 +51,7 @@ public class Carta implements Comparable<Carta> {
     return true;
   }
 
+  // Método para poder comparar una carta con otra
   @Override
   public int compareTo(Carta x) {
     if (this.palo.equals(x.palo)) {

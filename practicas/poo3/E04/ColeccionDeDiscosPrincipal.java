@@ -63,7 +63,9 @@ public class ColeccionDeDiscosPrincipal {
             System.out.print("Introduzca una opción: ");
             listado = scanner.nextInt();
 
+            // Tipos de listado
             switch (listado) {
+              // General
               case 1:
                 for (Disco d: album) {
                   if (!d.getCodigo().equals("LIBRE")) {
@@ -73,6 +75,7 @@ public class ColeccionDeDiscosPrincipal {
 
                 break;
 
+              // Autor
               case 2:
                 System.out.print("Introduzca un autor: ");
                 autorIntroducido = System.console().readLine();
@@ -84,6 +87,7 @@ public class ColeccionDeDiscosPrincipal {
 
                 break;
 
+              // Genero
               case 3:
                 System.out.print("Introduzca un género: ");
                 generoIntroducido = System.console().readLine();
@@ -95,6 +99,7 @@ public class ColeccionDeDiscosPrincipal {
 
                 break;
 
+              // Rango de duración
               case 4:
                 System.out.print("Desde (minutos): ");
                 limite1 = Integer.parseInt(System.console().readLine());
@@ -130,6 +135,7 @@ public class ColeccionDeDiscosPrincipal {
           System.out.println("Por favor, introduzca los datos del disco.");
 
           System.out.print("Código: ");
+          // Comprobar que no se repita el código
           while (flag) {
             flag = false;
             codigoIntroducido = scanner.nextLine();
@@ -223,6 +229,7 @@ public class ColeccionDeDiscosPrincipal {
           System.out.print("Por favor, introduzca el código del disco que desea borrar: ");
           codigoIntroducido = scanner.nextLine();
 
+          // Comprobar que exista el código del álbum a borrar
           try {
             i = -1;
             do {
