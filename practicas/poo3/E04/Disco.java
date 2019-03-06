@@ -3,7 +3,7 @@
  *
  * @author Luis José Sánchez | Modificado
  */
-package practicas.poo3;
+package practicas.poo3.E04;
 
 public class Disco {
   private String codigo = "LIBRE";
