@@ -20,7 +20,7 @@ public class E02Excepciones extends GatoSimple {
 
   public E02Excepciones apareaCon(GatoSimple gato) throws ExcepcionApareamientoImposible {
     if (this.getSexo() == gato.getSexo()) {
-      throw new ExcepcionApareamientoImposible("El apareamiento es imposible porque los gatos son del mismo sexo.");
+      throw new ExcepcionApareamientoImposible();
     } else {
       String[] sexos = new String[]{"macho", "hembra"};
       return new E02Excepciones(sexos[((int)(Math.random()*2))]);
