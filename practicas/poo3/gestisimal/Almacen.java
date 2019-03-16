@@ -3,59 +3,67 @@ package practicas.poo3.gestisimal;
 import java.util.ArrayList;
 
 public class Almacen {
-  private ArrayList<Articulo> articulos = new ArrayList<>();
+  private ArrayList<Articulo> almacen = new ArrayList<>();
+  private String stringAlmacen;
 
   public void altaArticulo(String descripcion, double precioCompra, double precioVenta, int unidades) throws ExcepcionArticuloExistente, ExcepcionValorNegativo, ExcepcionDescripcionVacia {
-    Articulo articulo = new Articulo(descripcion, precioCompra, precioVenta, unidades);
-    if (articulos.contains(articulo)) {
+    Articulo nuevoArticulo = new Articulo(descripcion, precioCompra, precioVenta, unidades);
+    if (almacen.contains(nuevoArticulo)) {
       throw new ExcepcionArticuloExistente();
     } else {
-      articulos.add(articulo);
+      almacen.add(nuevoArticulo);
+      Articulo.nextCodigo++;
     }
   }
 
   public void bajaArticulo(int codigo) throws ExcepcionArticuloNoExistente {
-    for (int i = 0; i < articulos.size(); i++) {
-      if (articulos.get(i).getCodigo() == codigo) {
-        articulos.remove(i);
-      } else {
-        throw new ExcepcionArticuloNoExistente();
+    for (int i = 0; i < almacen.size(); i++) {
+      if (almacen.get(i).getCodigo() == codigo) {
+        almacen.remove(i);
+        return;
       }
     }
+    throw new ExcepcionArticuloNoExistente();
   }
 
   public void entradaMercancia(int codigo, int unidades) throws ExcepcionArticuloNoExistente, ExcepcionValorNegativo {
-    for (int i = 0; i < articulos.size(); i++) {
-      if (articulos.get(i).getCodigo() == codigo) {
-        articulos.get(i).setUnidades(articulos.get(i).getUnidades() + unidades);
-      } else {
-        throw new ExcepcionArticuloNoExistente();
+    for (Articulo articulo : almacen) {
+      if (articulo.getCodigo() == codigo) {
+        articulo.setUnidades(articulo.getUnidades() + unidades);
+        return;
       }
     }
+    throw new ExcepcionArticuloNoExistente();
   }
 
   public void salidaMercancia(int codigo, int unidades) throws ExcepcionArticuloNoExistente, ExcepcionValorNegativo {
-    for (int i = 0; i < articulos.size(); i++) {
-      if (articulos.get(i).getCodigo() == codigo) {
-        if ((articulos.get(i).getUnidades() - unidades) < 0) {
+    for (Articulo articulo : almacen) {
+      if (articulo.getCodigo() == codigo) {
+        if ((articulo.getUnidades() - unidades) < 0) {
           throw new ExcepcionValorNegativo();
         } else {
-          articulos.get(i).setUnidades(articulos.get(i).getUnidades() - unidades);
+          articulo.setUnidades(articulo.getUnidades() - unidades);
+          return;
         }
-      } else {
-        throw new ExcepcionArticuloNoExistente();
       }
     }
+    throw new ExcepcionArticuloNoExistente();
   }
 
   public String getArticulo(int codigo) throws ExcepcionArticuloNoExistente {
-    for (int i = 0; i < articulos.size(); i++) {
-      if (articulos.get(i).getCodigo() == codigo) {
-        return articulos.get(i).toString();
-      } else {
-        throw new ExcepcionArticuloNoExistente();
+    for (Articulo articulo : almacen) {
+      if (articulo.getCodigo() == codigo) {
+        return articulo.toString();
       }
     }
-    return null;
+    throw new ExcepcionArticuloNoExistente();
+  }
+
+  public String getArticulos() {
+    stringAlmacen = "";
+    for (Articulo articulo : almacen) {
+      stringAlmacen = (stringAlmacen + articulo.toString() + "\n\n");
+    }
+    return stringAlmacen;
   }
 }

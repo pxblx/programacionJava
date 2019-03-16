@@ -1,7 +1,7 @@
 package practicas.poo3.gestisimal;
 
 public class Articulo {
-  private static int contador = 1;
+  protected static int nextCodigo = 100;
   private int codigo;
   private String descripcion;
   private double precioCompra;
@@ -9,36 +9,35 @@ public class Articulo {
   private int unidades;
 
   public Articulo(String descripcion, double precioCompra, double precioVenta, int unidades) throws ExcepcionDescripcionVacia, ExcepcionValorNegativo {
-    this.codigo = contador;
+    this.codigo = nextCodigo;
     setDescripcion(descripcion);
     setPrecioCompra(precioCompra);
     setPrecioVenta(precioVenta);
     setUnidades(unidades);
-    contador++;
   }
 
   public int getCodigo() {
-    return codigo;
+    return this.codigo;
   }
 
   public String getDescripcion() {
-    return descripcion;
+    return this.descripcion;
   }
 
   public double getPrecioCompra() {
-    return precioCompra;
+    return this.precioCompra;
   }
 
   public double getPrecioVenta() {
-    return precioVenta;
+    return this.precioVenta;
   }
 
   public int getUnidades() {
-    return unidades;
+    return this.unidades;
   }
 
   public void setDescripcion(String descripcion) throws ExcepcionDescripcionVacia {
-    if (descripcion == "" || descripcion == null) {
+    if (descripcion.isEmpty()) {
       throw new ExcepcionDescripcionVacia();
     } else {
       this.descripcion = descripcion;
@@ -73,20 +72,19 @@ public class Articulo {
   public String toString() {
     return ("Articulo\n" +
       "--------\n" +
-      "Código: " + codigo + "\n" +
-      "Descripción: " + descripcion + "\n" +
-      "Precio de compra: " + precioCompra + "\n" +
-      "Precio de venta: " + precioVenta + "\n" +
-      "Unidades: " + unidades);
+      "Código: " + this.codigo + "\n" +
+      "Descripción: " + this.descripcion + "\n" +
+      "Precio de compra: " + this.precioCompra + "\n" +
+      "Precio de venta: " + this.precioVenta + "\n" +
+      "Unidades: " + this.unidades);
   }
 
   @Override
   public boolean equals(Object obj) {
-    Articulo other = (Articulo) obj;
-    if (this.codigo == other.codigo) {
+    if (obj instanceof Articulo && ((Articulo)obj).getCodigo() == this.codigo) {
       return true;
     } else {
-      if (this.descripcion == other.descripcion) {
+      if (obj instanceof Articulo && ((Articulo)obj).getDescripcion().equals(this.descripcion)) {
         return true;
       } else {
         return false;
