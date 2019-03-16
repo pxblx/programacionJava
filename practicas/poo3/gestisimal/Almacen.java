@@ -60,10 +60,14 @@ public class Almacen {
   }
 
   public String getArticulos() {
-    stringAlmacen = "";
-    for (Articulo articulo : almacen) {
-      stringAlmacen = (stringAlmacen + articulo.toString() + "\n\n");
+    if (!almacen.isEmpty()) {
+      stringAlmacen = "";
+      for (Articulo articulo : almacen) {
+        stringAlmacen = (stringAlmacen + articulo.toString() + "\n\n");
+      }
+      return stringAlmacen;
+    } else {
+      return ("El almacén está vacío.\n\n");
     }
-    return stringAlmacen;
   }
 }

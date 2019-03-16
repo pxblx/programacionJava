@@ -41,12 +41,15 @@ public class TestAlmacen {
             almacen.altaArticulo(descripcion, precioCompra, precioVenta, unidades);
             System.out.print("Artículo creado.\n\n");
           } catch (ExcepcionDescripcionVacia e) {
+            System.out.println();
             e.printStackTrace();
             System.out.println();
           } catch (ExcepcionValorNegativo e) {
+            System.out.println();
             e.printStackTrace();
             System.out.println();
           } catch (ExcepcionArticuloExistente e) {
+            System.out.println();
             e.printStackTrace();
             System.out.println();
           }
@@ -59,6 +62,7 @@ public class TestAlmacen {
             almacen.bajaArticulo(codigo);
             System.out.print("Artículo eliminado.\n\n");
           } catch (ExcepcionArticuloNoExistente e) {
+            System.out.println();
             e.printStackTrace();
             System.out.println();
           }
@@ -73,9 +77,11 @@ public class TestAlmacen {
             almacen.entradaMercancia(codigo, unidades);
             System.out.println("Unidades añadidas.\n");
           } catch (ExcepcionArticuloNoExistente e) {
+            System.out.println();
             e.printStackTrace();
             System.out.println();
           } catch (ExcepcionValorNegativo e) {
+            System.out.println();
             e.printStackTrace();
             System.out.println();
           }
@@ -90,9 +96,11 @@ public class TestAlmacen {
             almacen.salidaMercancia(codigo, unidades);
             System.out.println("Unidades quitadas.\n");
           } catch (ExcepcionArticuloNoExistente e) {
+            System.out.println();
             e.printStackTrace();
             System.out.println();
           } catch (ExcepcionValorNegativo e) {
+            System.out.println();
             e.printStackTrace();
             System.out.println();
           }
@@ -104,6 +112,7 @@ public class TestAlmacen {
           try {
             System.out.println("\n" + almacen.getArticulo(codigo) + "\n");
           } catch (ExcepcionArticuloNoExistente e) {
+            System.out.println();
             e.printStackTrace();
             System.out.println();
           }
