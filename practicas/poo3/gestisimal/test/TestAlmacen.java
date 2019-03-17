@@ -1,8 +1,15 @@
 package practicas.poo3.gestisimal.test;
 
-import practicas.poo3.gestisimal.*;
 import java.util.Scanner;
+import practicas.poo3.gestisimal.Almacen;
+import practicas.poo3.gestisimal.ExcepcionDescripcionVacia;
+import practicas.poo3.gestisimal.ExcepcionValorNegativo;
+import practicas.poo3.gestisimal.ExcepcionArticuloExistente;
+import practicas.poo3.gestisimal.ExcepcionArticuloNoExistente;
 
+/**
+ * TestAlmacen
+ */
 public class TestAlmacen {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -14,6 +21,7 @@ public class TestAlmacen {
     double precioVenta;
     int unidades;
 
+    // Mostrar menú
     do {
       System.out.print("Almacén" +
         "\n-------" +
@@ -28,7 +36,7 @@ public class TestAlmacen {
       opcion = Integer.parseInt(scanner.nextLine());
 
       switch (opcion) {
-        case 1:
+        case 1: // Dar de alta un nuevo artículo
           System.out.print("\nIntroduce la descripción del artículo: ");
           descripcion = scanner.nextLine();
           System.out.print("Introduce el precio de compra del artículo: ");
@@ -55,7 +63,7 @@ public class TestAlmacen {
           }
           break;
 
-        case 2:
+        case 2: // Dar de baja un artículo
           System.out.print("\nIntroduce el código del artículo: ");
           codigo = Integer.parseInt(scanner.nextLine());
           try {
@@ -68,7 +76,7 @@ public class TestAlmacen {
           }
           break;
 
-        case 3:
+        case 3: // Entrada de mercancía
           System.out.print("\nIntroduce el código del artículo: ");
           codigo = Integer.parseInt(scanner.nextLine());
           System.out.print("Introduce las unidades que entran: ");
@@ -87,7 +95,7 @@ public class TestAlmacen {
           }
           break;
 
-        case 4:
+        case 4: // Salida de mercancía
           System.out.print("\nIntroduce el código del artículo: ");
           codigo = Integer.parseInt(scanner.nextLine());
           System.out.print("Introduce las unidades que salen: ");
@@ -106,7 +114,7 @@ public class TestAlmacen {
           }
           break;
 
-        case 5:
+        case 5: // Mostrar un artículo
           System.out.print("\nIntroduce el código del artículo: ");
           codigo = Integer.parseInt(scanner.nextLine());
           try {
@@ -118,15 +126,15 @@ public class TestAlmacen {
           }
           break;
 
-        case 6:
-          System.out.print("\n" + almacen.getArticulos());
+        case 6: // Mostrar todos los artículos
+          System.out.print("\n" + almacen);
           break;
 
-        case 7:
+        case 7: // Salir
           System.out.print("\nSaliendo...");
           return;
 
-        default:
+        default: // Por defecto
           System.out.println("\nOpción incorrecta.\n");
           break;
       }
