@@ -1,5 +1,9 @@
 package practicas.poo3.gestisimal;
 
+import practicas.poo3.gestisimal.excepciones.ExcepcionArticuloExistente;
+import practicas.poo3.gestisimal.excepciones.ExcepcionArticuloNoExistente;
+import practicas.poo3.gestisimal.excepciones.ExcepcionDescripcionVacia;
+import practicas.poo3.gestisimal.excepciones.ExcepcionValorNegativo;
 import java.util.ArrayList;
 
 /**
