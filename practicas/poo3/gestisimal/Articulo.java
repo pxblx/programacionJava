@@ -157,14 +157,10 @@ public class Articulo {
    */
   @Override
   public boolean equals(Object obj) {
-    if (obj instanceof Articulo && ((Articulo)obj).getCodigo() == this.codigo) {
+    if (((Articulo)obj).getCodigo() == this.codigo) {
       return true;
     } else {
-      if (obj instanceof Articulo && ((Articulo)obj).getDescripcion().equals(this.descripcion)) {
-        return true;
-      } else {
-        return false;
-      }
+      return false;
     }
   }
 }

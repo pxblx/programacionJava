@@ -36,7 +36,7 @@ public class TestAlmacen {
           "\n\nSeleccione una opción: ");
         opcion = Integer.parseInt(scanner.nextLine());
       } catch (NumberFormatException e) {
-        System.out.println("\nEntrada de datos incorrecta.\n");
+        System.err.println("\nEntrada de datos incorrecta.\n");
       }
 
       switch (opcion) {
@@ -51,24 +51,18 @@ public class TestAlmacen {
             System.out.print("Introduce el número de unidades del artículo: ");
             unidades = Integer.parseInt(scanner.nextLine());
           } catch (NumberFormatException e) {
-            System.out.println("\nEntrada de datos incorrecta.\n");
+            System.err.println("\nEntrada de datos incorrecta.\n");
             break;
           }
           try {
             almacen.altaArticulo(descripcion, precioCompra, precioVenta, unidades);
             System.out.print("Artículo creado.\n\n");
           } catch (ExcepcionDescripcionVacia e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
+            System.err.println("\n" + e.getMessage() + "\n");
           } catch (ExcepcionValorNegativo e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
+            System.err.println("\n" + e.getMessage() + "\n");
           } catch (ExcepcionArticuloExistente e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
+            System.err.println("\n" + e.getMessage() + "\n");
           }
           break;
 
@@ -77,16 +71,14 @@ public class TestAlmacen {
             System.out.print("\nIntroduce el código del artículo: ");
             codigo = Integer.parseInt(scanner.nextLine());
           } catch (NumberFormatException e) {
-            System.out.println("\nEntrada de datos incorrecta.\n");
+            System.err.println("\nEntrada de datos incorrecta.\n");
             break;
           }
           try {
             almacen.bajaArticulo(codigo);
             System.out.print("Artículo eliminado.\n\n");
           } catch (ExcepcionArticuloNoExistente e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
+            System.err.println("\n" + e.getMessage() + "\n");
           }
           break;
 
@@ -97,20 +89,16 @@ public class TestAlmacen {
             System.out.print("Introduce las unidades que entran: ");
             unidades = Integer.parseInt(scanner.nextLine());
           } catch (NumberFormatException e) {
-            System.out.println("\nEntrada de datos incorrecta.\n");
+            System.err.println("\nEntrada de datos incorrecta.\n");
             break;
           }
           try {
             almacen.entradaMercancia(codigo, unidades);
             System.out.println("Unidades añadidas.\n");
           } catch (ExcepcionArticuloNoExistente e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
+            System.err.println("\n" + e.getMessage() + "\n");
           } catch (ExcepcionValorNegativo e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
+            System.err.println("\n" + e.getMessage() + "\n");
           }
           break;
 
@@ -121,20 +109,16 @@ public class TestAlmacen {
             System.out.print("Introduce las unidades que salen: ");
             unidades = Integer.parseInt(scanner.nextLine());
           } catch (NumberFormatException e) {
-            System.out.println("\nEntrada de datos incorrecta.\n");
+            System.err.println("\nEntrada de datos incorrecta.\n");
             break;
           }
           try {
             almacen.salidaMercancia(codigo, unidades);
             System.out.println("Unidades quitadas.\n");
           } catch (ExcepcionArticuloNoExistente e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
+            System.err.println("\n" + e.getMessage() + "\n");
           } catch (ExcepcionValorNegativo e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
+            System.err.println("\n" + e.getMessage() + "\n");
           }
           break;
 
@@ -143,15 +127,13 @@ public class TestAlmacen {
             System.out.print("\nIntroduce el código del artículo: ");
             codigo = Integer.parseInt(scanner.nextLine());
           } catch (NumberFormatException e) {
-            System.out.println("\nEntrada de datos incorrecta.\n");
+            System.err.println("\nEntrada de datos incorrecta.\n");
             break;
           }
           try {
             System.out.println("\n" + almacen.getArticulo(codigo) + "\n");
           } catch (ExcepcionArticuloNoExistente e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
+            System.err.println("\n" + e.getMessage() + "\n");
           }
           break;
 
@@ -163,11 +145,11 @@ public class TestAlmacen {
           System.out.print("\nSaliendo...");
           return;
 
-        case 0:
+        case 0: // Si no se especifica ninguna opción, por defecto es 0
           break;
 
-        default: // Por defecto
-          System.out.println("\nOpción incorrecta.\n");
+        default: // Si se especifica una opción que no existe
+          System.err.println("\nOpción incorrecta.\n");
           break;
       }
     } while (true);

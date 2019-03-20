@@ -35,19 +35,33 @@ public class Almacen {
   }
 
   /**
+   * Obtener un artículo del almacén según su código
+   *
+   * @param codigo código del artículo
+   * @return artículo
+   * @throws ExcepcionArticuloNoExistente si el artículo no existe en el almacén
+   */
+  public Articulo getArticulo(int codigo) throws ExcepcionArticuloNoExistente {
+    for (Articulo articulo : almacen) {
+      if (articulo.getCodigo() == codigo) {
+        return articulo;
+      }
+    }
+    throw new ExcepcionArticuloNoExistente();
+  }
+
+  /**
    * Dar de baja un artículo
    *
    * @param codigo código del artículo
    * @throws ExcepcionArticuloNoExistente si el artículo no existe en el almacén
    */
   public void bajaArticulo(int codigo) throws ExcepcionArticuloNoExistente {
-    for (int i = 0; i < almacen.size(); i++) {
-      if (almacen.get(i).getCodigo() == codigo) {
-        almacen.remove(i);
-        return;
-      }
+    if (almacen.contains(getArticulo(codigo))) {
+      almacen.remove(getArticulo(codigo));
+    } else {
+      throw new ExcepcionArticuloNoExistente();
     }
-    throw new ExcepcionArticuloNoExistente();
   }
 
   /**
@@ -59,11 +73,9 @@ public class Almacen {
    * @throws ExcepcionValorNegativo si las unidades del artículo pasan a negativas
    */
   public void entradaMercancia(int codigo, int unidades) throws ExcepcionArticuloNoExistente, ExcepcionValorNegativo {
-    for (Articulo articulo : almacen) {
-      if (articulo.getCodigo() == codigo) {
-        articulo.setUnidades(articulo.getUnidades() + unidades);
-        return;
-      }
+    if (almacen.contains(getArticulo(codigo))) {
+      getArticulo(codigo).setUnidades(getArticulo(codigo).getUnidades() + unidades);
+      return;
     }
     throw new ExcepcionArticuloNoExistente();
   }
@@ -77,31 +89,9 @@ public class Almacen {
    * @throws ExcepcionValorNegativo si las unidades del artículo pasan a negativas
    */
   public void salidaMercancia(int codigo, int unidades) throws ExcepcionArticuloNoExistente, ExcepcionValorNegativo {
-    for (Articulo articulo : almacen) {
-      if (articulo.getCodigo() == codigo) {
-        if ((articulo.getUnidades() - unidades) < 0) {
-          throw new ExcepcionValorNegativo();
-        } else {
-          articulo.setUnidades(articulo.getUnidades() - unidades);
-          return;
-        }
-      }
-    }
-    throw new ExcepcionArticuloNoExistente();
-  }
-
-  /**
-   * Obtener la representación en string de un artículo
-   *
-   * @param codigo código del artículo
-   * @return artículo representado como string
-   * @throws ExcepcionArticuloNoExistente si el artículo no existe en el almacén
-   */
-  public String getArticulo(int codigo) throws ExcepcionArticuloNoExistente {
-    for (Articulo articulo : almacen) {
-      if (articulo.getCodigo() == codigo) {
-        return articulo.toString();
-      }
+    if (almacen.contains(getArticulo(codigo))) {
+      getArticulo(codigo).setUnidades(getArticulo(codigo).getUnidades() - unidades);
+      return;
     }
     throw new ExcepcionArticuloNoExistente();
   }
