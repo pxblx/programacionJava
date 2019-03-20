@@ -14,7 +14,7 @@ public class TestAlmacen {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     Almacen almacen = new Almacen();
-    int opcion = 0;
+    int opcion;
     int codigo;
     String descripcion;
     double precioCompra;
@@ -36,6 +36,7 @@ public class TestAlmacen {
           "\n\nSeleccione una opción: ");
         opcion = Integer.parseInt(scanner.nextLine());
       } catch (NumberFormatException e) {
+        opcion = 0;
         System.err.println("\nEntrada de datos incorrecta.\n");
       }
 
@@ -145,7 +146,7 @@ public class TestAlmacen {
           System.out.print("\nSaliendo...");
           return;
 
-        case 0: // Si no se especifica ninguna opción, por defecto es 0
+        case 0: // Si la entrada de datos para opcion no es correcta, se establece a 0 y no hace nada
           break;
 
         default: // Si se especifica una opción que no existe
