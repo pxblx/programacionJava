@@ -1,19 +1,22 @@
 package practicas.poo3.gestisimal.test;
 
-import java.util.Scanner;
 import practicas.poo3.gestisimal.Almacen;
 import practicas.poo3.gestisimal.excepciones.ExcepcionDescripcionVacia;
 import practicas.poo3.gestisimal.excepciones.ExcepcionValorNegativo;
 import practicas.poo3.gestisimal.excepciones.ExcepcionArticuloExistente;
 import practicas.poo3.gestisimal.excepciones.ExcepcionArticuloNoExistente;
+import practicas.poo3.gestisimal.utiles.Menu;
+import practicas.poo3.gestisimal.utiles.Teclado;
 
 /**
  * TestAlmacen
  */
 public class TestAlmacen {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
     Almacen almacen = new Almacen();
+    Menu menuPrincipal = new Menu("Almacén", new String[]{"Dar de alta un nuevo artículo", "Dar de baja un artículo",
+    "Entrada de mercancía", "Salida de mercancía", "Mostrar un artículo", "Mostrar todos los artículos",
+    "Salir"});
     int opcion;
     int codigo;
     String descripcion;
@@ -24,17 +27,7 @@ public class TestAlmacen {
     // Mostrar menú
     do {
       try {
-        System.out.print("Almacén" +
-          "\n-------" +
-          "\n1.- Dar de alta un nuevo artículo" +
-          "\n2.- Dar de baja un artículo" +
-          "\n3.- Entrada de mercancía" +
-          "\n4.- Salida de mercancía" +
-          "\n5.- Mostrar un artículo" +
-          "\n6.- Mostrar todos los artículos" +
-          "\n7.- Salir" +
-          "\n\nSeleccione una opción: ");
-        opcion = Integer.parseInt(scanner.nextLine());
+        opcion = menuPrincipal.mostrar();
       } catch (NumberFormatException e) {
         opcion = 0;
         System.err.println("\nEntrada de datos incorrecta.\n");
@@ -43,14 +36,10 @@ public class TestAlmacen {
       switch (opcion) {
         case 1: // Dar de alta un nuevo artículo
           try {
-            System.out.print("\nIntroduce la descripción del artículo: ");
-            descripcion = scanner.nextLine();
-            System.out.print("Introduce el precio de compra del artículo: ");
-            precioCompra = Double.parseDouble(scanner.nextLine());
-            System.out.print("Introduce el precio de venta del artículo: ");
-            precioVenta = Double.parseDouble(scanner.nextLine());
-            System.out.print("Introduce el número de unidades del artículo: ");
-            unidades = Integer.parseInt(scanner.nextLine());
+            descripcion = Teclado.leerCadena("\nIntroduce la descripción del artículo: ");
+            precioCompra = Teclado.leerDecimal("Introduce el precio de compra del artículo: ");
+            precioVenta = Teclado.leerDecimal("Introduce el precio de venta del artículo: ");
+            unidades = Teclado.leerEntero("Introduce el número de unidades del artículo: ");
           } catch (NumberFormatException e) {
             System.err.println("\nEntrada de datos incorrecta.\n");
             break;
@@ -69,8 +58,7 @@ public class TestAlmacen {
 
         case 2: // Dar de baja un artículo
           try {
-            System.out.print("\nIntroduce el código del artículo: ");
-            codigo = Integer.parseInt(scanner.nextLine());
+            codigo = Teclado.leerEntero("\nIntroduce el código del artículo: ");
           } catch (NumberFormatException e) {
             System.err.println("\nEntrada de datos incorrecta.\n");
             break;
@@ -85,10 +73,8 @@ public class TestAlmacen {
 
         case 3: // Entrada de mercancía
           try {
-            System.out.print("\nIntroduce el código del artículo: ");
-            codigo = Integer.parseInt(scanner.nextLine());
-            System.out.print("Introduce las unidades que entran: ");
-            unidades = Integer.parseInt(scanner.nextLine());
+            codigo = Teclado.leerEntero("\nIntroduce el código del artículo: ");
+            unidades = Teclado.leerEntero("Introduce las unidades que entran: ");
           } catch (NumberFormatException e) {
             System.err.println("\nEntrada de datos incorrecta.\n");
             break;
@@ -105,10 +91,8 @@ public class TestAlmacen {
 
         case 4: // Salida de mercancía
           try {
-            System.out.print("\nIntroduce el código del artículo: ");
-            codigo = Integer.parseInt(scanner.nextLine());
-            System.out.print("Introduce las unidades que salen: ");
-            unidades = Integer.parseInt(scanner.nextLine());
+            codigo = Teclado.leerEntero("\nIntroduce el código del artículo: ");
+            unidades = Teclado.leerEntero("Introduce las unidades que salen: ");
           } catch (NumberFormatException e) {
             System.err.println("\nEntrada de datos incorrecta.\n");
             break;
@@ -125,8 +109,7 @@ public class TestAlmacen {
 
         case 5: // Mostrar un artículo
           try {
-            System.out.print("\nIntroduce el código del artículo: ");
-            codigo = Integer.parseInt(scanner.nextLine());
+            codigo = Teclado.leerEntero("\nIntroduce el código del artículo: ");
           } catch (NumberFormatException e) {
             System.err.println("\nEntrada de datos incorrecta.\n");
             break;
@@ -146,7 +129,7 @@ public class TestAlmacen {
           System.out.print("\nSaliendo...");
           return;
 
-        case 0: // Si la entrada de datos para opcion no es correcta, se establece a 0 y no hace nada
+        case 0: // Si la entrada de datos para 'opcion' no es correcta, se establece a 0 y no hace nada
           break;
 
         default: // Si se especifica una opción que no existe
