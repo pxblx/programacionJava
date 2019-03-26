@@ -1,12 +1,13 @@
 package practicas.poo3.gestisimal.test;
 
-import practicas.poo3.gestisimal.Almacen;
-import practicas.poo3.gestisimal.excepciones.ExcepcionDescripcionVacia;
-import practicas.poo3.gestisimal.excepciones.ExcepcionValorNegativo;
-import practicas.poo3.gestisimal.excepciones.ExcepcionArticuloExistente;
-import practicas.poo3.gestisimal.excepciones.ExcepcionArticuloNoExistente;
-import practicas.poo3.gestisimal.utiles.Menu;
-import practicas.poo3.gestisimal.utiles.Teclado;
+import practicas.poo3.gestisimal.src.Almacen;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionArticuloExistente;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionDescripcionVacia;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionOpcionIncorrecta;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionValorNegativo;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionArticuloNoExistente;
+import practicas.poo3.gestisimal.src.utiles.Menu;
+import practicas.poo3.gestisimal.src.utiles.Teclado;
 
 /**
  * TestAlmacen
@@ -27,10 +28,13 @@ public class TestAlmacen {
     // Mostrar menú
     do {
       try {
-        opcion = menuPrincipal.mostrar();
+        opcion = menuPrincipal.gestionar();
       } catch (NumberFormatException e) {
         opcion = 0;
         System.err.println("\nEntrada de datos incorrecta.\n");
+      } catch (ExcepcionOpcionIncorrecta e) {
+        opcion = 0;
+        System.err.println("\n" + e.getMessage() + "\n");
       }
 
       switch (opcion) {
@@ -129,7 +133,7 @@ public class TestAlmacen {
           System.out.print("\nSaliendo...");
           return;
 
-        case 0: // Si la entrada de datos para 'opcion' no es correcta, se establece a 0 y no hace nada
+        case 0: // Si salta alguna excepción al introducir la opción, la variable se establece a 0 y no se hace nada
           break;
 
         default: // Si se especifica una opción que no existe

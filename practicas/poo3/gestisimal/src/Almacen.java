@@ -1,9 +1,9 @@
-package practicas.poo3.gestisimal;
+package practicas.poo3.gestisimal.src;
 
-import practicas.poo3.gestisimal.excepciones.ExcepcionArticuloExistente;
-import practicas.poo3.gestisimal.excepciones.ExcepcionArticuloNoExistente;
-import practicas.poo3.gestisimal.excepciones.ExcepcionDescripcionVacia;
-import practicas.poo3.gestisimal.excepciones.ExcepcionValorNegativo;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionArticuloExistente;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionArticuloNoExistente;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionDescripcionVacia;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionValorNegativo;
 import java.util.ArrayList;
 
 /**
@@ -28,10 +28,8 @@ public class Almacen {
     Articulo nuevoArticulo = new Articulo(descripcion, precioCompra, precioVenta, unidades);
     if (almacen.contains(nuevoArticulo)) {
       throw new ExcepcionArticuloExistente();
-    } else {
-      almacen.add(nuevoArticulo);
-      Articulo.nextCodigo++;
     }
+    almacen.add(nuevoArticulo);
   }
 
   /**
@@ -57,11 +55,10 @@ public class Almacen {
    * @throws ExcepcionArticuloNoExistente si el artículo no existe en el almacén
    */
   public void bajaArticulo(int codigo) throws ExcepcionArticuloNoExistente {
-    if (almacen.contains(getArticulo(codigo))) {
-      almacen.remove(getArticulo(codigo));
-    } else {
+    if (!almacen.contains(getArticulo(codigo))) {
       throw new ExcepcionArticuloNoExistente();
     }
+    almacen.remove(getArticulo(codigo));
   }
 
   /**
@@ -73,11 +70,10 @@ public class Almacen {
    * @throws ExcepcionValorNegativo si las unidades del artículo pasan a negativas
    */
   public void entradaMercancia(int codigo, int unidades) throws ExcepcionArticuloNoExistente, ExcepcionValorNegativo {
-    if (almacen.contains(getArticulo(codigo))) {
-      getArticulo(codigo).setUnidades(getArticulo(codigo).getUnidades() + unidades);
-      return;
+    if (!almacen.contains(getArticulo(codigo))) {
+      throw new ExcepcionArticuloNoExistente();
     }
-    throw new ExcepcionArticuloNoExistente();
+    getArticulo(codigo).setUnidades(getArticulo(codigo).getUnidades() + unidades);
   }
 
   /**
@@ -89,11 +85,10 @@ public class Almacen {
    * @throws ExcepcionValorNegativo si las unidades del artículo pasan a negativas
    */
   public void salidaMercancia(int codigo, int unidades) throws ExcepcionArticuloNoExistente, ExcepcionValorNegativo {
-    if (almacen.contains(getArticulo(codigo))) {
-      getArticulo(codigo).setUnidades(getArticulo(codigo).getUnidades() - unidades);
-      return;
+    if (!almacen.contains(getArticulo(codigo))) {
+      throw new ExcepcionArticuloNoExistente();
     }
-    throw new ExcepcionArticuloNoExistente();
+    getArticulo(codigo).setUnidades(getArticulo(codigo).getUnidades() - unidades);
   }
 
   /**

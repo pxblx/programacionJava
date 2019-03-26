@@ -1,4 +1,4 @@
-package practicas.poo3.gestisimal.excepciones;
+package practicas.poo3.gestisimal.src.excepciones;
 
 /**
  * ExcepcionDescripcionVacia

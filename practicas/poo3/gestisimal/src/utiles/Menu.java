@@ -1,4 +1,6 @@
-package practicas.poo3.gestisimal.utiles;
+package practicas.poo3.gestisimal.src.utiles;
+
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionOpcionIncorrecta;
 
 /**
  * Clase para crear un menú de opciones
@@ -21,18 +23,15 @@ public class Menu {
   }
 
   /**
-   * toString
-   *
-   * @return menú construido en una string
+   * Construir el menú y mostrarlo por pantalla
    */
-  @Override
-  public String toString() {
+  private void mostrar() {
     stringMenu = (titulo + "\n---------------\n");
     for (int i = 0; i < opciones.length; i++) {
       stringMenu += ((i+1) + ".- " + opciones[i] + "\n");
     }
     stringMenu += ("\nSeleccione una opción: ");
-    return stringMenu;
+    System.out.print(stringMenu);
   }
 
   /**
@@ -41,8 +40,11 @@ public class Menu {
    * @return opción introducida por teclado
    * @throws NumberFormatException si se introduce algo distinto a un entero
    */
-  private int pedirOpcion() throws NumberFormatException {
+  private int pedirOpcion() throws NumberFormatException, ExcepcionOpcionIncorrecta {
     opcion = Teclado.leerEntero();
+    if ((opcion < 1) || (opcion > opciones.length+1)) {
+      throw new ExcepcionOpcionIncorrecta();
+    }
     return opcion;
   }
 
@@ -51,8 +53,8 @@ public class Menu {
    *
    * @return opción introducida por teclado
    */
-  public int mostrar() {
-    System.out.print(this);
+  public int gestionar() throws ExcepcionOpcionIncorrecta {
+    mostrar();
     return pedirOpcion();
   }
 }

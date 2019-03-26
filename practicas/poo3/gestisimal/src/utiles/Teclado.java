@@ -1,4 +1,4 @@
-package practicas.poo3.gestisimal.utiles;
+package practicas.poo3.gestisimal.src.utiles;
 
 import java.util.Scanner;
 

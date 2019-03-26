@@ -1,13 +1,13 @@
-package practicas.poo3.gestisimal;
+package practicas.poo3.gestisimal.src;
 
-import practicas.poo3.gestisimal.excepciones.ExcepcionDescripcionVacia;
-import practicas.poo3.gestisimal.excepciones.ExcepcionValorNegativo;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionDescripcionVacia;
+import practicas.poo3.gestisimal.src.excepciones.ExcepcionValorNegativo;
 
 /**
  * Artículo
  */
 public class Articulo {
-  protected static int nextCodigo = 100;
+  private static int nextCodigo = 100;
   private int codigo;
   private String descripcion;
   private double precioCompra;
@@ -30,6 +30,14 @@ public class Articulo {
     setPrecioCompra(precioCompra);
     setPrecioVenta(precioVenta);
     setUnidades(unidades);
+    nextCodigo();
+  }
+
+  /**
+   * Incrementar la variable nextCodigo para asignarsela al código del siguiente artículo que se cree
+   */
+  private static void nextCodigo() {
+    nextCodigo++;
   }
 
   /**
@@ -86,9 +94,8 @@ public class Articulo {
   public void setDescripcion(String descripcion) throws ExcepcionDescripcionVacia {
     if (descripcion.isEmpty()) {
       throw new ExcepcionDescripcionVacia();
-    } else {
-      this.descripcion = descripcion;
     }
+    this.descripcion = descripcion;
   }
 
   /**
@@ -100,9 +107,8 @@ public class Articulo {
   public void setPrecioCompra(double precioCompra) throws ExcepcionValorNegativo {
     if (precioCompra <= 0) {
       throw new ExcepcionValorNegativo();
-    } else {
-      this.precioCompra = precioCompra;
     }
+    this.precioCompra = precioCompra;
   }
 
   /**
@@ -114,9 +120,8 @@ public class Articulo {
   public void setPrecioVenta(double precioVenta) throws ExcepcionValorNegativo {
     if (precioVenta <= 0) {
       throw new ExcepcionValorNegativo();
-    } else {
-      this.precioVenta = precioVenta;
     }
+    this.precioVenta = precioVenta;
   }
 
   /**
@@ -128,9 +133,8 @@ public class Articulo {
   public void setUnidades(int unidades) throws ExcepcionValorNegativo {
     if (unidades < 0) {
       throw new ExcepcionValorNegativo();
-    } else {
-      this.unidades = unidades;
     }
+    this.unidades = unidades;
   }
 
   /**
@@ -152,12 +156,19 @@ public class Articulo {
   /**
    * equals
    *
-   * @param obj artículo con el que comparar
+   * @param o artículo con el que comparar
    * @return true si son iguales o false si son distintos
    */
   @Override
-  public boolean equals(Object obj) {
-    if (((Articulo)obj).getCodigo() == this.codigo) {
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Articulo articulo = (Articulo) o;
+    if (codigo == articulo.codigo) {
       return true;
     } else {
       return false;
