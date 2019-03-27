@@ -1,9 +1,9 @@
 package practicas.poo3.gestisimal.src;
 
-import practicas.poo3.gestisimal.src.excepciones.ExcepcionArticuloExistente;
 import practicas.poo3.gestisimal.src.excepciones.ExcepcionArticuloNoExistente;
 import practicas.poo3.gestisimal.src.excepciones.ExcepcionDescripcionVacia;
 import practicas.poo3.gestisimal.src.excepciones.ExcepcionValorNegativo;
+
 import java.util.ArrayList;
 
 /**
@@ -11,25 +11,19 @@ import java.util.ArrayList;
  */
 public class Almacen {
   private ArrayList<Articulo> almacen = new ArrayList<>();
-  private String stringAlmacen;
 
   /**
    * Dar de alta un nuevo artículo
    *
-   * @param descripcion descripción del artículo
+   * @param descripcion  descripción del artículo
    * @param precioCompra precio de compra del artículo
-   * @param precioVenta precio de venta del artículo
-   * @param unidades unidades disponibles del artículo
-   * @throws ExcepcionArticuloExistente si el artículo que se introduce coincide en código o en descripción
-   * @throws ExcepcionValorNegativo si se da un valor negativo o 0 a precioCompra, precioVenta y unidades
-   * @throws ExcepcionDescripcionVacia si se da una descripción vacía
+   * @param precioVenta  precio de venta del artículo
+   * @param unidades     unidades disponibles del artículo
+   * @throws ExcepcionValorNegativo     si se da un valor negativo o 0 a precioCompra, precioVenta y unidades
+   * @throws ExcepcionDescripcionVacia  si se da una descripción vacía
    */
-  public void altaArticulo(String descripcion, double precioCompra, double precioVenta, int unidades) throws ExcepcionArticuloExistente, ExcepcionValorNegativo, ExcepcionDescripcionVacia {
-    Articulo nuevoArticulo = new Articulo(descripcion, precioCompra, precioVenta, unidades);
-    if (almacen.contains(nuevoArticulo)) {
-      throw new ExcepcionArticuloExistente();
-    }
-    almacen.add(nuevoArticulo);
+  public void altaArticulo(String descripcion, double precioCompra, double precioVenta, int unidades) throws ExcepcionValorNegativo, ExcepcionDescripcionVacia {
+    almacen.add(new Articulo(descripcion, precioCompra, precioVenta, unidades));
   }
 
   /**
@@ -40,55 +34,53 @@ public class Almacen {
    * @throws ExcepcionArticuloNoExistente si el artículo no existe en el almacén
    */
   public Articulo getArticulo(int codigo) throws ExcepcionArticuloNoExistente {
-    for (Articulo articulo : almacen) {
-      if (articulo.getCodigo() == codigo) {
-        return articulo;
-      }
+    try {
+      return almacen.get(almacen.indexOf(new Articulo(codigo)));
+    } catch (IndexOutOfBoundsException e) {
+      throw new ExcepcionArticuloNoExistente("No existe ningún artículo con el código introducido.");
     }
-    throw new ExcepcionArticuloNoExistente();
   }
 
   /**
    * Dar de baja un artículo
    *
    * @param codigo código del artículo
-   * @throws ExcepcionArticuloNoExistente si el artículo no existe en el almacén
+   *
    */
   public void bajaArticulo(int codigo) throws ExcepcionArticuloNoExistente {
-    if (!almacen.contains(getArticulo(codigo))) {
-      throw new ExcepcionArticuloNoExistente();
-    }
     almacen.remove(getArticulo(codigo));
   }
 
   /**
    * Entrada de mercancía (incrementar unidades del artículo)
    *
-   * @param codigo código del artículo
+   * @param codigo   código del artículo
    * @param unidades unidades del artículo a incrementar
    * @throws ExcepcionArticuloNoExistente si el artículo no existe en el almacén
-   * @throws ExcepcionValorNegativo si las unidades del artículo pasan a negativas
+   * @throws ExcepcionValorNegativo       si las unidades del artículo pasan a negativas
    */
   public void entradaMercancia(int codigo, int unidades) throws ExcepcionArticuloNoExistente, ExcepcionValorNegativo {
-    if (!almacen.contains(getArticulo(codigo))) {
-      throw new ExcepcionArticuloNoExistente();
+    if (unidades < 0) {
+      throw new ExcepcionValorNegativo("El valor para las unidades no puede ser negativo.");
     }
-    getArticulo(codigo).setUnidades(getArticulo(codigo).getUnidades() + unidades);
+    Articulo articulo = getArticulo(codigo);
+    articulo.setUnidades(articulo.getUnidades() + unidades);
   }
 
   /**
    * Salida de mercancía (decrementar unidades del artículo)
    *
-   * @param codigo código del artículo
+   * @param codigo   código del artículo
    * @param unidades unidades del artículo a decrementar
    * @throws ExcepcionArticuloNoExistente si el artículo no existe en el almacén
-   * @throws ExcepcionValorNegativo si las unidades del artículo pasan a negativas
+   * @throws ExcepcionValorNegativo       si las unidades del artículo pasan a negativas
    */
   public void salidaMercancia(int codigo, int unidades) throws ExcepcionArticuloNoExistente, ExcepcionValorNegativo {
-    if (!almacen.contains(getArticulo(codigo))) {
-      throw new ExcepcionArticuloNoExistente();
+    if (unidades < 0) {
+      throw new ExcepcionValorNegativo("El valor para las unidades no puede ser negativo.");
     }
-    getArticulo(codigo).setUnidades(getArticulo(codigo).getUnidades() - unidades);
+    Articulo articulo = getArticulo(codigo);
+    articulo.setUnidades(articulo.getUnidades() - unidades);
   }
 
   /**
@@ -98,14 +90,9 @@ public class Almacen {
    */
   @Override
   public String toString() {
-    if (!almacen.isEmpty()) {
-      stringAlmacen = "";
-      for (Articulo articulo : almacen) {
-        stringAlmacen = (stringAlmacen + articulo + "\n\n");
-      }
-      return stringAlmacen;
-    } else {
+    if (almacen.isEmpty()) {
       return ("El almacén está vacío.\n\n");
     }
+    return (almacen.toString() + "\n\n");
   }
 }

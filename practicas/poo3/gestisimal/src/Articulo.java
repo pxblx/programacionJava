@@ -34,11 +34,20 @@ public class Articulo {
   }
 
   /**
+   * Constructor para hacer comparaciones de artículos a través del código
+   *
+   * @param codigo código del artículo
+   */
+  public Articulo(int codigo) {
+   this.codigo = codigo;
+  }
+
+  /**
    * Incrementar la variable nextCodigo para asignarsela al código del siguiente artículo que se cree
    */
   private static void nextCodigo() {
     nextCodigo++;
-  }
+  }   
 
   /**
    * Obtener código del artículo
@@ -93,7 +102,7 @@ public class Articulo {
    */
   public void setDescripcion(String descripcion) throws ExcepcionDescripcionVacia {
     if (descripcion.isEmpty()) {
-      throw new ExcepcionDescripcionVacia();
+      throw new ExcepcionDescripcionVacia("La descripción de un artículo no puede estar vacía.");
     }
     this.descripcion = descripcion;
   }
@@ -106,7 +115,7 @@ public class Articulo {
    */
   public void setPrecioCompra(double precioCompra) throws ExcepcionValorNegativo {
     if (precioCompra <= 0) {
-      throw new ExcepcionValorNegativo();
+      throw new ExcepcionValorNegativo("El precio de compra de un artículo no puede ser negativo.");
     }
     this.precioCompra = precioCompra;
   }
@@ -119,7 +128,7 @@ public class Articulo {
    */
   public void setPrecioVenta(double precioVenta) throws ExcepcionValorNegativo {
     if (precioVenta <= 0) {
-      throw new ExcepcionValorNegativo();
+      throw new ExcepcionValorNegativo("El precio de venta de un artículo no puede ser negativo.");
     }
     this.precioVenta = precioVenta;
   }
@@ -132,7 +141,7 @@ public class Articulo {
    */
   public void setUnidades(int unidades) throws ExcepcionValorNegativo {
     if (unidades < 0) {
-      throw new ExcepcionValorNegativo();
+      throw new ExcepcionValorNegativo("Las unidades de un artículo no pueden ser negativas.");
     }
     this.unidades = unidades;
   }
@@ -144,9 +153,7 @@ public class Articulo {
    */
   @Override
   public String toString() {
-    return ("Articulo\n" +
-      "--------\n" +
-      "Código: " + this.codigo + "\n" +
+    return ("Código: " + this.codigo + "\n" +
       "Descripción: " + this.descripcion + "\n" +
       "Precio de compra: " + this.precioCompra + "\n" +
       "Precio de venta: " + this.precioVenta + "\n" +

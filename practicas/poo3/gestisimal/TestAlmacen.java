@@ -1,7 +1,6 @@
-package practicas.poo3.gestisimal.test;
+package practicas.poo3.gestisimal;
 
 import practicas.poo3.gestisimal.src.Almacen;
-import practicas.poo3.gestisimal.src.excepciones.ExcepcionArticuloExistente;
 import practicas.poo3.gestisimal.src.excepciones.ExcepcionDescripcionVacia;
 import practicas.poo3.gestisimal.src.excepciones.ExcepcionOpcionIncorrecta;
 import practicas.poo3.gestisimal.src.excepciones.ExcepcionValorNegativo;
@@ -54,8 +53,6 @@ public class TestAlmacen {
           } catch (ExcepcionDescripcionVacia e) {
             System.err.println("\n" + e.getMessage() + "\n");
           } catch (ExcepcionValorNegativo e) {
-            System.err.println("\n" + e.getMessage() + "\n");
-          } catch (ExcepcionArticuloExistente e) {
             System.err.println("\n" + e.getMessage() + "\n");
           }
           break;

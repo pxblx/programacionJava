@@ -43,7 +43,7 @@ public class Menu {
   private int pedirOpcion() throws NumberFormatException, ExcepcionOpcionIncorrecta {
     opcion = Teclado.leerEntero();
     if ((opcion < 1) || (opcion > opciones.length+1)) {
-      throw new ExcepcionOpcionIncorrecta();
+      throw new ExcepcionOpcionIncorrecta("Opción incorrecta.");
     }
     return opcion;
   }

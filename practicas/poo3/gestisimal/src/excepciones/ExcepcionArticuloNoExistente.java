@@ -4,7 +4,7 @@ package practicas.poo3.gestisimal.src.excepciones;
  * ExcepcionArticuloNoExistente
  */
 public class ExcepcionArticuloNoExistente extends Exception {
-  public ExcepcionArticuloNoExistente() {
-    super("El artículo no existe en el almacén.");
+  public ExcepcionArticuloNoExistente(String msg) {
+    super(msg);
   }
 }

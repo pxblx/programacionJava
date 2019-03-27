@@ -4,7 +4,7 @@ package practicas.poo3.gestisimal.src.excepciones;
  * ExcepcionValorNegativo
  */
 public class ExcepcionValorNegativo extends Exception {
-  public ExcepcionValorNegativo() {
-    super("El valor para los precios y las unidades no puede ser 0 o negativo.");
+  public ExcepcionValorNegativo(String msg) {
+    super(msg);
   }
 }
