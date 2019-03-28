@@ -1,6 +1,7 @@
 package practicas.poo3.gestisimal.src.utiles;
 
-import practicas.poo3.gestisimal.src.excepciones.ExcepcionOpcionIncorrecta;
+import practicas.poo3.gestisimal.src.excepciones.EntradaDeDatosException;
+import practicas.poo3.gestisimal.src.excepciones.OpcionIncorrectaException;
 
 /**
  * Clase para crear un menú de opciones
@@ -40,10 +41,10 @@ public class Menu {
    * @return opción introducida por teclado
    * @throws NumberFormatException si se introduce algo distinto a un entero
    */
-  private int pedirOpcion() throws NumberFormatException, ExcepcionOpcionIncorrecta {
+  private int pedirOpcion() throws EntradaDeDatosException, OpcionIncorrectaException {
     opcion = Teclado.leerEntero();
     if ((opcion < 1) || (opcion > opciones.length+1)) {
-      throw new ExcepcionOpcionIncorrecta("Opción incorrecta.");
+      throw new OpcionIncorrectaException("Opción incorrecta.");
     }
     return opcion;
   }
@@ -53,7 +54,7 @@ public class Menu {
    *
    * @return opción introducida por teclado
    */
-  public int gestionar() throws ExcepcionOpcionIncorrecta {
+  public int gestionar() throws EntradaDeDatosException, OpcionIncorrectaException {
     mostrar();
     return pedirOpcion();
   }

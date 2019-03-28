@@ -1,7 +1,7 @@
 package practicas.poo3.gestisimal.src;
 
-import practicas.poo3.gestisimal.src.excepciones.ExcepcionDescripcionVacia;
-import practicas.poo3.gestisimal.src.excepciones.ExcepcionValorNegativo;
+import practicas.poo3.gestisimal.src.excepciones.DescripcionVaciaException;
+import practicas.poo3.gestisimal.src.excepciones.ValorNegativoException;
 
 /**
  * Artículo
@@ -21,10 +21,10 @@ public class Articulo {
    * @param precioCompra precio de compra del artículo
    * @param precioVenta precio de venta del artículo
    * @param unidades unidades disponibles del artículo
-   * @throws ExcepcionDescripcionVacia si se da una descripción vacía
-   * @throws ExcepcionValorNegativo si se da un valor negativo o 0 a precioCompra, precioVenta o unidades
+   * @throws DescripcionVaciaException si se da una descripción vacía
+   * @throws ValorNegativoException si se da un valor negativo o 0 a precioCompra, precioVenta o unidades
    */
-  public Articulo(String descripcion, double precioCompra, double precioVenta, int unidades) throws ExcepcionDescripcionVacia, ExcepcionValorNegativo {
+  public Articulo(String descripcion, double precioCompra, double precioVenta, int unidades) throws DescripcionVaciaException, ValorNegativoException {
     this.codigo = nextCodigo;
     setDescripcion(descripcion);
     setPrecioCompra(precioCompra);
@@ -98,11 +98,11 @@ public class Articulo {
    * Establecer la descripción del artículo
    *
    * @param descripcion descripción del artículo
-   * @throws ExcepcionDescripcionVacia si se da una descripción vacía
+   * @throws DescripcionVaciaException si se da una descripción vacía
    */
-  public void setDescripcion(String descripcion) throws ExcepcionDescripcionVacia {
+  public void setDescripcion(String descripcion) throws DescripcionVaciaException {
     if (descripcion.isEmpty()) {
-      throw new ExcepcionDescripcionVacia("La descripción de un artículo no puede estar vacía.");
+      throw new DescripcionVaciaException("La descripción de un artículo no puede estar vacía.");
     }
     this.descripcion = descripcion;
   }
@@ -111,11 +111,11 @@ public class Articulo {
    * Establecer el precio de compra del artículo
    *
    * @param precioCompra precio de compra del artículo
-   * @throws ExcepcionValorNegativo si se da un valor negativo o 0 a precioCompra
+   * @throws ValorNegativoException si se da un valor negativo o 0 a precioCompra
    */
-  public void setPrecioCompra(double precioCompra) throws ExcepcionValorNegativo {
+  public void setPrecioCompra(double precioCompra) throws ValorNegativoException {
     if (precioCompra <= 0) {
-      throw new ExcepcionValorNegativo("El precio de compra de un artículo no puede ser 0 o negativo.");
+      throw new ValorNegativoException("El precio de compra de un artículo no puede ser 0 o negativo.");
     }
     this.precioCompra = precioCompra;
   }
@@ -124,11 +124,11 @@ public class Articulo {
    * Establecer el precio de venta del artículo
    *
    * @param precioVenta precio de venta del artículo
-   * @throws ExcepcionValorNegativo si se da un valor negativo o 0 a precioVenta
+   * @throws ValorNegativoException si se da un valor negativo o 0 a precioVenta
    */
-  public void setPrecioVenta(double precioVenta) throws ExcepcionValorNegativo {
+  public void setPrecioVenta(double precioVenta) throws ValorNegativoException {
     if (precioVenta <= 0) {
-      throw new ExcepcionValorNegativo("El precio de venta de un artículo no puede ser 0 o negativo.");
+      throw new ValorNegativoException("El precio de venta de un artículo no puede ser 0 o negativo.");
     }
     this.precioVenta = precioVenta;
   }
@@ -137,11 +137,11 @@ public class Articulo {
    * Establecer el número de unidades disponibles del artículo
    *
    * @param unidades unidades disponibles del artículo
-   * @throws ExcepcionValorNegativo si se da un valor negativo a unidades
+   * @throws ValorNegativoException si se da un valor negativo a unidades
    */
-  public void setUnidades(int unidades) throws ExcepcionValorNegativo {
+  public void setUnidades(int unidades) throws ValorNegativoException {
     if (unidades < 0) {
-      throw new ExcepcionValorNegativo("Las unidades de un artículo no pueden ser negativas.");
+      throw new ValorNegativoException("Las unidades de un artículo no pueden ser negativas.");
     }
     this.unidades = unidades;
   }
