@@ -115,7 +115,7 @@ public class Articulo {
    */
   public void setPrecioCompra(double precioCompra) throws ExcepcionValorNegativo {
     if (precioCompra <= 0) {
-      throw new ExcepcionValorNegativo("El precio de compra de un artículo no puede ser negativo.");
+      throw new ExcepcionValorNegativo("El precio de compra de un artículo no puede ser 0 o negativo.");
     }
     this.precioCompra = precioCompra;
   }
@@ -128,7 +128,7 @@ public class Articulo {
    */
   public void setPrecioVenta(double precioVenta) throws ExcepcionValorNegativo {
     if (precioVenta <= 0) {
-      throw new ExcepcionValorNegativo("El precio de venta de un artículo no puede ser negativo.");
+      throw new ExcepcionValorNegativo("El precio de venta de un artículo no puede ser 0 o negativo.");
     }
     this.precioVenta = precioVenta;
   }

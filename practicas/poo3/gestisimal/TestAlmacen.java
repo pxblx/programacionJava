@@ -132,10 +132,6 @@ public class TestAlmacen {
 
         case 0: // Si salta alguna excepción al introducir la opción, la variable se establece a 0 y no se hace nada
           break;
-
-        default: // Si se especifica una opción que no existe
-          System.err.println("\nOpción incorrecta.\n");
-          break;
       }
     } while (true);
   }
