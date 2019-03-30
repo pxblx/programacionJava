@@ -1,7 +1,6 @@
 package practicas.poo3.gestisimal.src.utiles;
 
 import practicas.poo3.gestisimal.src.excepciones.EntradaDeDatosException;
-import practicas.poo3.gestisimal.src.excepciones.OpcionIncorrectaException;
 
 /**
  * Clase para crear un menú de opciones
@@ -9,8 +8,6 @@ import practicas.poo3.gestisimal.src.excepciones.OpcionIncorrectaException;
 public class Menu {
   private String titulo;
   private String[] opciones;
-  private String stringMenu;
-  private int opcion;
 
   /**
    * Consctructor
@@ -27,26 +24,40 @@ public class Menu {
    * Construir el menú y mostrarlo por pantalla
    */
   private void mostrar() {
+    String stringMenu;
     stringMenu = (titulo + "\n---------------\n");
     for (int i = 0; i < opciones.length; i++) {
       stringMenu += ((i+1) + ".- " + opciones[i] + "\n");
     }
-    stringMenu += ("\nSeleccione una opción: ");
     System.out.print(stringMenu);
   }
 
   /**
-   * Pedir por teclado una opción
+   * Pedir por teclado una opción entre las posibles
    *
-   * @return opción introducida por teclado
-   * @throws NumberFormatException si se introduce algo distinto a un entero
+   * @return opción válida
    */
-  private int pedirOpcion() throws EntradaDeDatosException, OpcionIncorrectaException {
-    opcion = Teclado.leerEntero();
-    if ((opcion < 1) || (opcion > opciones.length+1)) {
-      throw new OpcionIncorrectaException("Opción incorrecta.");
-    }
+  private int getOpcionValida() {
+    int opcion = 0;
+    do {
+      System.out.print("Elige opción [1, " + opciones.length + "]: ");
+      try {
+        opcion = Teclado.leerEntero();
+      } catch (EntradaDeDatosException e) {
+        System.err.println("\n" + e.getMessage() + "\n");
+      }
+    } while (!esOpcionValida(opcion));
     return opcion;
+  }
+
+  /**
+   * Indica si la opción es válida
+   *
+   * @param opcion número a comparar
+   * @return true si es válida false en otro caso
+   */
+  private boolean esOpcionValida(int opcion) {
+    return (opcion >= 1 && opcion <= opciones.length);
   }
 
   /**
@@ -54,8 +65,8 @@ public class Menu {
    *
    * @return opción introducida por teclado
    */
-  public int gestionar() throws EntradaDeDatosException, OpcionIncorrectaException {
+  public int gestionar() {
     mostrar();
-    return pedirOpcion();
+    return getOpcionValida();
   }
 }

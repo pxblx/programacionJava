@@ -2,7 +2,6 @@ package practicas.poo3.gestisimal;
 
 import practicas.poo3.gestisimal.src.Almacen;
 import practicas.poo3.gestisimal.src.excepciones.DescripcionVaciaException;
-import practicas.poo3.gestisimal.src.excepciones.OpcionIncorrectaException;
 import practicas.poo3.gestisimal.src.excepciones.ValorNegativoException;
 import practicas.poo3.gestisimal.src.excepciones.ArticuloNoExistenteException;
 import practicas.poo3.gestisimal.src.excepciones.EntradaDeDatosException;
@@ -28,13 +27,7 @@ public class TestAlmacen {
 
     // Mostrar el menú y pedir una de las opciones
     do {
-      try {
-        opcion = menuPrincipal.gestionar();
-      } catch (EntradaDeDatosException | OpcionIncorrectaException e) {
-        opcion = 0;
-        System.err.println("\n" + e.getMessage() + "\n");
-      }
-
+      opcion = menuPrincipal.gestionar();
       switch (opcion) {
         case 1: // Dar de alta un artículo
           try {
@@ -98,9 +91,6 @@ public class TestAlmacen {
         case 7: // Salir
           salir();
           return;
-
-        case 0: // Si salta alguna excepción al introducir la opción, la variable se establece a 0 y no se hace nada
-          break;
       }
     } while (true);
   }
