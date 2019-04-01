@@ -4,7 +4,6 @@ import practicas.poo3.gestisimal.src.Almacen;
 import practicas.poo3.gestisimal.src.excepciones.DescripcionVaciaException;
 import practicas.poo3.gestisimal.src.excepciones.ValorNegativoException;
 import practicas.poo3.gestisimal.src.excepciones.ArticuloNoExistenteException;
-import practicas.poo3.gestisimal.src.excepciones.EntradaDeDatosException;
 import practicas.poo3.gestisimal.src.utiles.Menu;
 import practicas.poo3.gestisimal.src.utiles.Teclado;
 
@@ -13,136 +12,118 @@ import practicas.poo3.gestisimal.src.utiles.Teclado;
  */
 public class TestAlmacen {
   private static Almacen almacen = new Almacen();
-  private static Menu menuPrincipal = new Menu("Almacén", new String[]{"Dar de alta un nuevo artículo",
-    "Dar de baja un artículo", "Entrada de mercancía", "Salida de mercancía", "Mostrar un artículo",
-    "Mostrar todos los artículos", "Salir"});
 
+  /**
+   * Principal
+   */
   public static void main(String[] args) {
-    int opcion;
-    int codigo;
-    String descripcion;
-    double precioCompra;
-    double precioVenta;
-    int unidades;
-
-    // Mostrar el menú y pedir una de las opciones
+    Menu menuPrincipal = new Menu("Almacén", new String[]{"Dar de alta un nuevo artículo",
+      "Dar de baja un artículo", "Entrada de mercancía", "Salida de mercancía", "Mostrar un artículo",
+      "Mostrar todos los artículos", "Salir"});
     do {
-      opcion = menuPrincipal.gestionar();
-      switch (opcion) {
-        case 1: // Dar de alta un artículo
-          try {
-            descripcion = Teclado.leerCadena("\nIntroduce la descripción del artículo: ");
-            precioCompra = Teclado.leerDecimal("Introduce el precio de compra del artículo: ");
-            precioVenta = Teclado.leerDecimal("Introduce el precio de venta del artículo: ");
-            unidades = Teclado.leerEntero("Introduce el número de unidades del artículo: ");
-            altaArticulo(descripcion, precioCompra, precioVenta, unidades);
-          } catch (EntradaDeDatosException e) {
-            System.err.println("\n" + e.getMessage() + "\n");
+      try {
+        switch (menuPrincipal.gestionar()) {
+          case 1:
+            alta();
             break;
-          }
-          break;
 
-        case 2: // Dar de baja un artículo
-          try {
-            codigo = Teclado.leerEntero("\nIntroduce el código del artículo: ");
-            bajaArticulo(codigo);
-          } catch (EntradaDeDatosException e) {
-            System.err.println("\n" + e.getMessage() + "\n");
+          case 2:
+            baja();
             break;
-          }
-          break;
 
-        case 3: // Añadir unidades a un artículo
-          try {
-            codigo = Teclado.leerEntero("\nIntroduce el código del artículo: ");
-            unidades = Teclado.leerEntero("Introduce las unidades que entran: ");
-            entradaMercancia(codigo, unidades);
-          } catch (EntradaDeDatosException e) {
-            System.err.println("\n" + e.getMessage() + "\n");
+          case 3:
+            entrada();
             break;
-          }
-          break;
 
-        case 4: // Quitar unidades a un artículo
-          try {
-            codigo = Teclado.leerEntero("\nIntroduce el código del artículo: ");
-            unidades = Teclado.leerEntero("Introduce las unidades que salen: ");
-            salidaMercancia(codigo, unidades);
-          } catch (EntradaDeDatosException e) {
-            System.err.println("\n" + e.getMessage() + "\n");
+          case 4:
+            salida();
             break;
-          }
-          break;
 
-        case 5: // Mostrar un artículo
-          try {
-            codigo = Teclado.leerEntero("\nIntroduce el código del artículo: ");
-            mostrarArticulo(codigo);
-          } catch (EntradaDeDatosException e) {
-            System.err.println("\n" + e.getMessage() + "\n");
+          case 5:
+            mostrarArticulo();
             break;
-          }
-          break;
 
-        case 6: // Mostrar todos los artículos
-          mostrarArticulos();
-          break;
+          case 6:
+            mostrarArticulos();
+            break;
 
-        case 7: // Salir
-          salir();
-          return;
+          case 7:
+            salir();
+            return;
+        }
+      } catch (ValorNegativoException | DescripcionVaciaException | ArticuloNoExistenteException e) {
+        System.err.println("\n" + e.getMessage() + "\n");
       }
     } while (true);
   }
 
-  private static void altaArticulo(String descripcion, double precioCompra, double precioVenta, int unidades) {
-    try {
-      almacen.altaArticulo(descripcion, precioCompra, precioVenta, unidades);
-      System.out.print("Artículo creado.\n\n");
-    } catch (DescripcionVaciaException | ValorNegativoException e) {
-      System.err.println("\n" + e.getMessage() + "\n");
-    }
+  /**
+   * Dar de alta un artículo
+   *
+   * @throws ValorNegativoException si se da un valor negativo a los precios o las unidades
+   * @throws DescripcionVaciaException si se da una descripción vacía
+   */
+  private static void alta() throws ValorNegativoException, DescripcionVaciaException {
+    almacen.altaArticulo(Teclado.leerCadena("\nIntroduce la descripción del artículo: "),
+      Teclado.leerDecimal("Introduce el precio de compra del artículo: "),
+      Teclado.leerDecimal("Introduce el precio de venta del artículo: "),
+      Teclado.leerEntero("Introduce el número de unidades del artículo: "));
+    System.out.println("Artículo creado.\n");
   }
 
-  private static void bajaArticulo(int codigo) {
-    try {
-      almacen.bajaArticulo(codigo);
-      System.out.print("Artículo eliminado.\n\n");
-    } catch (ArticuloNoExistenteException e) {
-      System.err.println("\n" + e.getMessage() + "\n");
-    }
+  /**
+   * Dar de baja un artículo
+   *
+   * @throws ArticuloNoExistenteException si no existe ningún artículo con el código que se especifica
+   */
+  private static void baja() throws ArticuloNoExistenteException {
+    almacen.bajaArticulo(Teclado.leerEntero("\nIntroduce el código del artículo: "));
+    System.out.println("Artículo eliminado.\n");
   }
 
-  private static void entradaMercancia(int codigo, int unidades) {
-    try {
-      almacen.entradaMercancia(codigo, unidades);
-      System.out.println("Unidades añadidas.\n");
-    } catch (ArticuloNoExistenteException | ValorNegativoException e) {
-      System.err.println("\n" + e.getMessage() + "\n");
-    }
+  /**
+   * Incrementar las unidades de un artículo
+   *
+   * @throws ArticuloNoExistenteException si no existe ningún artículo con el código que se especifica
+   * @throws ValorNegativoException si se da un valor negativo a las unidades
+   */
+  private static void entrada() throws ArticuloNoExistenteException, ValorNegativoException {
+    almacen.entradaMercancia(Teclado.leerEntero("\nIntroduce el código del artículo: "),
+      Teclado.leerEntero("Introduce las unidades que entran: "));
+    System.out.println("Unidades añadidas.\n");
   }
 
-  private static void salidaMercancia(int codigo, int unidades) {
-    try {
-      almacen.salidaMercancia(codigo, unidades);
-      System.out.println("Unidades quitadas.\n");
-    } catch (ArticuloNoExistenteException | ValorNegativoException e) {
-      System.err.println("\n" + e.getMessage() + "\n");
-    }
+  /**
+   * Decrementar las unidades de un artículo
+   *
+   * @throws ArticuloNoExistenteException si no existe ningún artículo con el código que se especifica
+   * @throws ValorNegativoException si se da un valor negativo a las unidades
+   */
+  private static void salida() throws  ArticuloNoExistenteException, ValorNegativoException {
+    almacen.salidaMercancia(Teclado.leerEntero("\nIntroduce el código del artículo: "),
+      Teclado.leerEntero("Introduce las unidades que salen: "));
+    System.out.println("Unidades quitadas.\n");
   }
 
-  private static void mostrarArticulo(int codigo) {
-    try {
-      System.out.println("\n" + almacen.getArticulo(codigo) + "\n");
-    } catch (ArticuloNoExistenteException e) {
-      System.err.println("\n" + e.getMessage() + "\n");
-    }
+  /**
+   * Mostrar un artículo
+   *
+   * @throws ArticuloNoExistenteException si no existe ningún artículo con el código que se especifica
+   */
+  private static void mostrarArticulo() throws ArticuloNoExistenteException {
+    System.out.println("\n" + almacen.getArticulo(Teclado.leerEntero("\nIntroduce el código del artículo: ")) + "\n");
   }
 
+  /**
+   * Mostrar todos los artículos
+   */
   private static void mostrarArticulos() {
     System.out.print("\n" + almacen);
   }
 
+  /**
+   * Salir del programa
+   */
   private static void salir() {
     System.out.print("\nSaliendo...");
   }

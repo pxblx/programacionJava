@@ -1,7 +1,5 @@
 package practicas.poo3.gestisimal.src.utiles;
 
-import practicas.poo3.gestisimal.src.excepciones.EntradaDeDatosException;
-
 import java.util.Scanner;
 
 /**
@@ -36,12 +34,14 @@ public class Teclado {
    * @return entero introducido
    * @throws NumberFormatException si se introduce algo distinto a un entero
    */
-  public static int leerEntero() throws EntradaDeDatosException {
-    try {
-      return Integer.parseInt(leerCadena());
-    } catch (NumberFormatException e) {
-      throw new EntradaDeDatosException("Entrada de datos incorrecta.");
-    }
+  public static int leerEntero() {
+    do {
+      try {
+        return Integer.parseInt(leerCadena());
+      } catch (NumberFormatException e) {
+        System.err.print("Entrada de datos incorrecta, vuelve a intentarlo: ");
+      }
+    } while (true);
   }
 
   /**
@@ -51,7 +51,7 @@ public class Teclado {
    * @return entero introducido
    * @throws NumberFormatException si se introduce algo distinto a un entero
    */
-  public static int leerEntero(String msg) throws EntradaDeDatosException {
+  public static int leerEntero(String msg) {
     System.out.print(msg);
     return leerEntero();
   }
@@ -62,12 +62,14 @@ public class Teclado {
    * @return decimal introducido
    * @throws NumberFormatException si se introduce algo distinto a un decimal
    */
-  public static double leerDecimal() throws EntradaDeDatosException {
-    try {
-      return Double.parseDouble(leerCadena());
-    } catch (NumberFormatException e) {
-      throw new EntradaDeDatosException("Entrada de datos incorrecta.");
-    }
+  public static double leerDecimal() {
+    do {
+      try {
+        return Double.parseDouble(leerCadena());
+      } catch (NumberFormatException e) {
+        System.err.print("Entrada de datos incorrecta, vuelve a intentarlo: ");
+      }
+    } while (true);
   }
 
   /**
@@ -77,7 +79,7 @@ public class Teclado {
    * @return decimal introducido
    * @throws NumberFormatException si se introduce algo distinto a un decimal
    */
-  public static double leerDecimal(String msg) throws EntradaDeDatosException {
+  public static double leerDecimal(String msg) {
     System.out.print(msg);
     return leerDecimal();
   }

@@ -1,7 +1,5 @@
 package practicas.poo3.gestisimal.src.utiles;
 
-import practicas.poo3.gestisimal.src.excepciones.EntradaDeDatosException;
-
 /**
  * Clase para crear un menú de opciones
  */
@@ -24,8 +22,7 @@ public class Menu {
    * Construir el menú y mostrarlo por pantalla
    */
   private void mostrar() {
-    String stringMenu;
-    stringMenu = (titulo + "\n---------------\n");
+    String stringMenu = (titulo + "\n---------------\n");
     for (int i = 0; i < opciones.length; i++) {
       stringMenu += ((i+1) + ".- " + opciones[i] + "\n");
     }
@@ -38,14 +35,9 @@ public class Menu {
    * @return opción válida
    */
   private int getOpcionValida() {
-    int opcion = 0;
+    int opcion;
     do {
-      System.out.print("Elige opción [1, " + opciones.length + "]: ");
-      try {
-        opcion = Teclado.leerEntero();
-      } catch (EntradaDeDatosException e) {
-        System.err.println("\n" + e.getMessage() + "\n");
-      }
+      opcion = Teclado.leerEntero("Elige opción [1, " + opciones.length + "]: ");
     } while (!esOpcionValida(opcion));
     return opcion;
   }
