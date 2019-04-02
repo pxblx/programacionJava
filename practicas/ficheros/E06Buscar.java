@@ -23,7 +23,6 @@ public class E06Buscar {
     final String NOMBRE_ARCHIVO = args[0];
     String palabra = args[1];
     String linea;
-    int ocurrencias;
     ArrayList<String> palabras = new ArrayList<>();
 
     try {
@@ -33,8 +32,8 @@ public class E06Buscar {
         palabras.add(linea);
         linea = br.readLine();
       }
-      ocurrencias = Collections.frequency(palabras, palabra);
-      System.out.println("Se han encontrado "+ocurrencias+" ocurrencias de la palabra '"+palabra+"'.");
+      br.close();
+      System.out.println("Se han encontrado "+(Collections.frequency(palabras, palabra))+" ocurrencias de la palabra '"+palabra+"'.");
     } catch (FileNotFoundException e) {
       System.err.println("No se ha encontrado el archivo '"+NOMBRE_ARCHIVO+"'.");
     } catch (IOException e) {

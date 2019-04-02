@@ -33,13 +33,13 @@ public class E04Ordenar {
 
     try {
       BufferedReader br = new BufferedReader(new FileReader(NOMBRE_ARCHIVO));
-
       linea = br.readLine();
       while (linea != null) {
         palabras.add(linea);
         linea = br.readLine();
       }
       Collections.sort(palabras);
+      br.close();
 
       BufferedWriter bw = new BufferedWriter(new FileWriter(new File(nuevo_archivo)));
       for (String palabra : palabras) {

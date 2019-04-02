@@ -23,6 +23,7 @@ public class E02Primos {
         System.out.println(linea);
         linea = br.readLine();
       }
+      br.close();
     } catch (FileNotFoundException e) {
       System.err.println("No se ha encontrado el archivo '"+NOMBRE_ARCHIVO+"'.");
     } catch (IOException e) {
