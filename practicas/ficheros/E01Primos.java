@@ -14,11 +14,9 @@ import java.io.IOException;
 public class E01Primos {
   public static void main(String[] args) {
     final String NOMBRE_ARCHIVO = ".\\src\\practicas\\ficheros\\primos.dat";
-    int contador;
-
     try {
       BufferedWriter bw = new BufferedWriter(new FileWriter(new File(NOMBRE_ARCHIVO)));
-
+      int contador;
       for(int i = 2; i < 500; i++) {
         contador = 0;
         for(int j = 1; j < i+1; j++) {
@@ -31,9 +29,9 @@ public class E01Primos {
         }
       }
       bw.close();
-      System.out.println("Archivo '"+NOMBRE_ARCHIVO+"' creado.");
+      System.out.println("Archivo '" + NOMBRE_ARCHIVO + "' creado.");
     } catch (IOException e) {
-      System.err.println("No se ha podido escribir en el archivo '"+NOMBRE_ARCHIVO+"'.");
+      System.err.println("No se ha podido escribir en el archivo '" + NOMBRE_ARCHIVO + "'.");
     }
   }
 }

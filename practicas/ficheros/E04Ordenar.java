@@ -27,30 +27,27 @@ public class E04Ordenar {
       System.exit(-1);
     }
     final String NOMBRE_ARCHIVO = args[0];
-    ArrayList<String> palabras = new ArrayList<>();
-    String linea;
-    String nuevo_archivo = NOMBRE_ARCHIVO.substring(0, NOMBRE_ARCHIVO.lastIndexOf('.'))+"_sort.txt";
-
+    final String NOMBRE_NUEVO_ARCHIVO = NOMBRE_ARCHIVO.substring(0, NOMBRE_ARCHIVO.lastIndexOf('.')) + "_sort.txt";
     try {
+      ArrayList<String> palabras = new ArrayList<>();
       BufferedReader br = new BufferedReader(new FileReader(NOMBRE_ARCHIVO));
-      linea = br.readLine();
+      String linea = br.readLine();
       while (linea != null) {
         palabras.add(linea);
         linea = br.readLine();
       }
-      Collections.sort(palabras);
       br.close();
-
-      BufferedWriter bw = new BufferedWriter(new FileWriter(new File(nuevo_archivo)));
+      Collections.sort(palabras);
+      BufferedWriter bw = new BufferedWriter(new FileWriter(new File(NOMBRE_NUEVO_ARCHIVO)));
       for (String palabra : palabras) {
-        bw.write(palabra+"\n");
+        bw.write(palabra + "\n");
       }
       bw.close();
-      System.out.println("Archivo '"+nuevo_archivo+"' creado.");
+      System.out.println("Archivo '" + NOMBRE_NUEVO_ARCHIVO + "' creado.");
     } catch (FileNotFoundException e) {
-      System.err.println("No se ha encontrado el archivo '"+NOMBRE_ARCHIVO+"'.");
+      System.err.println("No se ha encontrado el archivo '" + NOMBRE_ARCHIVO + "'.");
     } catch (IOException e) {
-      System.err.println("No se ha podido escribir en el archivo '"+NOMBRE_ARCHIVO+"'.");
+      System.err.println("No se ha podido escribir en el archivo '" + NOMBRE_ARCHIVO + "'.");
     }
   }
 }

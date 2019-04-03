@@ -21,23 +21,21 @@ public class E06Buscar {
       System.exit(-1);
     }
     final String NOMBRE_ARCHIVO = args[0];
-    String palabra = args[1];
-    String linea;
-    ArrayList<String> palabras = new ArrayList<>();
-
+    final String PALABRA = args[1];
     try {
+      ArrayList<String> palabras = new ArrayList<>();
       BufferedReader br = new BufferedReader(new FileReader(NOMBRE_ARCHIVO));
-      linea = br.readLine();
+      String linea = br.readLine();
       while (linea != null) {
         palabras.add(linea);
         linea = br.readLine();
       }
       br.close();
-      System.out.println("Se han encontrado "+(Collections.frequency(palabras, palabra))+" ocurrencias de la palabra '"+palabra+"'.");
+      System.out.println("Se han encontrado " + (Collections.frequency(palabras, PALABRA)) + " ocurrencias de la palabra '" + PALABRA + "'.");
     } catch (FileNotFoundException e) {
-      System.err.println("No se ha encontrado el archivo '"+NOMBRE_ARCHIVO+"'.");
+      System.err.println("No se ha encontrado el archivo '" + NOMBRE_ARCHIVO + "'.");
     } catch (IOException e) {
-      System.err.println("No se ha podido escribir en el archivo '"+NOMBRE_ARCHIVO+"'.");
+      System.err.println("No se ha podido escribir en el archivo '" + NOMBRE_ARCHIVO + "'.");
     }
   }
 }
