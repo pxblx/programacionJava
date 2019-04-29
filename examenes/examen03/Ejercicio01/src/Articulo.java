@@ -1,8 +1,8 @@
 package examenes.examen03.Ejercicio01.src;
 
-import examenes.examen03.Ejercicio01.src.excepciones.DescripcionVaciaException;
-import examenes.examen03.Ejercicio01.src.excepciones.IVAInvalidoException;
-import examenes.examen03.Ejercicio01.src.excepciones.ValorNegativoException;
+import examenes.examen03.Ejercicio01.excepciones.DescripcionVaciaException;
+import examenes.examen03.Ejercicio01.excepciones.IVAInvalidoException;
+import examenes.examen03.Ejercicio01.excepciones.ValorNegativoException;
 
 /**
  * Artículo
@@ -11,7 +11,7 @@ public class Articulo {
   private static int nextCodigo = 100;
   private int codigo;
   private String descripcion;
-  private String tipoIVA;
+  private tiposIVA tipoIVA;
   private double precioCompra;
   private double precioVenta;
   private int unidades;
@@ -20,15 +20,15 @@ public class Articulo {
    * Constructor
    *
    * @param descripcion descripción del artículo
-   * @param tipoIVA tipo de IVA del artículo
+   * @param tipoIVA tipoIVA de IVA del artículo
    * @param precioCompra precio de compra del artículo
    * @param precioVenta precio de venta del artículo
    * @param unidades unidades disponibles del artículo
    * @throws DescripcionVaciaException si se da una descripción vacía
-   * @throws IVAInvalidoException si se intenta establecer un tipo de IVA no existente
+   * @throws IVAInvalidoException si se intenta establecer un tipoIVA de IVA no existente
    * @throws ValorNegativoException si se da un valor negativo o 0 a precioCompra, precioVenta o unidades
    */
-  public Articulo(String descripcion, String tipoIVA, double precioCompra, double precioVenta, int unidades) throws DescripcionVaciaException, IVAInvalidoException, ValorNegativoException {
+  public Articulo(String descripcion, tiposIVA tipoIVA, double precioCompra, double precioVenta, int unidades) throws DescripcionVaciaException, IVAInvalidoException, ValorNegativoException {
     this.codigo = nextCodigo;
     setDescripcion(descripcion);
     setTipoIVA(tipoIVA);
@@ -77,7 +77,7 @@ public class Articulo {
    *
    * @return tipo de IVA del artículo
    */
-  public String getTipoIVA() {
+  public tiposIVA getTipoIVA() {
     return tipoIVA;
   }
 
@@ -114,7 +114,7 @@ public class Articulo {
    * @param descripcion descripción del artículo
    * @throws DescripcionVaciaException si se da una descripción vacía
    */
-  public void setDescripcion(String descripcion) throws DescripcionVaciaException {
+  void setDescripcion(String descripcion) throws DescripcionVaciaException {
     if (descripcion.isEmpty()) {
       throw new DescripcionVaciaException("La descripción de un artículo no puede estar vacía.");
     }
@@ -124,12 +124,12 @@ public class Articulo {
   /**
    * Establecer el tipo de IVA del artículo
    *
-   * @param tipoIVA típo de IVA del artículo ('general', 'reducido' o 's_reducido')
+   * @param tipoIVA tipo de IVA del artículo ('GENERAL', 'REDUCIDO' o 'S_REDUCIDO')
    * @throws IVAInvalidoException si se intenta establecer un tipo de IVA no existente
    */
-  public void setTipoIVA(String tipoIVA) throws IVAInvalidoException {
-    if (!(tipoIVA == "general" || tipoIVA == "reducido" || tipoIVA == "s_reducido")) {
-      throw new IVAInvalidoException("El tipo de IVA debe ser 'general', 'reducido' o 's_reducido'.");
+  void setTipoIVA(tiposIVA tipoIVA) throws IVAInvalidoException {
+    if (tipoIVA == null) {
+      throw new IVAInvalidoException("El tipo de IVA debe ser 'GENERAL', 'REDUCIDO' o 'S_REDUCIDO'.");
     }
     this.tipoIVA = tipoIVA;
   }
@@ -140,7 +140,7 @@ public class Articulo {
    * @param precioCompra precio de compra del artículo
    * @throws ValorNegativoException si se da un valor negativo o 0 a precioCompra
    */
-  public void setPrecioCompra(double precioCompra) throws ValorNegativoException {
+  void setPrecioCompra(double precioCompra) throws ValorNegativoException {
     if (precioCompra <= 0) {
       throw new ValorNegativoException("El precio de compra de un artículo no puede ser 0 o negativo.");
     }
@@ -153,7 +153,7 @@ public class Articulo {
    * @param precioVenta precio de venta del artículo
    * @throws ValorNegativoException si se da un valor negativo o 0 a precioVenta
    */
-  public void setPrecioVenta(double precioVenta) throws ValorNegativoException {
+  void setPrecioVenta(double precioVenta) throws ValorNegativoException {
     if (precioVenta <= 0) {
       throw new ValorNegativoException("El precio de venta de un artículo no puede ser 0 o negativo.");
     }
@@ -166,7 +166,7 @@ public class Articulo {
    * @param unidades unidades disponibles del artículo
    * @throws ValorNegativoException si se da un valor negativo a unidades
    */
-  public void setUnidades(int unidades) throws ValorNegativoException {
+  void setUnidades(int unidades) throws ValorNegativoException {
     if (unidades < 0) {
       throw new ValorNegativoException("Las unidades de un artículo no pueden ser negativas.");
     }

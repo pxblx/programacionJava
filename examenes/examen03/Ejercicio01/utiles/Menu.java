@@ -1,4 +1,4 @@
-package examenes.examen03.Ejercicio01.src.utiles;
+package examenes.examen03.Ejercicio01.utiles;
 
 /**
  * Clase para crear un menú de opciones
