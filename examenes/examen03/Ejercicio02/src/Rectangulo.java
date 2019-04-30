@@ -35,7 +35,7 @@ public class Rectangulo {
    *
    * @param ancho ancho del rectángulo
    */
-  public void setAncho(double ancho) {
+  void setAncho(double ancho) {
     if (ancho <= 0 || ancho > 10) {
       throw new ArithmeticException("Las medidas no pueden tomar valores negativos o 0.");
     }
@@ -56,7 +56,7 @@ public class Rectangulo {
    *
    * @param alto alto del rectángulo
    */
-  public void setAlto(double alto) {
+  void setAlto(double alto) {
     if (alto <= 0 || alto > 10) {
       throw new ArithmeticException("Las medidas no pueden tomar valores negativos o 0.");
     }
