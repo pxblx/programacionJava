@@ -1,8 +1,8 @@
-package examenes.examen03.Ejercicio01.src;
+package examenes.examen03.ejercicio01;
 
-import examenes.examen03.Ejercicio01.excepciones.DescripcionVaciaException;
-import examenes.examen03.Ejercicio01.excepciones.IVAInvalidoException;
-import examenes.examen03.Ejercicio01.excepciones.ValorNegativoException;
+import examenes.examen03.ejercicio01.excepciones.DescripcionVaciaException;
+import examenes.examen03.ejercicio01.excepciones.IVAInvalidoException;
+import examenes.examen03.ejercicio01.excepciones.ValorNegativoException;
 
 /**
  * Artículo
@@ -125,11 +125,11 @@ public class Articulo {
    * Establecer el tipo de IVA del artículo
    *
    * @param tipoIVA tipo de IVA del artículo ('GENERAL', 'REDUCIDO' o 'S_REDUCIDO')
-   * @throws IVAInvalidoException si se intenta establecer un tipo de IVA no existente
+   * @throws IVAInvalidoException si se intenta establecer un tipo de IVA no existente o nulo
    */
   void setTipoIVA(tiposIVA tipoIVA) throws IVAInvalidoException {
     if (tipoIVA == null) {
-      throw new IVAInvalidoException("El tipo de IVA debe ser 'GENERAL', 'REDUCIDO' o 'S_REDUCIDO'.");
+      throw new IVAInvalidoException("El tipo de IVA no puede ser nulo.");
     }
     this.tipoIVA = tipoIVA;
   }

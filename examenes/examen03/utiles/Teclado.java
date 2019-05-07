@@ -1,4 +1,4 @@
-package examenes.examen03.Ejercicio01.utiles;
+package examenes.examen03.utiles;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package examenes.examen03.Ejercicio01.excepciones;
+package examenes.examen03.ejercicio01.excepciones;
 
 /**
  * Se lanza cuando se intenta acceder a un artículo que no existe en el almacén

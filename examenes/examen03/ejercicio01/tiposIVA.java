@@ -1,4 +1,4 @@
-package examenes.examen03.Ejercicio01.src;
+package examenes.examen03.ejercicio01;
 
 /**
  * Enum con los tipos de IVA

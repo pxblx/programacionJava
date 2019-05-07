@@ -1,13 +1,13 @@
-package examenes.examen03.Ejercicio01;
+package examenes.examen03.ejercicio01.test;
 
-import examenes.examen03.Ejercicio01.src.Almacen;
-import examenes.examen03.Ejercicio01.excepciones.ArticuloNoExistenteException;
-import examenes.examen03.Ejercicio01.excepciones.DescripcionVaciaException;
-import examenes.examen03.Ejercicio01.excepciones.IVAInvalidoException;
-import examenes.examen03.Ejercicio01.excepciones.ValorNegativoException;
-import examenes.examen03.Ejercicio01.src.tiposIVA;
-import examenes.examen03.Ejercicio01.utiles.Menu;
-import examenes.examen03.Ejercicio01.utiles.Teclado;
+import examenes.examen03.ejercicio01.Almacen;
+import examenes.examen03.ejercicio01.excepciones.ArticuloNoExistenteException;
+import examenes.examen03.ejercicio01.excepciones.DescripcionVaciaException;
+import examenes.examen03.ejercicio01.excepciones.IVAInvalidoException;
+import examenes.examen03.ejercicio01.excepciones.ValorNegativoException;
+import examenes.examen03.ejercicio01.tiposIVA;
+import examenes.examen03.utiles.Menu;
+import examenes.examen03.utiles.Teclado;
 
 /**
  * Interacción con el usuario
@@ -54,7 +54,7 @@ public class TestAlmacen {
             mostrarArticulos();
             break;
 
-          case 8:
+          default:
             salir();
             return;
         }

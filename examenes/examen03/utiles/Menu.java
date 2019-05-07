@@ -1,4 +1,4 @@
-package examenes.examen03.Ejercicio01.utiles;
+package examenes.examen03.utiles;
 
 /**
  * Clase para crear un menú de opciones
@@ -22,7 +22,7 @@ public class Menu {
    * Construir el menú y mostrarlo por pantalla
    */
   private void mostrar() {
-    String stringMenu = (titulo + "\n---------------\n");
+    String stringMenu = (titulo + "\n------------------------------\n");
     for (int i = 0; i < opciones.length; i++) {
       stringMenu += ((i+1) + ".- " + opciones[i] + "\n");
     }

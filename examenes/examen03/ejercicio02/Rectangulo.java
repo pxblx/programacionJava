@@ -1,10 +1,7 @@
-package examenes.examen03.Ejercicio02.src;
+package examenes.examen03.ejercicio02;
 
 /**
  * Rectángulo (Ejercicio 2)
- *
- * @author Pablo
- * @version 1.0
  */
 public class Rectangulo {
   private double ancho;
@@ -37,7 +34,7 @@ public class Rectangulo {
    */
   void setAncho(double ancho) {
     if (ancho <= 0 || ancho > 10) {
-      throw new ArithmeticException("Las medidas no pueden tomar valores negativos o 0.");
+      throw new ArithmeticException("Las medidas no pueden tomar valores mayores que 10, negativos o 0.");
     }
     this.ancho = ancho;
   }
@@ -58,7 +55,7 @@ public class Rectangulo {
    */
   void setAlto(double alto) {
     if (alto <= 0 || alto > 10) {
-      throw new ArithmeticException("Las medidas no pueden tomar valores negativos o 0.");
+      throw new ArithmeticException("Las medidas no pueden tomar valores mayores que 10, negativos o 0.");
     }
     this.alto = alto;
   }

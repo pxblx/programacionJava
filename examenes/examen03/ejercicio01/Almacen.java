@@ -1,9 +1,9 @@
-package examenes.examen03.Ejercicio01.src;
+package examenes.examen03.ejercicio01;
 
-import examenes.examen03.Ejercicio01.excepciones.ArticuloNoExistenteException;
-import examenes.examen03.Ejercicio01.excepciones.DescripcionVaciaException;
-import examenes.examen03.Ejercicio01.excepciones.IVAInvalidoException;
-import examenes.examen03.Ejercicio01.excepciones.ValorNegativoException;
+import examenes.examen03.ejercicio01.excepciones.ArticuloNoExistenteException;
+import examenes.examen03.ejercicio01.excepciones.DescripcionVaciaException;
+import examenes.examen03.ejercicio01.excepciones.IVAInvalidoException;
+import examenes.examen03.ejercicio01.excepciones.ValorNegativoException;
 import java.util.ArrayList;
 
 /**
@@ -22,7 +22,7 @@ public class Almacen {
    * @param unidades unidades disponibles del artículo
    * @throws ValorNegativoException si se da un valor negativo o 0 a precioCompra, precioVenta y unidades
    * @throws DescripcionVaciaException si se da una descripción vacía
-   * @throws IVAInvalidoException si se intenta establecer un tipo de IVA no existente
+   * @throws IVAInvalidoException si se intenta establecer un tipo de IVA no existente o nulo
    */
   public void altaArticulo(String descripcion, tiposIVA tipoIVA, double precioCompra, double precioVenta, int unidades) throws ValorNegativoException, DescripcionVaciaException, IVAInvalidoException {
     almacen.add(new Articulo(descripcion, tipoIVA, precioCompra, precioVenta, unidades));
@@ -65,7 +65,7 @@ public class Almacen {
    * @throws ArticuloNoExistenteException si el artículo no existe en el almacén
    * @throws ValorNegativoException si se da un valor negativo o 0 a precioCompra, precioVenta y unidades
    * @throws DescripcionVaciaException si se da una descripción vacía
-   * @throws IVAInvalidoException si se intenta establecer un tipo de IVA no existente
+   * @throws IVAInvalidoException si se intenta establecer un tipo de IVA no existente o nulo
    */
   public void modificarArticulo(int codigo, String descripcion, tiposIVA tipoIVA, double precioCompra, double precioVenta, int unidades) throws ArticuloNoExistenteException, DescripcionVaciaException, IVAInvalidoException, ValorNegativoException {
     Articulo articulo = getArticulo(codigo);
