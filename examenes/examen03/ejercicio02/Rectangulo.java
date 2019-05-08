@@ -4,6 +4,7 @@ package examenes.examen03.ejercicio02;
  * Rectángulo (Ejercicio 2)
  */
 public class Rectangulo {
+  private static final int LIMITE_MEDIDAS = 10;
   private double ancho;
   private double alto;
 
@@ -32,11 +33,21 @@ public class Rectangulo {
    *
    * @param ancho ancho del rectángulo
    */
-  void setAncho(double ancho) {
-    if (ancho <= 0 || ancho > 10) {
-      throw new ArithmeticException("Las medidas no pueden tomar valores mayores que 10, negativos o 0.");
+  protected void setAncho(double ancho) {
+    if (!esMedidaValida(ancho)) {
+      throw new ArithmeticException("El ancho no puede tomar valores mayores que " + LIMITE_MEDIDAS + ", negativos o 0.");
     }
     this.ancho = ancho;
+  }
+
+  /**
+   * Comprobar si una medida es mayor o igual a 1 y menor que el límite establecido
+   * 
+   * @param medida medida
+   * @return true si es correcta o false si no lo es
+   */
+  private boolean esMedidaValida(double medida) {
+    return medida > 0 && medida <= LIMITE_MEDIDAS;
   }
 
   /**
@@ -53,9 +64,9 @@ public class Rectangulo {
    *
    * @param alto alto del rectángulo
    */
-  void setAlto(double alto) {
-    if (alto <= 0 || alto > 10) {
-      throw new ArithmeticException("Las medidas no pueden tomar valores mayores que 10, negativos o 0.");
+  protected void setAlto(double alto) {
+    if (!esMedidaValida(alto)) {
+      throw new ArithmeticException("El alto no puede tomar valores mayores que " + LIMITE_MEDIDAS + ", negativos o 0.");
     }
     this.alto = alto;
   }

@@ -29,7 +29,7 @@ public class Test {
           case 3:
             testCompararCuadrados();
             break;
-            
+
           default:
             salir();
             return;
