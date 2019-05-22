@@ -1,0 +1,19 @@
+<%--
+Ejercicio 2 de JSP
+--%>
+
+root {
+  display: block;
+}
+
+body {
+  color:#008080;
+  background:#c0c0c0;
+  font-family:arial;
+  font-size: 12px;
+}
+
+h1 {
+  color:#008040;
+  font-size: 24px;
+}
