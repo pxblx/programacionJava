@@ -1,18 +1,14 @@
-/**
- * Ejercicio 17 de funciones
- * 
- * Escribe un programa que pase de binario a decimal.
- * 
- * @author Pablo
- */
-
 package practicas.funciones;
 
 import java.util.Scanner;
 import practicas.funciones.funciones.Matematicas;
 
+/**
+ * Ejercicio 17 de funciones
+ *
+ * Escribe un programa que pase de binario a decimal.
+ */
 public class E17BinarioADecimal {
-  
   public static void main(String[] args) {
     
     // Declaración de variables
@@ -28,21 +24,18 @@ public class E17BinarioADecimal {
     
     while (numero != 0) {
       // Primero se toma el primer dígito del número
-      digito = numero%10;
+      digito = numero % 10;
       // Se eleva la base 2 a la posición en la que se encuentra el dígito y se multiplica por el mismo, sumandolo con el
       // que será el resultado final
       resultado += digito * Matematicas.potencia(2, posicion);
       // Se incrementa para pasar a la siguiente posición
       posicion++;
       // Se quita la cifra que ya hemos utilizado, cuando llegue a 0 terminará el ciclo
-      numero = numero/10;
+      numero = numero / 10;
     }
-    
     s.close();
     
     // Resultado
     System.out.print("El número en decimal es: "+resultado);
-    
   }
-  
 }

@@ -1,3 +1,5 @@
+package practicas.poo2.E02;
+
 /**
  * Ejercicio 2 de POO
  *
@@ -17,13 +19,6 @@
  * 7. Ver kilometraje total
  * 8. Salir
  * Elige una opción (1-8):
- *
- * @author Pablo
- */
-package practicas.poo2.E02;
-
-/**
- * Clase Vehiculo
  */
 abstract class Vehiculo {
   private static int vehiculosCreados = 0;

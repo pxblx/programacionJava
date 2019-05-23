@@ -1,12 +1,3 @@
-/**
- * Ejercicio 1 de Excepciones
- *
- * Realiza un programa que pida 6 números por teclado y nos diga cuál es el
- * máximo. Si el usuario introduce un dato erróneo (algo que no sea un número
- * entero) el programa debe indicarlo y debe pedir de nuevo el número.
- *
- * @author Pablo
- */
 package practicas.excepciones;
 
 import java.util.ArrayList;
@@ -14,6 +5,13 @@ import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Ejercicio 1 de Excepciones
+ *
+ * Realiza un programa que pida 6 números por teclado y nos diga cuál es el
+ * máximo. Si el usuario introduce un dato erróneo (algo que no sea un número
+ * entero) el programa debe indicarlo y debe pedir de nuevo el número.
+ */
 public class E01Excepciones {
   public static void main(String[] args) {
     ArrayList<Integer> numeros = new ArrayList<>();
@@ -21,7 +19,7 @@ public class E01Excepciones {
     int numero;
 
     while (numeros.size() < 6) {
-      System.out.print("Introduzca el "+(numeros.size()+1)+" número: ");
+      System.out.print("Introduzca el " + (numeros.size() + 1) + " número: ");
       try {
         numero = scanner.nextInt();
         numeros.add(numero);
@@ -31,7 +29,7 @@ public class E01Excepciones {
       }
     }
 
-    System.out.println("\nEl máximo es "+ Collections.max(numeros));
-    System.out.println("El mínimo es "+ Collections.min(numeros));
+    System.out.println("\nEl máximo es " + Collections.max(numeros));
+    System.out.println("El mínimo es " + Collections.min(numeros));
   }
 }

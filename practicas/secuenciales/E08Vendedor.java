@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E08Vendedor {
-
   public static void main(String[] args) {
   
     // Declaracion de variables
@@ -26,13 +25,11 @@ public class E08Vendedor {
     venta3 = s.nextInt();
     
     // Resultado
-    comisiones = venta1*0.1+venta2*0.1+venta3*0.1;
+    comisiones = venta1 * 0.1 + venta2 * 0.1 + venta3 * 0.1;
     total = salario+comisiones;
     
-    System.out.println("Obtendra "+comisiones+" en concepto de comisiones y "+total+" en total.");
+    System.out.println("Obtendra " + comisiones + " en concepto de comisiones y " + total + " en total.");
     
     s.close();
-    
   }
-  
 }

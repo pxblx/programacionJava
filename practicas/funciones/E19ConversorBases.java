@@ -1,19 +1,15 @@
-/**
- * Ejercicio 19 de funciones
- * 
- * Une y amplía los dos programas anteriores de tal forma que se permita convertir un número entre cualquiera de las siguientes
- * bases: decimal, binario, hexadecimal y octal.
- * 
- * @author Pablo
- */
-
 package practicas.funciones;
 
 import java.util.Scanner;
 import practicas.funciones.funciones.Matematicas;
 
+/**
+ * Ejercicio 19 de funciones
+ *
+ * Une y amplía los dos programas anteriores de tal forma que se permita convertir un número entre cualquiera de las siguientes
+ * bases: decimal, binario, hexadecimal y octal.
+ */
 public class E19ConversorBases {
-  
   public static void main(String[] args) {
     
     // Declaración de variables
@@ -89,11 +85,8 @@ public class E19ConversorBases {
     default:
       System.out.println("La opción que has especificado no existe.");
       break;
-      
     }
-    
     s.close();
-    
   }
   
   /**
@@ -104,7 +97,7 @@ public class E19ConversorBases {
    * @return número convertido a decimal
    */
   public static int BinarioOctalADecimal (int numero, int base) {
-    
+
     // Declaración de variables
     int digito;
     int posicion = 0;
@@ -124,7 +117,6 @@ public class E19ConversorBases {
     
     // Resultado
     return resultado;
-    
   }
   
   /**
@@ -147,7 +139,7 @@ public class E19ConversorBases {
     // Mientras que el número siga siendo mayor que 0
     while (numero > 0) {
       // Se obtiene el siguiente resto de la división
-      resto = numero%base;
+      resto = numero % base;
       // Se añade al resultado
       resultado = Matematicas.pegaPorDetras(resultado, resto);
       // Se divide entre 2/8
@@ -156,7 +148,6 @@ public class E19ConversorBases {
     
     // Se voltea el resultado
     return Matematicas.voltea(resultado);
-    
   }
   
   /**
@@ -176,7 +167,7 @@ public class E19ConversorBases {
     // Mientras que el número siga siendo mayor que 0
     do {
       // Se obtiene el resto de la división y se toma el caracter que le corresponde del array hexadecimal
-      resto = numero%16;
+      resto = numero % 16;
       // Se añade al resultado
       resultado = resultado+hexadecimal[resto];
       // Se divide entre 16
@@ -187,9 +178,7 @@ public class E19ConversorBases {
     for (int i = resultado.length(); i > 0; i--) {
       resultado2 = resultado2 + resultado.charAt(i-1);
     }
-    
     return resultado2;
-    
   }
   
   /**
@@ -212,9 +201,6 @@ public class E19ConversorBases {
       pos = hexadecimal.indexOf(caracter);
       resultado = resultado*16 + pos;
     }
-    
     return resultado;
-    
   }
-  
 }

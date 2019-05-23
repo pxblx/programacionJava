@@ -1,3 +1,8 @@
+package practicas.poo4;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Ejercicio 12 de POO4
  *
@@ -8,14 +13,7 @@
  * estructura de la clase ArrayList que contiene objetos de la clase Carta. El valor
  * de las cartas es el siguiente: as → 11, tres → 10, sota → 2, caballo → 3, rey →
  * 4; el resto de cartas no vale nada.
- *
- * @author Pablo
  */
-package practicas.poo4;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class E12HashMap {
   public static void main(String[] args) {
     ArrayList<Carta> cartas = new ArrayList<>();
@@ -41,7 +39,7 @@ public class E12HashMap {
       cartas.add(carta);
     }
 
-    for (Carta c: cartas) {
+    for (Carta c : cartas) {
       System.out.println(c);
       puntos += valores.get(c.getNumero());
     }

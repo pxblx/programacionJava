@@ -1,16 +1,14 @@
-/**
- * Ejercicio 4 de poo1
- * 
- * Modifica la clase Círculo para que cuando el radio se convierta a 0 el círculo reaccione y diga con una caja de texto
- * gráfica “Soy un mísero punto sin área” usando la clase JOptionPane del paquete javax.swing. Podéis ver
- * este vídeo: https://youtu.be/F_48qh3BcDs.
- *   
- * @author Pablo
- */
 package practicas.poo1;
 
 import javax.swing.*;
 
+/**
+ * Ejercicio 4 de poo1
+ *
+ * Modifica la clase Círculo para que cuando el radio se convierta a 0 el círculo reaccione y diga con una caja de texto
+ * gráfica “Soy un mísero punto sin área” usando la clase JOptionPane del paquete javax.swing. Podéis ver
+ * este vídeo: https://youtu.be/F_48qh3BcDs.
+ */
 public class E04CirculoMod {
   private double radio;
   

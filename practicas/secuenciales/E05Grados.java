@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E05Grados {
-
   public static void main(String[] args) {
   
     // Declaracion de variables
@@ -16,12 +15,10 @@ public class E05Grados {
     farenheit = s.nextDouble();
     
     // Resultado
-    celsius = (farenheit-32)*5/9;
+    celsius = (farenheit - 32) * 5 / 9;
     
-    System.out.println(farenheit+" grados Farenheit equivalen a "+celsius+" grados Celsius.");
+    System.out.println(farenheit + " grados Farenheit equivalen a " + celsius + " grados Celsius.");
     
     s.close();
-    
   }
-  
 }

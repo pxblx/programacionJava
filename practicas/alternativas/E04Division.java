@@ -1,18 +1,14 @@
-/**
- * Ejercicio 4
- * 
- * Crea un programa que pida al usuario dos números y muestre su división si el segundo
- * no es cero, o un mensaje de aviso en caso contrario.
- * 
- * @author Pablo
- */
-
 package practicas.alternativas;
 
 import java.util.Scanner;
 
+/**
+ * Ejercicio 4
+ *
+ * Crea un programa que pida al usuario dos números y muestre su división si el segundo
+ * no es cero, o un mensaje de aviso en caso contrario.
+ */
 public class E04Division {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -26,14 +22,11 @@ public class E04Division {
     numero2 = s.nextDouble();
     
     // Resultado
-    if (numero2==0) {
+    if (numero2 == 0) {
       System.out.println("No se puede dividir entre 0.");
     } else {
-      System.out.println("El resultado es "+numero1/numero2+".");
+      System.out.println("El resultado es " + numero1 / numero2 + ".");
     }
-    
     s.close();
-    
   }
-  
 }

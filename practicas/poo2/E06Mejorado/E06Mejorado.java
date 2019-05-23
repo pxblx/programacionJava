@@ -1,11 +1,10 @@
-/**
- * Ejercicio 6 de POO mejorado
- */
 package practicas.poo2.E06Mejorado;
 
 import java.time.LocalTime;
 
 /**
+ * Ejercicio 6 de POO mejorado
+ *
  * Programa de prueba
  */
 public class E06Mejorado {

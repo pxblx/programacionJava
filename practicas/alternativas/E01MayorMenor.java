@@ -1,17 +1,13 @@
-/**
- * Ejercicio 1
- * 
- * Algoritmo que pida dos numeros e indique si el primero es mayor que el segundo o no.
- * 
- * @author Pablo
- */
-
 package practicas.alternativas;
 
 import java.util.Scanner;
 
+/**
+ * Ejercicio 1
+ *
+ * Algoritmo que pida dos numeros e indique si el primero es mayor que el segundo o no.
+ */
 public class E01MayorMenor {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -30,9 +26,6 @@ public class E01MayorMenor {
     } else {
       System.out.println("El segundo numero es mayor que el primero.");
     }
-    
     s.close();
-    
   }
-  
 }

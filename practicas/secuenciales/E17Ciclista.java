@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E17Ciclista {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -28,16 +27,14 @@ public class E17Ciclista {
     tiempo_invertido = s.nextInt();
     
     // Resultado
-    llegada_segundos = hora_salida*3600+minuto_salida*60+segundo_salida+tiempo_invertido;
-    hora_llegada = llegada_segundos/3600;
-    minuto_llegada = (llegada_segundos%3600)/60;
-    segundo_llegada = (llegada_segundos%3600)%60;
+    llegada_segundos = hora_salida * 3600 + minuto_salida * 60 + segundo_salida + tiempo_invertido;
+    hora_llegada = llegada_segundos / 3600;
+    minuto_llegada = (llegada_segundos % 3600) / 60;
+    segundo_llegada = (llegada_segundos % 3600) % 60;
     
     
-    System.out.println("Llegara a las "+hora_llegada+":"+minuto_llegada+":"+segundo_llegada+".");
+    System.out.println("Llegara a las " + hora_llegada + ":" + minuto_llegada + ":" + segundo_llegada + ".");
     
     s.close();
-    
   }
-  
 }

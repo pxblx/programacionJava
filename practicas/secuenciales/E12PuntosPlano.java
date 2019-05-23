@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.lang.Math;
 
 public class E12PuntosPlano {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -26,12 +25,10 @@ public class E12PuntosPlano {
     y2 = s.nextInt();
     
     // Resultado
-    distancia = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
+    distancia = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
     
-    System.out.println("La distancia entre los puntos es "+distancia+".");
+    System.out.println("La distancia entre los puntos es " + distancia + ".");
     
     s.close();
-    
   }
-  
 }

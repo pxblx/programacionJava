@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.lang.Math;
 
 public class E11Distancia {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -19,10 +18,8 @@ public class E11Distancia {
     numero2 = s.nextInt();
     
     // Resultado
-    System.out.println("La distancia entre los dos numeros es "+(Math.abs(numero1-numero2))+".");
+    System.out.println("La distancia entre los dos numeros es " + (Math.abs(numero1 - numero2)) + ".");
     
     s.close();
-    
   }
-  
 }

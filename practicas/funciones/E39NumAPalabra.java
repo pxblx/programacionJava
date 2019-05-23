@@ -1,18 +1,15 @@
-/**
- * Ejercicio 39 de funciones
- * 
- * Esta función convierte los dígitos del número n en las correspondientes palabras y lo devuelve todo en una cadena de caracteres.
- * Por ejemplo, el 470213 convertido a palabras sería: cuatro, siete, cero, dos, uno, tres.
- * Utiliza esta función en un programa para comprobar que funciona bien. Desde la función no se debe mostrar nada por pantalla, solo se
- * debe usar print desde el programa principal. Fíjate que hay una coma detrás de cada palabra salvo al final.
- * 
- * @author Pablo
- */
-
 package practicas.funciones;
 
 import practicas.funciones.funciones.Matematicas;
 
+/**
+ * Ejercicio 39 de funciones
+ *
+ * Esta función convierte los dígitos del número n en las correspondientes palabras y lo devuelve todo en una cadena de caracteres.
+ * Por ejemplo, el 470213 convertido a palabras sería: cuatro, siete, cero, dos, uno, tres.
+ * Utiliza esta función en un programa para comprobar que funciona bien. Desde la función no se debe mostrar nada por pantalla, solo se
+ * debe usar print desde el programa principal. Fíjate que hay una coma detrás de cada palabra salvo al final.
+ */
 public class E39NumAPalabra {
   
   /**
@@ -22,17 +19,13 @@ public class E39NumAPalabra {
    * @return dígitos del número escritos
    */
   public static String NumAPalabra (int numero) {
-    
     int numDigitos = Matematicas.digitos(numero);
     String numeroEscrito = DigitoEscrito(Matematicas.digitoN(numero, 0));
-    
     for (int i = 2; i <= numDigitos; i++) {
       numeroEscrito = (numeroEscrito+", "+DigitoEscrito(Matematicas.digitoN(numero, i)));
     }
     numeroEscrito = (numeroEscrito+".");
-    
     return numeroEscrito;
-    
   }
   
   /**
@@ -41,9 +34,7 @@ public class E39NumAPalabra {
    * @return dígito escrito
    */
   public static String DigitoEscrito (int digito) {
-    
     switch (digito) {
-    
       case 0:
         return ("cero");
       case 1:
@@ -66,9 +57,6 @@ public class E39NumAPalabra {
         return ("nueve");
       default:
         return ("?");
-    
     }
-    
   }
-  
 }

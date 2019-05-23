@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E19Estudiante {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -19,12 +18,10 @@ public class E19Estudiante {
     incorrectas = s.nextInt();
     
     // Resultado
-    nota = correctas*5+incorrectas*-1;
+    nota = correctas * 5 + incorrectas *- 1;
     
-    System.out.println("La nota final es: "+nota+".");
+    System.out.println("La nota final es: " + nota + ".");
     
     s.close();
-    
   }
-  
 }

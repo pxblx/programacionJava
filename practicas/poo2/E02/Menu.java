@@ -1,11 +1,10 @@
-/**
- * Ejercicio 2 de POO
- */
 package practicas.poo2.E02;
 
 import java.util.Scanner;
 
 /**
+ * Ejercicio 2 de POO
+ *
  * Programa de prueba
  */
 public class Menu {

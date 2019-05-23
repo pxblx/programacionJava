@@ -1,10 +1,10 @@
+package practicas.poo3.E04;
+
 /**
  * Definición de la clase Disco
  *
  * @author Luis José Sánchez | Modificado
  */
-package practicas.poo3.E04;
-
 public class Disco {
   private String codigo = "LIBRE";
   private String autor;

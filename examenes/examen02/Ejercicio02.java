@@ -1,17 +1,12 @@
-/**
- * Ejercicio 2 de Java
- * 
- * @author Pablo
- */
-
 package examenes.examen02;
 
 import java.util.Scanner;
 
+/**
+ * Ejercicio 2
+ */
 public class Ejercicio02 {
-  
   public static void main(String[] args) {
-    
     // Definir las variables
     Scanner s = new Scanner(System.in);
     String[][] equipos = new String[15][2];
@@ -20,7 +15,7 @@ public class Ejercicio02 {
     // Pedir valores para el array de equipos
     for (int x = 0; x < 15; x++) {
       for (int y = 0; y < 2; y++) {
-        System.out.print("Introduce el equipo "+(y+1)+" para el partido "+(x+1)+": ");
+        System.out.print("Introduce el equipo " + (y + 1) + " para el partido " + (x + 1) + ": ");
         equipos[x][y] = s.nextLine();
       }
     }
@@ -28,7 +23,7 @@ public class Ejercicio02 {
     // Pedir valores para el array de resultados
     for (int x = 0; x < 15; x++) {
       for (int y = 0; y < 2; y++) {
-        System.out.print("Introduce el resultado del equipo "+(y+1)+" en el partido "+(x+1)+": ");
+        System.out.print("Introduce el resultado del equipo " + (y + 1) + " en el partido " + (x + 1) + ": ");
         resultados[x][y] = s.nextInt();
       }
     }
@@ -37,7 +32,6 @@ public class Ejercicio02 {
     imprimirQuiniela(equipos, resultados);
     
     s.close();
-    
   }
   
   /**
@@ -47,19 +41,16 @@ public class Ejercicio02 {
    * @param resultados array de resultados
    */
   public static void imprimirQuiniela (String[][] equipos, int[][] resultados) {
-    
     // Definir las variables
     int res1 = 0;
     int res2 = 0;
     
     // Imprimir la quiniela
-    System.out.println();
-    System.out.println("Resultados de la quiniela:");
-    System.out.println();
+    System.out.println("\nResultados de la quiniela:\n");
     
     // Imprimir partido
     for (int x = 0; x < 15; x++) {
-      System.out.print("Partido "+(x+1)+": ");
+      System.out.print("Partido " + (x + 1) + ": ");
       
       // Imprimir los nombres de los equipos
       for (int y = 0; y < 2; y++) {
@@ -91,7 +82,5 @@ public class Ejercicio02 {
       res1 = 0;
       res2 = 0;
     }
-    
   }
-  
 }

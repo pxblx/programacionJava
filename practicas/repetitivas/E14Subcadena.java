@@ -1,17 +1,13 @@
-/**
- * Ejercicio 14
- * 
- * Realizar un programa que compruebe si una cadena contiene una subcadena. Las dos cadenas se introducen por teclado.
- * 
- * @author Pablo
- */
-
 package practicas.repetitivas;
 
 import java.util.Scanner;
 
+/**
+ * Ejercicio 14
+ *
+ * Realizar un programa que compruebe si una cadena contiene una subcadena. Las dos cadenas se introducen por teclado.
+ */
 public class E14Subcadena {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -30,9 +26,6 @@ public class E14Subcadena {
     } else {
       System.out.println("No contiene la subcadena.");
     }
-    
     s.close();
-    
   }
-      
 }

@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E10Calificacion {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -28,12 +27,10 @@ public class E10Calificacion {
     trabajo = s.nextInt();
     
     // Resultado
-    nota = (((parcial1+parcial2+parcial3)/3)*0.55)+(examen*0.3)+(trabajo*0.15);
+    nota = (((parcial1 + parcial2 + parcial3) / 3) * 0.55) + (examen * 0.3) + (trabajo * 0.15);
     
-    System.out.println("La nota final es "+nota+".");
+    System.out.println("La nota final es " + nota + ".");
     
     s.close();
-    
   }
-  
 }

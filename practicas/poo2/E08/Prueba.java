@@ -1,9 +1,8 @@
-/**
- * Ejercicio 8 de POO
- */
 package practicas.poo2.E08;
 
 /**
+ * Ejercicio 8 de POO
+ *
  * Programa de prueba
  */
 public class Prueba {

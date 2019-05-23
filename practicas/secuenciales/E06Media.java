@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E06Media {
-
   public static void main(String[] args) {
   
     // Declaracion de variables
@@ -22,12 +21,10 @@ public class E06Media {
     numero3 = s.nextDouble();
     
     // Resultado
-    media = (numero1+numero2+numero3)/3;
+    media = (numero1 + numero2 + numero3) / 3;
     
-    System.out.println("La media es "+media+".");
+    System.out.println("La media es " + media + ".");
     
     s.close();
-    
   }
-  
 }

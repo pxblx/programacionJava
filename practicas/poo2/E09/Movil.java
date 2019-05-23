@@ -1,3 +1,8 @@
+package practicas.poo2.E09;
+
+import practicas.poo2.E08.Terminal;
+import java.text.DecimalFormat;
+
 /**
  * Ejercicio 9 de POO
  *
@@ -29,16 +34,6 @@
  * Nº 678 11 22 33 - 520s de conversación - tarificados 0,52 euros
  * Nº 644 74 44 69 - 870s de conversación - tarificados 1,10 euros
  * Nº 622 32 89 09 - 750s de conversación - tarificados 0,00 euros
- *
- * @author Pablo
- */
-package practicas.poo2.E09;
-
-import practicas.poo2.E08.Terminal;
-import java.text.DecimalFormat;
-
-/**
- * Subclase Movil
  */
 public class Movil extends Terminal {
   private String tarifa;

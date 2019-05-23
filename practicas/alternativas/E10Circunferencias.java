@@ -1,6 +1,10 @@
+package practicas.alternativas;
+
+import java.util.Scanner;
+
 /**
  * Ejercicio 10
- * 
+ *
  * Algoritmo que pida los puntos centrales x1,y1,x2,y2 y los radios r1,r2 de dos circunferencias y las clasifique en uno de estos estados:
  * - Exteriores.
  * - Tangentes exteriores.
@@ -8,16 +12,8 @@
  * - Tangentes interiores.
  * - Interiores.
  * - Concéntricas.
- * 
- * @author Pablo
  */
-
-package practicas.alternativas;
-
-import java.util.Scanner;
-
 public class E10Circunferencias {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -39,24 +35,21 @@ public class E10Circunferencias {
     r2 = s.nextDouble();
     
     // Resultado
-    d = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
+    d = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
     
-    if ((r1+r2)<d) {
+    if ((r1 + r2) < d) {
       System.out.println("Exteriores.");
-    } else if ((r1+r2)==d) {
+    } else if ((r1 + r2) == d) {
       System.out.println("Tangentes exteriores.");
-    } else if ((r1+r2)>d && d>Math.abs(r1-r2)) {
+    } else if ((r1 + r2) > d && d > Math.abs(r1 - r2)) {
       System.out.println("Secantes.");
-    } else if (d==Math.abs(r1-r2)) {
+    } else if (d == Math.abs(r1 - r2)) {
       System.out.println("Tangentes interiores.");
-    } else if (d>0 && d<Math.abs(r1-r2)) {
+    } else if (d > 0 && d < Math.abs(r1 - r2)) {
         System.out.println("Interiores.");
-    } else if (d==0) {
+    } else if (d == 0) {
       System.out.println("Concentricas.");
     }
-    
     s.close();
-    
   }
-  
 }

@@ -1,11 +1,3 @@
-/**
- * Círculo por entorno gráfico (extra)
- * 
- * - Pasar como parámetro el color del círculo
- * - Mostrar el círculo usando el entorno gráfico
- *   
- * @author Pablo
- */
 package practicas.poo1.circuloGrafico;
 
 import java.awt.BasicStroke;
@@ -16,6 +8,12 @@ import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+/**
+ * Círculo por entorno gráfico (extra)
+ *
+ * - Pasar como parámetro el color del círculo
+ * - Mostrar el círculo usando el entorno gráfico
+ */
 public class CirculoGrafico extends JFrame {
   private double diametro;
   

@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E15Intercambiar {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -23,10 +22,8 @@ public class E15Intercambiar {
     a = b;
     b = c;
     
-    System.out.println("Ahora el valor de A es "+a+" y el de B "+b+".");
+    System.out.println("Ahora el valor de A es " + a + " y el de B " + b + ".");
     
     s.close();
-    
   }
-  
 }

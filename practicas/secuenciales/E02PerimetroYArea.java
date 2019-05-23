@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E02PerimetroYArea {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -24,9 +23,7 @@ public class E02PerimetroYArea {
     area = base*altura;
       
   	System.out.println("El perimetro es "+perimetro+" cm y el area "+area+" cm2.");
-  	
+
   	s.close();
-      
   }
-  
 }

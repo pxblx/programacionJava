@@ -1,17 +1,13 @@
-/**
- * Ejercicio 15 de funciones
- * 
- * Muestra los números primos que hay entre 1 y 1000.
- * 
- * @author Pablo
- */
-
 package practicas.funciones;
 
 import practicas.funciones.funciones.Matematicas;
 
+/**
+ * Ejercicio 15 de funciones
+ *
+ * Muestra los números primos que hay entre 1 y 1000.
+ */
 public class E15Primos {
-  
   public static void main(String[] args) {
     
     // Obtener los primos entre 1 y 1000
@@ -21,7 +17,5 @@ public class E15Primos {
         System.out.print(i + " | ");
       }
     }
-    
   }
-  
 }

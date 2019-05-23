@@ -1,3 +1,5 @@
+package practicas.poo2.E08;
+
 /**
  * Ejercicio 8 de POO
  *
@@ -28,13 +30,6 @@
  * Nº 644 74 44 69 - 320s de conversación
  * Nº 622 32 89 09 - 200s de conversación
  * Nº 664 73 98 18 - 0s de conversación
- *
- * @author Pablo
- */
-package practicas.poo2.E08;
-
-/**
- * Clase Terminal
  */
 public class Terminal {
   private String numero;

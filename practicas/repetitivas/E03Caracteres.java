@@ -1,18 +1,14 @@
-/**
- * Ejercicio 3
- * 
- * Algoritmo que pida caracteres e imprima "VOCAL" si son vocales y "NO VOCAL" en caso contrario, el programa termina cuando se introduce
- * un espacio.
- * 
- * @author Pablo
- */
-
 package practicas.repetitivas;
 
 import java.util.Scanner;
 
+/**
+ * Ejercicio 3
+ *
+ * Algoritmo que pida caracteres e imprima "VOCAL" si son vocales y "NO VOCAL" en caso contrario, el programa termina cuando se introduce
+ * un espacio.
+ */
 public class E03Caracteres {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -25,7 +21,7 @@ public class E03Caracteres {
     
     // Bucle
     while (!" ".equals(caracter)) {
-      if ("aeiouAEIOU".indexOf(caracter)!=-1) {
+      if ("aeiouAEIOU".indexOf(caracter) != -1) {
         System.out.println("Vocal.");
       } else {
         System.out.println("No vocal.");
@@ -33,9 +29,6 @@ public class E03Caracteres {
       System.out.println("Introduce un caracter:");
       caracter = s.nextLine();
     }
-    
     s.close();
-  
   }
-  
 }

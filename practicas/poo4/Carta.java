@@ -1,12 +1,12 @@
+package practicas.poo4;
+
+import java.util.Objects;
+
 /**
  * Clase Carta
  *
  * @author Luis José Sánchez | Modificado
  */
-package practicas.poo4;
-
-import java.util.Objects;
-
 public class Carta implements Comparable<Carta> {
 
   private static String[] n = {"as", "dos", "tres", "cuatro", "cinco", "seis", "siete", "sota", "caballo", "rey"};

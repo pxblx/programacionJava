@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E01Saludo {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -15,10 +14,8 @@ public class E01Saludo {
     nombre = s.nextLine();
   	
     // Resultado
-    System.out.println("Hola, "+nombre+".");
-    
+    System.out.println("Hola, " + nombre + ".");
+
     s.close();
-      
   }
-  
 }

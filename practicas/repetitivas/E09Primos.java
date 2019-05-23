@@ -1,17 +1,13 @@
-/**
- * Ejercicio 9
- * 
- * Mostrar en pantalla los N primero números primos. Se pide por teclado la cantidad de números primos que queremos mostrar.
- * 
- * @author Pablo
- */
-
 package practicas.repetitivas;
 
 import java.util.Scanner;
 
+/**
+ * Ejercicio 9
+ *
+ * Mostrar en pantalla los N primero números primos. Se pide por teclado la cantidad de números primos que queremos mostrar.
+ */
 public class E09Primos {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -26,8 +22,8 @@ public class E09Primos {
     System.out.println("2");
     while (contador < n) {
       boolean primo = true;
-      for (i=3; i<=Math.sqrt(actual) && primo; i+=2) {
-        if (actual%i==0) {
+      for (i = 3; i <= Math.sqrt(actual) && primo; i += 2) {
+        if (actual % i == 0) {
           primo = false;
         }
       }
@@ -37,9 +33,6 @@ public class E09Primos {
       }
       actual+=2;
     }
-    
     s.close();
-    
   }
-      
 }

@@ -1,9 +1,8 @@
-/**
- * Ejercicio 2 de POO
- */
 package practicas.poo2.E02;
 
 /**
+ * Ejercicio 2 de POO
+ *
  * Subclase Bicicleta
  */
 public class Bicicleta extends Vehiculo {

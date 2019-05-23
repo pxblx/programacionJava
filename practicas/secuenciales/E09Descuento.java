@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E09Descuento {
-
   public static void main(String[] args) {
   
     // Declaracion de variables
@@ -15,10 +14,8 @@ public class E09Descuento {
     precio = s.nextInt();
     
     // Resultado
-    System.out.println("Pagara "+(precio-precio*0.15)+" aplicando el descuento del 15%.");
+    System.out.println("Pagara " + (precio - precio * 0.15) + " aplicando el descuento del 15%.");
     
     s.close();
-    
   }
-  
 }

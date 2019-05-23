@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E16Vehiculos {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -24,10 +23,8 @@ public class E16Vehiculos {
     // Resultado
     resultado = d/(v1-v2);
     
-    System.out.println("Se cruzaran en "+resultado*60+" minutos.");
+    System.out.println("Se cruzaran en " + resultado * 60 + " minutos.");
     
     s.close();
-    
   }
-  
 }

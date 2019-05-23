@@ -1,9 +1,8 @@
-/**
- * Ejercicio 9 de POO
- */
 package practicas.poo2.E09;
 
 /**
+ * Ejercicio 9 de POO
+ *
  * Programa de prueba
  */
 public class Prueba {

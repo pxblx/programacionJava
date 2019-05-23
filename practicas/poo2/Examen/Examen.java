@@ -1,14 +1,12 @@
-/**
- * Ejercicio del examen utilizando LocalDate
- * 
- * @author Pablo
- */
 package practicas.poo2.Examen;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+/**
+ * Ejercicio del examen utilizando LocalDate
+ */
 public class Examen {
   public static void main (String[] args) {
     boolean menuFlag = true;

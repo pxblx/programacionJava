@@ -1,22 +1,18 @@
-/**
- * Ejercicio 13
- * 
- * Realizar un programa que lea una cadena por teclado y convierta las mayúsculas a minúsculas y viceversa.
- * 
- * @author Pablo
- */
-
 package practicas.repetitivas;
 
 import java.util.Scanner;
 
+/**
+ * Ejercicio 13
+ *
+ * Realizar un programa que lea una cadena por teclado y convierta las mayúsculas a minúsculas y viceversa.
+ */
 public class E13MayMin {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
     Scanner s = new Scanner(System.in);
-    String cadena, cadenaNueva="";
+    String cadena, cadenaNueva = "";
     char caracter, caracterMin, caracterMay;
     
     // Introducción de datos
@@ -24,21 +20,17 @@ public class E13MayMin {
     cadena = s.nextLine();
     
     // Bucle y resultado
-    for (int i=0; i<cadena.length(); i++) {
+    for (int i = 0; i < cadena.length(); i++) {
       caracter = cadena.charAt(i);
       caracterMin = Character.toLowerCase(cadena.charAt(i));
-      if (caracter!=caracterMin) {
+      if (caracter != caracterMin) {
         cadenaNueva = cadenaNueva+Character.toString(caracterMin);
       } else {
         caracterMay = Character.toUpperCase(cadena.charAt(i));
         cadenaNueva = cadenaNueva+Character.toString(caracterMay);
       }
     }
-    
     System.out.println(cadenaNueva);
-    
     s.close();
-    
   }
-      
 }

@@ -1,21 +1,17 @@
-/**
- * Ejercicio 7
- * 
- * Realiza un algoritmo que calcule la potencia, para ello pide por teclado la base y el exponente. Pueden ocurrir tres cosas:
- * - El exponente sea positivo, solo tienes que imprimir la potencia.
- * - El exponente sea 0, el resultado es 1.
- * - El exponente sea negativo, el resultado es 1/potencia con el exponente positivo.
- * 
- * @author Pablo
- */
-
 package practicas.alternativas;
 
 import java.util.Scanner;
 import java.lang.Math;
 
+/**
+ * Ejercicio 7
+ *
+ * Realiza un algoritmo que calcule la potencia, para ello pide por teclado la base y el exponente. Pueden ocurrir tres cosas:
+ * - El exponente sea positivo, solo tienes que imprimir la potencia.
+ * - El exponente sea 0, el resultado es 1.
+ * - El exponente sea negativo, el resultado es 1/potencia con el exponente positivo.
+ */
 public class E07Potencia {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -29,16 +25,13 @@ public class E07Potencia {
     exponente = s.nextDouble();
     
     // Resultado
-    if (exponente==0) {
+    if (exponente == 0) {
       System.out.println("El resultado es 1.0.");
     } else if (exponente<0) {
-      System.out.println("El resultado es "+1/(Math.pow(base,Math.abs(exponente)))+".");
+      System.out.println("El resultado es " + 1 / (Math.pow(base, Math.abs(exponente))) + ".");
     } else {
-      System.out.println("El resultado es "+Math.pow(base,exponente)+".");
+      System.out.println("El resultado es " + Math.pow(base, exponente) + ".");
     }
-    
     s.close();
-    
   }
-  
 }

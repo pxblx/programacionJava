@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E20Dinero {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -28,13 +27,11 @@ public class E20Dinero {
     monedas_10c = s.nextInt();
     
     // Resultado
-    total = monedas_2e*200+monedas_1e*100+monedas_50c*50+monedas_20c*20+monedas_10c*10;
-    total = total/100;
+    total = monedas_2e * 200 + monedas_1e * 100 + monedas_50c * 50 + monedas_20c * 20 + monedas_10c * 10;
+    total = total / 100;
     
-    System.out.println("El total es: "+total+" euros.");
+    System.out.println("El total es: " + total + " euros.");
     
     s.close();
-    
   }
-  
 }

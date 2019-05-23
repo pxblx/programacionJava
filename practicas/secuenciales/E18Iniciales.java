@@ -3,7 +3,6 @@ package practicas.secuenciales;
 import java.util.Scanner;
 
 public class E18Iniciales {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -21,10 +20,8 @@ public class E18Iniciales {
     apellido2 = s.nextLine();
     
     // Resultado
-    System.out.println(nombre.substring(0,1)+apellido1.substring(0,1)+apellido2.substring(0,1));
+    System.out.println(nombre.substring(0, 1) + apellido1.substring(0, 1) + apellido2.substring(0, 1));
     
     s.close();
-    
   }
-  
 }

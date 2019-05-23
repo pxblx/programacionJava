@@ -1,18 +1,14 @@
-/**
- * Ejercicio 11
- * 
- * Suponiendo que hemos introducido una cadena por teclado que representa una frase (palabras separadas por espacios), realiza un programa
- * que cuente cuantas palabras tiene.
- * 
- * @author Pablo
- */
-
 package practicas.repetitivas;
 
 import java.util.Scanner;
 
+/**
+ * Ejercicio 11
+ *
+ * Suponiendo que hemos introducido una cadena por teclado que representa una frase (palabras separadas por espacios), realiza un programa
+ * que cuente cuantas palabras tiene.
+ */
 public class E11Palabras {
-
   public static void main(String[] args) {
     
     // Declaracion de variables
@@ -26,17 +22,13 @@ public class E11Palabras {
     
     // Bucle y resultado
     cadena = cadena.trim();
-    for (int i=0; i < cadena.length(); i++) {
-      if (cadena.charAt(i)==' ') {
+    for (int i = 0; i < cadena.length(); i++) {
+      if (cadena.charAt(i) == ' ') {
         contador++;
       }
     }
     contador++;
-    
-    System.out.println("La cadena '"+cadena+"' tiene "+contador+" palabras.");
-    
+    System.out.println("La cadena '" + cadena + "' tiene " + contador + " palabras.");
     s.close();
-    
   }
-      
 }

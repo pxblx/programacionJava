@@ -1,6 +1,8 @@
+package practicas.poo1;
+
 /**
  * Ejercicio 5 de poo1
- * 
+ *
  * Crea una clase Fraccion de forma que podamos hacer las siguientes operaciones:
  * - Contruir un objeto Fraccion pasándole al constructor el numerador y el denominador.
  * - Obtener la fracción.
@@ -9,11 +11,7 @@
  * - Multiplicar la fracción por un número.
  * - Multiplicar, sumar y restar fracciones.
  * - Simplificar la fracción.
- * 
- * @author Pablo
  */
-package practicas.poo1;
-
 public class E05Fraccion {
   private int numerador;
   private int denominador;
@@ -115,7 +113,7 @@ public class E05Fraccion {
     int min = Math.min(n1, n2);
     int mcd = 0;
     for (int i = 1; i <= min; i++) {
-      if (n1%i == 0 && n2%i == 0) {
+      if (n1 % i == 0 && n2 % i == 0) {
         mcd = i;
       }
     }

@@ -1,19 +1,15 @@
-/**
- * Ejercicio 16 de funciones
- * 
- * Muestra los números capicúa que hay entre 1 y 99999.
- * 
- * @author Pablo
- */
-
 package practicas.funciones;
 
 import practicas.funciones.funciones.Matematicas;
 
+/**
+ * Ejercicio 16 de funciones
+ *
+ * Muestra los números capicúa que hay entre 1 y 99999.
+ */
 public class E16Capicua {
-  
   public static void main(String[] args) {
-    
+
     // Obtener los números capicúa entre 1 y 99999
     System.out.print("| ");
     for (int i = 1; i < 100000; i++) {
@@ -21,7 +17,5 @@ public class E16Capicua {
         System.out.print(i + " | ");
       }
     }
-    
   }
-  
 }
