@@ -5,11 +5,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import examenes.examen04.ejercicio02.excepciones.FechaInvalidaException;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -21,7 +21,7 @@ import javax.swing.JButton;
 @SuppressWarnings("serial")
 public class Ejercicio02 extends JFrame {
   private JPanel contenedor;
-  private JTextField textFecha;
+  private DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
   /**
    * Lanzar la aplicación
@@ -55,7 +55,7 @@ public class Ejercicio02 extends JFrame {
     lblIntroduceUnaFecha.setBounds(10, 11, 224, 14);
     contenedor.add(lblIntroduceUnaFecha);
     
-    textFecha = new JTextField();
+    JTextField textFecha = new JTextField();
     textFecha.setBounds(244, 8, 200, 20);
     contenedor.add(textFecha);
     textFecha.setColumns(10);
@@ -81,10 +81,10 @@ public class Ejercicio02 extends JFrame {
       @Override
       public void actionPerformed(ActionEvent e) {
         try {
-          validarFecha(textFecha.getText());
+          stringAFecha(textFecha.getText());
           JOptionPane.showMessageDialog(contenedor, "La fecha introducida es válida");
-        } catch (FechaInvalidaException ex) {
-          JOptionPane.showMessageDialog(contenedor, "La fecha introducida no es válida");
+        } catch (DateTimeException ex) {
+          JOptionPane.showMessageDialog(contenedor, ex.getMessage());
         }
       }
     });
@@ -96,9 +96,9 @@ public class Ejercicio02 extends JFrame {
       @Override
       public void actionPerformed(ActionEvent e) {
         try {
-          textFecha.setText(sumarDia(validarFecha(textFecha.getText())));
-        } catch (FechaInvalidaException ex) {
-          JOptionPane.showMessageDialog(contenedor, "La fecha introducida no es válida");
+          textFecha.setText(sumarDia(stringAFecha(textFecha.getText())));
+        } catch (DateTimeException ex) {
+          JOptionPane.showMessageDialog(contenedor, ex.getMessage());
         }
       }
     });
@@ -110,9 +110,9 @@ public class Ejercicio02 extends JFrame {
       @Override
       public void actionPerformed(ActionEvent e) {
         try {
-          textFecha.setText(restarDia(validarFecha(textFecha.getText())));
-        } catch (FechaInvalidaException ex) {
-          JOptionPane.showMessageDialog(contenedor, "La fecha introducida no es válida");
+          textFecha.setText(restarDia(stringAFecha(textFecha.getText())));
+        } catch (DateTimeException ex) {
+          JOptionPane.showMessageDialog(contenedor, ex.getMessage());
         }
       }
     });
@@ -124,9 +124,9 @@ public class Ejercicio02 extends JFrame {
       @Override
       public void actionPerformed(ActionEvent e) {
         try {
-          JOptionPane.showMessageDialog(contenedor, "Entre hoy y la fecha introducida hay " + diasHastaHoy(validarFecha(textFecha.getText())) + " días de diferencia");
-        } catch (FechaInvalidaException ex) {
-          JOptionPane.showMessageDialog(contenedor, "La fecha introducida no es válida");
+          JOptionPane.showMessageDialog(contenedor, "Entre hoy y la fecha introducida hay " + diasDeDiferencia(stringAFecha(textFecha.getText())) + " días de diferencia");
+        } catch (DateTimeException ex) {
+          JOptionPane.showMessageDialog(contenedor, ex.getMessage());
         }
       }
     });
@@ -145,54 +145,57 @@ public class Ejercicio02 extends JFrame {
   }
   
   /**
-   * Comprobar que la fecha que se pasa como parámetro está en el formato correcto (dd/mm/yyyy) y devolverla en formato LocalDate
+   * Convertir una fecha en formato String (dd/mm/yyyy) a LocalDate
    * 
-   * @param fechaString fecha
+   * @param fecha fecha
    * @return fecha fecha en formato LocalDate
    * @throws FechaInvalidaException si la fecha no está en el formato correcto
    */
-  private LocalDate validarFecha(String fechaString) throws FechaInvalidaException {
-    LocalDate fecha;
+  private LocalDate stringAFecha(String fecha) throws DateTimeException {
     try {
-      fecha = LocalDate.of(Integer.parseInt(fechaString.substring(6)), Integer.parseInt(fechaString.substring(3, 5)), Integer.parseInt(fechaString.substring(0, 2)));
-      if (!(fechaString.substring(2, 3) == "/" || fechaString.substring(5, 6) == "/" || fechaString.length() == 10)) {
-        throw new FechaInvalidaException();
-      }
-    } catch (NumberFormatException | DateTimeException | StringIndexOutOfBoundsException e) {
-      throw new FechaInvalidaException();
+      return LocalDate.parse(fecha, formato);
+    } catch (DateTimeException ex) {
+      throw new DateTimeException("La fecha introducida no es válida");
     }
-    return fecha;
   }
   
   /**
-   * Sumar un día a la fecha que se pasa como parámetro y devolver una String en formato (dd/mm/yyy)
+   * Sumar un día a la fecha que se pasa como parámetro y devolver una String (dd/mm/yyyy)
    * 
    * @param fecha fecha en formato LocalDate
    * @return fecha en formato String
    */
   private String sumarDia(LocalDate fecha) {
-    fecha = fecha.plusDays(1);
-    return fecha.getDayOfMonth() + "/" + fecha.getMonthValue() + "/" + fecha.getYear();
+    return fechaAString(fecha.plusDays(1));
   }
   
   /**
-   * Restar un día a la fecha que se pasa como parámetro y devolver una String en formato (dd/mm/yyy)
+   * Restar un día a la fecha que se pasa como parámetro y devolver una String (dd/mm/yyy)
    * 
    * @param fecha fecha en formato LocalDate
-   * @return fecha en formato String
+   * @return fecha en formato String (dd/mm/yyyy)
    */
   private String restarDia(LocalDate fecha) {
-    fecha = fecha.minusDays(1);
-    return fecha.getDayOfMonth() + "/" + fecha.getMonthValue() + "/" + fecha.getYear();
+    return fechaAString(fecha.minusDays(1));
   }
   
   /**
-   * Calcular los días de diferencia entre la fecha introducida y la fecha actual
+   * Obtener los días de diferencia entre la fecha introducida y la fecha del día actual
    * 
    * @param fecha fecha en formato LocalDate
    * @return días de diferencia
    */
-  private long diasHastaHoy(LocalDate fecha) {
+  private long diasDeDiferencia(LocalDate fecha) {
     return Math.abs(fecha.until(LocalDate.now(), ChronoUnit.DAYS));
+  }
+  
+  /**
+   * Convertir una fecha en formato LocalDate a una String (dd/mm/yyyy)
+   * 
+   * @param fecha fecha en formato LocalDate
+   * @return fecha en formato String (dd/mm/yyyy)
+   */
+  private String fechaAString(LocalDate fecha) {
+    return formato.format(fecha);
   }
 }
