@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.filechooser.FileSystemView;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import java.awt.event.ActionListener;
@@ -108,33 +109,32 @@ public class Ejercicio01 extends JFrame {
    * @return archivo seleccionado
    */
   private File seleccionarArchivo() {
-    JFileChooser fc = new JFileChooser();
+    JFileChooser fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
     fc.showOpenDialog(this);
     return fc.getSelectedFile();
   }
   
   /**
-   * Sustituir los caracteres del archivo que se pasa como parámetro
+   * Sustituir los caracteres del archivo que se pasa como parámetro y devolverlo como String
    * 
    * @param archivo archivo
    * @return texto resultante
    */
   private String sustituirCaracteres(File archivo) {
-    String resultante = "";
+    String texto = "";
     try {
       BufferedReader br = new BufferedReader(new FileReader(archivo));
-      String linea = br.readLine();
-      while (linea != null) {
-        linea = linea.replace("A", "4").replace("B", "8").replace("E", "3").replace("I", "1").replace("O", "0").replace("S", "5").replace("T", "7");
-        linea = linea.replace("a", "4").replace("b", "8").replace("e", "3").replace("i", "1").replace("o", "0").replace("s", "5").replace("t", "7");
-        resultante += linea + "\n";
-        linea = br.readLine();
+      String linea;
+      while ((linea = br.readLine()) != null) {
+        texto += linea + "\n";
       }
+      texto = texto.replace("A", "4").replace("B", "8").replace("E", "3").replace("I", "1").replace("O", "0").replace("S", "5").replace("T", "7");
+      texto = texto.replace("a", "4").replace("b", "8").replace("e", "3").replace("i", "1").replace("o", "0").replace("s", "5").replace("t", "7");
       br.close();
     } catch (IOException e) {
       JOptionPane.showMessageDialog(contenedor, "No se ha podido abrir el archivo seleccionado");
     }
-    return resultante;
+    return texto;
   }
   
   /**
@@ -143,14 +143,14 @@ public class Ejercicio01 extends JFrame {
    * @param texto String con el texto a guardar
    */
   private void guardarArchivo(String texto) {
-    File resultante = seleccionarArchivo();
-    if (resultante != null) {
+    File archivo = seleccionarArchivo();
+    if (archivo != null) {
       try {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(resultante));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(archivo));
         bw.write(texto);
         bw.flush();
         bw.close();
-        JOptionPane.showMessageDialog(contenedor, "Archivo '" + resultante.getName() + "' creado");
+        JOptionPane.showMessageDialog(contenedor, "Archivo '" + archivo.getName() + "' creado");
       } catch (IOException ex) {
         JOptionPane.showMessageDialog(contenedor, "No se ha podido guardar el archivo");
       }
