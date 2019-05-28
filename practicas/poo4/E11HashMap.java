@@ -58,5 +58,6 @@ public class E11HashMap {
     }
 
     System.out.println("\nHas acertado " + correctas + " palabras y has fallado " + incorrectas + ".");
+    scanner.close();
   }
 }

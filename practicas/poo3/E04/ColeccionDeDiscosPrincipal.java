@@ -249,5 +249,7 @@ public class ColeccionDeDiscosPrincipal {
 
       } // switch
     } while (opcion != 5);
+    
+    scanner.close();
   }
 }

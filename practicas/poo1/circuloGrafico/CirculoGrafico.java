@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  * - Pasar como parámetro el color del círculo
  * - Mostrar el círculo usando el entorno gráfico
  */
+@SuppressWarnings("serial")
 public class CirculoGrafico extends JFrame {
   private double diametro;
   

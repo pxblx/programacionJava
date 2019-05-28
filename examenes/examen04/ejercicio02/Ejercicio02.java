@@ -149,7 +149,7 @@ public class Ejercicio02 extends JFrame {
    * 
    * @param fecha fecha
    * @return fecha fecha en formato LocalDate
-   * @throws FechaInvalidaException si la fecha no está en el formato correcto
+   * @throws DateTimeException si la fecha no está en el formato correcto
    */
   private LocalDate stringAFecha(String fecha) throws DateTimeException {
     try {

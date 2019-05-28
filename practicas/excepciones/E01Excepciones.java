@@ -28,7 +28,8 @@ public class E01Excepciones {
         scanner.next(); // Limpiar el valor incorrecto del scanner
       }
     }
-
+    
+    scanner.close();
     System.out.println("\nEl máximo es " + Collections.max(numeros));
     System.out.println("El mínimo es " + Collections.min(numeros));
   }

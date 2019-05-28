@@ -45,5 +45,6 @@ public class E10HashMap {
     } else {
       System.out.println("La palabra no está en el diccionario.");
     }
+    scanner.close();
   }
 }

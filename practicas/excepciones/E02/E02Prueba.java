@@ -8,7 +8,6 @@ package practicas.excepciones.E02;
 public class E02Prueba {
   public static void main(String[] args) {
     E02Excepciones garfield = new E02Excepciones("macho");
-    E02Excepciones lisa = new E02Excepciones("lisa");
     E02Excepciones tom = new E02Excepciones("macho");
 
     try {

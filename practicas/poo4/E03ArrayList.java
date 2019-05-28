@@ -28,5 +28,6 @@ public class E03ArrayList {
     for (int c : array) {
       System.out.print(c + " | ");
     }
+    scanner.close();
   }
 }
